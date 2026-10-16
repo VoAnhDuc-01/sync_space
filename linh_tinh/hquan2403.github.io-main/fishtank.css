@@ -1,0 +1,180 @@
+body{
+    background-image: url(aquarium-images/background1.jpg);
+    background-position: center;
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#shark{
+    left: 100px;
+    top: 400px;
+    position: absolute;
+    animation-name: shark;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+@keyframes shark {
+    0% {left: 100px;top: 400px;transform:scaleX(1)}
+    20% {left: 300px;top: 400px;transform:scaleX(1)}
+    40% {left: 500px;top: 300px;transform:scaleX(1)}
+    50% {left: 600px;top: 100px;transform:scaleX(1)}
+    50.0001% {left: 600px;top: 100px;transform:scaleX(-1)}
+    60% {left: 400px;top: 150px;transform:scaleX(-1)}
+    80% {left: 200px;top: 200px;transform:scaleX(-1)}
+    100% {left: 100px;top: 400px;transform:scaleX(-1)}
+    
+}
+#tholan1{
+    left: 0px;
+    top: 200px;
+    position: absolute;
+    animation-name: tholan1;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+@keyframes tholan1 {
+    0% {left: 0px;top: 200px;transform:scaleX(1)}
+    20% {left: 400px;top: 400px;transform:scaleX(1)}
+    30% {left: 600px;top: 500px;transform:scaleX(1)}
+    40% {left: 800px;top: 300px;transform:scaleX(1)}
+    50% {left: 1000px;top: 150px;transform:scaleX(1)}
+    50.0001% {left: 1200px;top: 150px;transform:scaleX(-1)}
+    60% {left: 1000px;top: 100px;transform:scaleX(-1)}
+    70%{left: 700px;top: 200px;transform:scaleX(-1)}
+    80% {left: 500px;top: 300px;transform:scaleX(-1)}
+    100% {left: 0px;top: 200px;transform:scaleX(-1)}
+    
+}
+#tholan2{
+    right: 0px;
+    top: 200px;
+    position: absolute;
+    animation-name: tholan2;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+@keyframes tholan2 {
+    0% {right: 0px;top: 200px;transform:scaleX(-1)}
+    20% {right: 200px;top: 400px;transform:scaleX(-1)}
+    30% {right: 500px;top: 300px;transform:scaleX(-1)}
+    40% {right: 700px;top: 300px;transform:scaleX(-1)}
+    50% {right: 900px;top: 100px;transform:scaleX(-1)}
+    50.0001% {right: 1100px;top: 350px;transform:scaleX(1)}
+    60% {right: 1000px;top: 300px;transform:scaleX(1)}
+    70%{right: 700px;top: 400px;transform:scaleX(1)}
+    80% {right: 500px;top: 200px;transform:scaleX(1)}
+    100% {right: 0px;top: 200px;transform:scaleX(1)}
+}
+#tholan3{
+    left: 300px;
+    top: 100px;
+    position: absolute;
+    animation-name: tholan3;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+@keyframes tholan3 {
+    0% {left: 300px;top: 100px;transform:scaleX(1)}
+    20% {left: 600px;top: 300px;transform:scaleX(1)}
+    30% {left: 800px;top: 200px;transform:scaleX(1)}
+    40% {left: 1000px;top: 350px;transform:scaleX(1)}
+    50% {left: 1200px;top: 250px;transform:scaleX(1)}
+    50.0001% {left: 1200px;top: 250px;transform:scaleX(-1)}
+    60% {left: 1000px;top: 200px;transform:scaleX(-1)}
+    70%{left: 900px;top: 150px;transform:scaleX(-1)}
+    80% {left: 600px;top: 100px;transform:scaleX(-1)}
+    100% {left: 300px;top: 100px;transform:scaleX(-1)}
+}
+#ca1{
+    left: 200px;
+    top: 200px;
+    position: absolute;
+    animation-name: ca1;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+@keyframes ca1 {
+    0% {left: 200px;top: 200px;transform:scaleX(1)}
+    20% {left: 400px;top: 300px;transform:scaleX(1)}
+    30% {left: 600px;top: 200px;transform:scaleX(1)}
+    40% {left: 1000px;top: 400px;transform:scaleX(1)}
+    50% {left: 1100px;top: 350px;transform:scaleX(1)}
+    50.0001% {left: 1100px;top: 350px;transform:scaleX(-1)}
+    60% {left: 1120px;top: 200px;transform:scaleX(-1)}
+    70%{left: 900px;top: 250px;transform:scaleX(-1)}
+    80% {left: 600px;top: 300px;transform:scaleX(-1)}
+    100% {left: 200px;top: 200px;transform:scaleX(-1)}
+}
+#rua1{
+    right: 0px;
+    top: 300px;
+    position: absolute;
+    animation-name: rua1;
+    animation-duration: 35s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+@keyframes rua1 {
+    0% {right: 0px;top: 300px;transform:scaleX(-1)}
+    20% {right: 100px;top: 200px;transform:scaleX(-1)}
+    30% {right: 300px;top: 200px;transform:scaleX(-1)}
+    40% {right: 500px;top: 300px;transform:scaleX(-1)}
+    50% {right: 700px;top: 250px;transform:scaleX(-1)}
+    50.0001% {right: 700px;top: 250px;transform:scaleX(1)}
+    60% {right: 600px;top: 150px;transform:scaleX(1)}
+    70%{right: 400px;top: 220px;transform:scaleX(1)}
+    80% {right: 200px;top: 200px;transform:scaleX(1)}
+    100% {right: 0px;top: 300px;transform:scaleX(1)}
+}
+.bar {
+    position: absolute;
+    top: 0px;
+    width: 1538px;
+    height: 50px;
+    left: -10px;
+    background-color: cadetblue;
+}
+.bar .title{
+    text-decoration: none;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    left: 50px;
+    position: absolute;
+    top: 7px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.bar .button{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    left: 900px;
+    top: -2px;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 15px ;
+    border-radius: 10px;
+    transition-property: transform;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.3s;
+    text-decoration: none;
+}
+.button:hover{
+    transform: translateY(-7px);
+}

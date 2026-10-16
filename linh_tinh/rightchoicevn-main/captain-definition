@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 2,
+  "dockerfileLines": [
+    "FROM php:7-apache",
+    "COPY . /var/www/html"
+  ],
+  "volumes": [
+    {
+      "containerPath": "/var/www/html",
+      "hostPath": "/captain/data/myapp"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hangman Game JavaScript</title>
+  <link rel="stylesheet" href="Hangman Game.css" />
+  <script src="scripts/word-list.js" defer></script>
+  <script src="scripts/script.js" defer></script>
+</head>
+<body>
+
+  <!-- Form nhập từ bí mật (chỉ hiện nếu là custom mode) -->
+  <div class="custom-word-input" style="display: none;">
+    <input type="text" id="custom-word" placeholder="Nhập từ bí mật" />
+    <input type="text" id="custom-hint" placeholder="Nhập từ gợi ý (optional)" />
+    <button id="start-custom-game">Bắt đầu chơi</button>
+  </div>
+
+  <!-- Modal kết thúc game -->
+  <div class="game-modal">
+    <div class="content">
+      <img src="images/hangman-0.svg" alt="icons" />
+      <h4>Game Over!</h4>
+      <p>The correct word was: <b>rainbow</b></p>
+      <button class="play-again">Chơi lại</button>
+    </div>
+  </div>
+
+  <!-- Giao diện chính game -->
+  <div class="container">
+    <div class="hangman-box">
+      <img src="images/hangman-0.svg" draggable="false" alt="hangman-img" />
+      <h1>Hangman Game</h1>
+    </div>
+    <div class="game-box">
+      <ul class="word-display"></ul>
+      <h4 class="hint-text">Hint: <b></b></h4>
+      <h4 class="guesses-text">Incorrect guesses: <b></b></h4>
+      <div class="keyboard"></div>
+    </div>
+  </div>
+
+</body>
+</html>

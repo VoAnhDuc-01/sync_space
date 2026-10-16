@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/gif" href="https://files.catbox.moe/w9in9p.gif">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sinh nhật bẹn </title>
+<style>
+  *, ::before, ::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    color: #f3f4f6;
+    background: linear-gradient(to bottom right, #f9a8d4, #fef3c7);
+    height: 100%;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow: hidden;
+  }
+
+  #fireworksCanvas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  #root { height: 100vh; position: relative; z-index: 10; }
+
+  .layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 1rem;
+  }
+  @media (min-width: 768px) {
+    .layout { flex-direction: row; padding: 2.5rem; }
+  }
+
+  .panel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (min-width: 768px) { .panel { width: 50%; } }
+
+  .chat-box {
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    border: 2px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    max-width: 100%;
+    text-align: left;
+    color: #000;
+    min-height: 3rem;
+  }
+  @media (min-width: 768px) { .chat-box { font-size: 1rem; padding: 1rem 1.25rem; } }
+
+  .typing-box {
+    padding: 0.75rem 1rem;
+    background: #fff;
+    border: 2px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    width: 100%;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #000;
+  }
+  @media (min-width: 768px) { .typing-box { min-height: 80px; font-size: 1rem; padding: 1rem 1.25rem; } }
+
+  .typing-text {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: #000;
+    vertical-align: text-bottom;
+    animation: blink 0.8s step-end infinite;
+    margin-left: 2px;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .btn-wrap {
+    margin-top: 1.5rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s, transform 0.5s;
+    pointer-events: none;
+  }
+  .btn-wrap.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .magic-btn {
+    padding: 0.85rem 1.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+    background: linear-gradient(to right, #fef3c7, #f9a8d4);
+    border: 2px solid #000;
+    border-radius: 9999px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+    transition: transform 0.15s, box-shadow 0.15s;
+    font-family: inherit;
+    user-select: none;
+    position: relative;
+    z-index: 20;
+  }
+  .magic-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,.2);
+  }
+  .magic-btn:active { transform: scale(0.94); }
+
+  .cake-wrapper {
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    margin-bottom: 1.5rem;
+  }
+  @media (min-width: 640px) { .cake-wrapper { width: 24rem; height: 24rem; } }
+
+  .cake-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.75rem;
+  }
+
+  #line2.hb {
+    font-weight: 600;
+    background: linear-gradient(90deg, #ff6b9d, #f368e0, #ff9f43, #ff6b9d);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s linear infinite;
+    font-size: 1.1em;
+  }
+  @media (min-width: 768px) { #line2.hb { font-size: 1.2em; } }
+
+  @keyframes shine {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
+  }
+</style>
+</head>
+<body>
+  <canvas id="fireworksCanvas"></canvas>
+
+  <div id="root">
+    <div class="layout">
+      <div class="panel">
+        <div class="chat-box">
+          <span class="typing-text" id="line1"></span><span class="cursor" id="cursor1"></span>
+        </div>
+        <div class="typing-box">
+          <span class="typing-text" id="line2"></span><span class="cursor" id="cursor2" style="display:none;"></span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="cake-wrapper">
+          <img class="cake-img" alt="Birthday Cake GIF"
+               src="https://files.catbox.moe/w9in9p.gif">
+        </div>
+        <div class="btn-wrap" id="btnWrap">
+          <button class="magic-btn" id="magicBtn">Ấn đây, ấn vào đây..</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+/* ============ ĐÁNH CHỮ TUẦN TỰ ============ */
+const line1Text = "Â, T k cố ý bơ tin nhắn m đâu, t cần 1 chút thời gian để deploy cái quỷ này :)))";
+const line2Text = "Ấn nút bên kia đi. Ấn đê ...";
+const hbText    = "Háp pi bớt đay :))))))";
+
+const line1El = document.getElementById('line1');
+const line2El = document.getElementById('line2');
+const cursor1 = document.getElementById('cursor1');
+const cursor2 = document.getElementById('cursor2');
+const btnWrap = document.getElementById('btnWrap');
+
+function typeText(text, el, cursor, speed, onDone) {
+  let i = 0;
+  cursor.style.display = 'inline-block';
+  function step() {
+    if (i < text.length) {
+      el.textContent += text[i++];
+      setTimeout(step, speed);
+    } else {
+      cursor.style.display = 'none';
+      if (onDone) onDone();
+    }
+  }
+  step();
+}
+
+setTimeout(() => {
+  typeText(line1Text, line1El, cursor1, 35, () => {
+    setTimeout(() => {
+      typeText(line2Text, line2El, cursor2, 35, () => {
+        setTimeout(() => btnWrap.classList.add('show'), 400);
+      });
+    }, 400);
+  });
+}, 400);
+
+/* ============ CANVAS PHÁO HOA ============ */
+const canvas = document.getElementById('fireworksCanvas');
+const ctx = canvas.getContext('2d');
+let W = 0, H = 0;
+
+function resize() {
+  const dpr = window.devicePixelRatio || 1;
+  W = window.innerWidth;
+  H = window.innerHeight;
+  canvas.width = W * dpr;
+  canvas.height = H * dpr;
+  canvas.style.width = W + 'px';
+  canvas.style.height = H + 'px';
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+resize();
+window.addEventListener('resize', resize);
+
+const COLORS = [
+  '#ff6b9d', '#ff8fab', '#ffb3c6', '#ff4757',
+  '#ff7979', '#ff7675', '#fd79a8', '#e84393',
+  '#ffa502', '#ffd93d', '#feca57', '#ff6348',
+  '#ff9ff3', '#f368e0', '#ff9f43'
+];
+
+const particles = [];
+const MAX_PARTICLES = 15000;
+const FADE_START_MS = 25000;
+const FADE_DURATION_MS = 4000;
+
+class Particle {
+  constructor(x, y, angle, speed) {
+    this.x = x; this.y = y;
+    this.vx = Math.cos(angle) * speed;
+    this.vy = Math.sin(angle) * speed;
+    this.size = 4 + Math.random() * 9;
+    this.color = COLORS[(Math.random() * COLORS.length) | 0];
+    this.rotation = Math.random() * Math.PI * 2;
+    this.rotSpeed = (Math.random() - 0.5) * 0.4;
+    const r = Math.random();
+    this.shape = r > 0.6 ? 'rect' : (r > 0.3 ? 'strip' : 'circle');
+    this.alpha = 1;
+    this.stopped = false;
+    this.stoppedAt = 0;
+    this.dead = false;
+  }
+
+  update(now) {
+    if (this.stopped) {
+      const dt = now - this.stoppedAt;
+      if (dt > FADE_START_MS) {
+        this.alpha = Math.max(0, 1 - (dt - FADE_START_MS) / FADE_DURATION_MS);
+        if (this.alpha <= 0) this.dead = true;
+      }
+      return;
+    }
+    this.vx *= 0.94;
+    this.vy *= 0.94;
+    this.vy += 0.22;
+    this.x += this.vx;
+    this.y += this.vy;
+    this.rotation += this.rotSpeed;
+    if (Math.abs(this.vx) < 0.1 && Math.abs(this.vy) < 0.1) {
+      this.stopped = true;
+      this.stoppedAt = now;
+    }
+    if (this.y > H + 300 || this.x < -400 || this.x > W + 400) this.dead = true;
+  }
+
+  draw() {
+    if (this.alpha <= 0) return;
+    ctx.save();
+    ctx.globalAlpha = this.alpha;
+    ctx.translate(this.x, this.y);
+    ctx.rotate(this.rotation);
+    ctx.fillStyle = this.color;
+    const s = this.size;
+    if (this.shape === 'rect') {
+      ctx.fillRect(-s/2, -s/4, s, s*0.5);
+    } else if (this.shape === 'strip') {
+      ctx.fillRect(-s/2, -s/6, s*1.6, s*0.32);
+    } else {
+      ctx.beginPath();
+      ctx.arc(0, 0, s/2, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.restore();
+  }
+}
+
+function burst(cx, cy, count, speedMin, speedMax) {
+  for (let i = 0; i < count; i++) {
+    if (particles.length >= MAX_PARTICLES) particles.shift();
+    const angle = Math.random() * Math.PI * 2;
+    const speed = speedMin + Math.pow(Math.random(), 0.55) * (speedMax - speedMin);
+    particles.push(new Particle(cx, cy, angle, speed));
+  }
+}
+
+function bigFirework() {
+  const startY = H * 0.15;
+  const positions = [
+    { x: W * 0.15, y: startY },
+    { x: W * 0.35, y: startY * 0.7 },
+    { x: W * 0.5,  y: startY },
+    { x: W * 0.65, y: startY * 0.7 },
+    { x: W * 0.85, y: startY }
+  ];
+  positions.forEach((p, idx) => {
+    setTimeout(() => {
+      burst(p.x, p.y, 500, 4, 22);
+    }, idx * 120);
+  });
+}
+
+function loop(now) {
+  ctx.clearRect(0, 0, W, H);
+  for (let i = particles.length - 1; i >= 0; i--) {
+    const p = particles[i];
+    p.update(now);
+    p.draw();
+    if (p.dead) particles.splice(i, 1);
+  }
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+
+/* ============ NÚT ẤN (không bao giờ biến mất) ============ */
+const magicBtn = document.getElementById('magicBtn');
+let textChanged = false; // chỉ đổi text lần đầu
+
+magicBtn.addEventListener('click', () => {
+  // 1. Bắn pháo hoa mỗi lần ấn
+  bigFirework();
+  setTimeout(() => bigFirework(), 800);
+  setTimeout(() => bigFirework(), 1700);
+
+  // 2. Chỉ lần ấn đầu tiên mới đổi dòng 2 thành "Háp pi bớt đay"
+  if (!textChanged) {
+    textChanged = true;
+    line2El.textContent = "";
+    line2El.classList.add('hb');
+    cursor2.style.display = 'inline-block';
+    let i = 0;
+    function step() {
+      if (i < hbText.length) {
+        line2El.textContent += hbText[i++];
+        setTimeout(step, 55);
+      } else {
+        cursor2.style.display = 'none';
+      }
+    }
+    step();
+  }
+  // 3. Nút KHÔNG ẩn — bấm bao nhiêu lần cũng được
+});
+</script>
+</body>
+</html>

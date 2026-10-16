@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chọn chế độ chơi</title>
+  <link rel="stylesheet" href="Hangman Game.css" />
+    <script src="scripts/word-list.js" defer></script>
+    <script src="scripts/script.js" defer></script>
+</head>
+<body>
+  <div class="main-menu">
+    <h1>🎮 Hangman Game</h1>
+    <button onclick="startGame('random')">RANDOM TỪ</button>
+    <button onclick="startGame('custom')">TỰ NHẬP TỪ</button>
+  </div>
+
+  <script>
+    function startGame(mode) {
+      // Lưu chế độ chơi vào localStorage để truyền qua index.html
+      localStorage.setItem("gameMode", mode);
+      window.location.href = "Hangman Game.html";
+    }
+  </script>
+</body>
+</html>

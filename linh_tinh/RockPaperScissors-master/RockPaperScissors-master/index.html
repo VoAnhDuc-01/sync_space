@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock-Paper-Sccisors</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <script src="jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="duc.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="col-md-12 text-center mgb-10">
+			<h1>Rock-Paper-Sccisors</h1>
+			<h4>@duc1607 - 2019</h4>
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-4 flex2">
+			<img id="host-image" src="Images/Host/Preperation-Host.gif" width="70%">
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-4 flex2 text-center">
+			<h2 id="result">
+				<b>
+					Duc
+				</b>
+				vs
+				<input type="text" id="name-input" class="bold text-center" placeholder="You" size="4">
+			</h2>
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-4 flex2">
+			<img id="user-image" src="Images/User/Preperation-User.gif" width="70%">
+		</div>
+
+		<div class="col-md-4 col-sm-4 col-xs-4 flex2 clear-both">
+			<h3>Duc</h3>
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-4 flex2">
+			<b>Rounds: </b>
+			<input type="tel" id="rounds-input" class="bold text-center" placeholder="1~5" size="1">
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-4 flex2">
+			<h3 id="user-name">You</h3>
+		</div>
+	</div>
+	<div class="container mgt-20">
+		<div id="startBtnDiv" class="col-md-12 col-sm-12 col-xs-12 bgwhite text-center">
+			<img src="Images/StartBtn.jpg" width="300px">
+		</div>
+		<div id="playBtnDiv" style="display: none">
+			<div class="col-md-4 flex2">
+				<button id="rock" type="button" choice="rock">
+					<img src="Images/RockBtn.jpg" width="90%">
+				</button>
+			</div>
+			<div class="col-md-4 flex2">
+				<button type="button" choice="paper">
+					<img src="Images/PaperBtn.jpg" width="90%">
+				</button>
+			</div>
+			<div class="col-md-4 flex2">
+				<button type="button" choice="scissors">
+					<img src="Images/ScissorsBtn.jpg" width="90%">
+				</button>			
+			</div>
+		</div>
+	</div>
+</body>
+</html>

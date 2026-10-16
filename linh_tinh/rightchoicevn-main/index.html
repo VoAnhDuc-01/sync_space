@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RightChoiceVN — Local Resin, Global Speed</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="RightChoiceVN resin materials — ABS-like, Clear, Tough, Dental Model, Flexible, High-Temp, Castable. Get a quote in 30 seconds."/>
+  <style>
+
+  /* Simple focus outline for accessibility */
+  :focus { 
+    outline: 2px dashed #111827; 
+    outline-offset: 3px; 
+  }
+
+  /* Brand bar animation (logo scroll) */
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* chạy hết nửa chiều rộng vì có 2 loops */
+  }
+
+  /* Hiệu ứng mờ hai đầu */
+  .fade-mask {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  /* Khi hover thì dừng (optional) */
+  .marquee:hover {
+    animation-play-state: paused;
+  }
+</style>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', sans-serif; }
+</style>
+
+<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
+  <!-- Header -->
+    <header class="border-b bg-white sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+    <!-- Left: Logo -->
+    <div class="flex items-center gap-1.5">
+      <img src="logofull.png" alt="RightChoiceVN Logo Icon" class="h-9 w-auto object-contain" />
+    </div>
+
+    <!-- Right: Nav + Button -->
+    <div class="flex items-center gap-6">
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#products" class="hover:underline">Products</a>
+        <a href="#about" class="hover:underline">About Us</a>
+        <a href="#industries" class="hover:underline">Industries</a>
+        <a href="#quote" class="hover:underline">Instant Quote</a>
+        <a href="#distributors" class="hover:underline">Distributors</a>
+      </nav>
+
+      <a href="#quote" class="shrink-0 inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-gray-900 text-white text-sm">
+  Get Quote
+</a>
+<button id="langToggle" class="shrink-0 text-sm border rounded-lg px-3 py-1 hover:bg-gray-100 transition">
+  VI
+</button>
+
+    </div>
+  </div>
+</header>
+
+
+
+  <!-- Hero -->
+<section 
+  class="relative min-h-[70vh] md:h-[700px] w-full bg-cover bg-center flex items-center md:-translate-y-20"
+  style="background-image: url('backgroundhero.png');"
+>
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 items-center">
+    <div class="text-white">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">Local Resin, Global Speed</h1>
+
+      <p class="mt-3 sm:mt-4 text-gray-200 max-w-md text-sm sm:text-base">
+        Resin materials for Anycubic / Phrozen / Elegoo & more.<br>
+        SLA-guaranteed delivery in <span class="font-semibold text-white">2–5 days</span>.
+        QC batch code on every bottle.
+      </p>
+
+      <div class="mt-5 sm:mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
+        <a href="#products" class="rounded-xl px-5 py-2.5 bg-white text-gray-900 font-medium text-center">Browse Products</a>
+        <a href="#quote" class="rounded-xl px-5 py-2.5 border border-white text-white font-medium text-center">Instant Quote</a>
+      </div>
+    </div>
+
+
+    <!-- Info Box -->
+    <!-- Info Box -->
+<div class="bg-white/90 backdrop-blur-md rounded-3xl shadow-lg p-8 max-w-lg mx-auto my-8 scale-130">
+  <!-- Grid 3 cột -->
+
+  <div class="grid grid-cols-3 gap-6 text-gray-900">
+    <!-- 1️⃣ Resin types -->
+    <div class="flex items-center justify-center gap-3">
+      <i data-lucide="flask-round" class="w-7 h-7 text-gray-800"></i>
+      <div>
+        <div class="text-2xl font-bold leading-tight">5+</div>
+        <div class="text-gray-600 text-sm" id="ib-types">Resin types</div>
+      </div>
+    </div>
+
+    <!-- 2️⃣ Delivery SLA -->
+    <div class="flex items-center justify-center gap-3">
+      <i data-lucide="truck" class="w-7 h-7 text-gray-800"></i>
+      <div>
+        <div class="text-2xl font-bold leading-tight">2–5d</div>
+       <div class="text-gray-600 text-sm" id="ib-sla">Delivery SLA</div>
+      </div>
+    </div>
+
+    <!-- 3️⃣ Batch trace -->
+    <div class="flex items-center justify-center gap-3">
+      <i data-lucide="search" class="w-7 h-7 text-gray-800"></i>
+      <div>
+        <div class="text-2xl font-bold leading-tight">QC</div>
+        <div class="text-gray-600 text-sm" id="ib-trace">Batch trace</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ghi chú nhỏ bên dưới -->
+  <div class="mt-5 text-xs text-gray-500 text-center" id="ib-note">
+  * Pilot program in HCMC & Hanoi. Contact us for other regions.
+</div>
+</div>
+
+<!-- ✅ Brand Carousel: đưa ra ngoài Info Box -->
+<div class="absolute md:bottom-[-195px] bottom-[-120px] left-1/2 -translate-x-1/2 w-full bg-white/30 backdrop-blur-md shadow-lg py-3 sm:py-4 overflow-hidden fade-mask">
+  <div class="flex items-center marquee animate-[marquee_40s_linear_infinite] w-[200%]">
+    <!-- giữ nguyên các logo -->
+    <!-- 🟢 Loop 1 -->
+    <div class="flex items-center gap-24">
+      <img src="1.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+      <img src="2.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+      <img src="3.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+      <img src="4.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+      <img src="5.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+      <img src="6.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+      <img src="7.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+    </div>
+
+    <!-- 🔸 Khoảng trống giữa 2 loops -->
+    <div class="flex-shrink-0 w-24"></div>
+
+    <!-- 🟢 Loop 2 (COPY Y HỆT loop 1) -->
+    <div class="flex items-center gap-24">
+      <img src="1.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+      <img src="2.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+      <img src="3.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+      <img src="4.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+      <img src="5.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+      <img src="6.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+      <img src="7.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+    </div>
+<div class="flex-shrink-0 w-24"></div>
+    <div class="flex items-center gap-24">
+      <img src="1.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+      <img src="2.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+      <img src="3.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+      <img src="4.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+      <img src="5.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+      <img src="6.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+      <img src="7.png" class="h-8 opacity-80 hover:opacity-100 transition" />
+    </div>
+
+  </div>
+</div>
+
+  </div>
+</div>
+
+</section>
+<!-- 🌿 About Us Section -->
+<!-- 🌿 About Us Section -->
+<section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+  <!-- Title -->
+  <h2 class="text-3xl font-bold text-center mb-10">
+    <span id="about-title1" class="text-[#163b5d]">About</span>
+    <span id="about-title2" class="text-[#d3262c]"> Us</span>
+  </h2>
+
+  <!-- Content Wrapper -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <!-- 🖼️ Logo card -->
+    <div class="flex md:justify-start">
+  <div class="bg-white rounded-2xl shadow-lg w-full md:w-[90%] flex items-center justify-center min-h-[320px] sm:min-h-[360px] overflow-hidden">
+    <img src="logofooter.png"
+         alt="RightChoiceVN Logo"
+         class="h-[85%] sm:h-[90%] w-auto object-contain hover:scale-105 transition-transform duration-300" />
+  </div>
+</div>
+
+
+    <!-- 📄 Text content -->
+    <div class="text-gray-700 text-sm sm:text-base leading-relaxed text-justify">
+      <p id="about-desc1">
+        RightChoiceVN is a Vietnam-based resin manufacturer specializing in high-performance photopolymer materials for 3D printing.
+        We were founded with a simple goal: to give makers, service bureaus, and industrial users across Vietnam access to world-class resin — produced locally, delivered fast, and priced fairly.
+      </p>
+      <p id="about-desc2" class="mt-4">
+        With in-house R&D, strict batch-level QC, and close collaboration with top print labs, we continuously refine our formulas to meet diverse applications — from dental models and engineering prototypes to jewelry casting and education.
+      </p>
+      <p id="about-desc3" class="mt-4">
+        Our mission is to empower Vietnam’s 3D printing ecosystem by providing dependable, transparent, and scalable material solutions.
+        We believe that speed, quality, and local trust should go hand in hand.
+      </p>
+      <p id="about-desc4" class="mt-4 font-semibold">
+        RightChoiceVN — Where Local Innovation Meets Global Standards.
+      </p>
+    </div>
+  </div>
+
+  <!-- Cards (Local/Global/R&D) -->
+  <div class="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+    <div class="bg-white rounded-2xl shadow p-6">
+      <i data-lucide="factory" class="w-8 h-8 mx-auto text-[#163b5d] mb-2"></i>
+      <h4 id="about-card1-title" class="font-semibold text-[#163b5d]">Local Production</h4>
+      <p id="about-card1-text" class="text-sm text-gray-600 mt-1">Made in Vietnam with strict QC standards.</p>
+    </div>
+    <div class="bg-white rounded-2xl shadow p-6">
+      <i data-lucide="globe-2" class="w-8 h-8 mx-auto text-[#163b5d] mb-2"></i>
+      <h4 id="about-card2-title" class="font-semibold text-[#163b5d]">Global Reach</h4>
+      <p id="about-card2-text" class="text-sm text-gray-600 mt-1">Supplying across APAC and expanding globally.</p>
+    </div>
+    <div class="bg-white rounded-2xl shadow p-6">
+      <i data-lucide="flask-round" class="w-8 h-8 mx-auto text-[#163b5d] mb-2"></i>
+      <h4 id="about-card3-title" class="font-semibold text-[#163b5d]">Innovation & R&D</h4>
+      <p id="about-card3-text" class="text-sm text-gray-600 mt-1">Continuous development of new resin formulas.</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- Products -->
+  <!-- ✅ Resin Product Section -->
+<!-- ✅ Resin Product Section -->
+<section id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+
+  <!-- Title -->
+  <h1 class="text-3xl font-bold text-center mb-12">
+    <span class="text-[#163b5d]">Resin</span>
+    <span class="text-[#d3262c]"> Products</span>
+  </h1>
+
+  <!-- 🧱 Product Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+    <!-- Each card -->
+    <div
+      class="product-card bg-[#163b5d] rounded-[2rem] shadow-lg p-8 text-center hover:-translate-y-1 hover:shadow-2xl transition cursor-pointer aspect-[3/4] sm:aspect-[3/5] p-6 sm:p-8
+ flex flex-col justify-center text-white"
+      data-product="basic"
+    >
+      <h3 class="text-xl font-semibold">Basic v.18</h3>
+      <p class="mt-2 text-sm text-gray-200">Flexible & durable — Basic / Heat-resistant</p>
+      <p class="text-xs text-gray-300 mt-1">Print time: 2.5 – 3.2 s/layer</p>
+      <button class="mt-5 px-4 py-2 rounded-xl bg-[#d3262c] text-white text-xs hover:bg-red-700 transition">
+        More
+      </button>
+    </div>
+
+    <div
+      class="product-card bg-[#163b5d] rounded-[2rem] shadow-lg p-8 text-center hover:-translate-y-1 hover:shadow-2xl transition cursor-pointer aspect-[3/4] sm:aspect-[3/5] p-6 sm:p-8
+ flex flex-col justify-center text-white"
+      data-product="ev"
+    >
+      <h3 class="text-xl font-semibold">E-V</h3>
+      <p class="mt-2 text-sm text-gray-200">High rigidity — Precise / Crisp detail</p>
+      <p class="text-xs text-gray-300 mt-1">Print time: 2.5 – 3.2 s/layer</p>
+      <button class="mt-5 px-4 py-2 rounded-xl bg-[#d3262c] text-white text-xs hover:bg-red-700 transition">
+        More
+      </button>
+    </div>
+
+    <div
+      class="product-card bg-[#163b5d] rounded-[2rem] shadow-lg p-8 text-center hover:-translate-y-1 hover:shadow-2xl transition cursor-pointer aspect-[3/4] sm:aspect-[3/5] p-6 sm:p-8
+ flex flex-col justify-center text-white"
+      data-product="m11"
+    >
+      <h3 class="text-xl font-semibold">M.11</h3>
+      <p class="mt-2 text-sm text-gray-200">Super-flexible — Bendable / Tough</p>
+      <p class="text-xs text-gray-300 mt-1">Print time: 2.5 – 3.2 s/layer</p>
+      <button class="mt-5 px-4 py-2 rounded-xl bg-[#d3262c] text-white text-xs hover:bg-red-700 transition">
+        More
+      </button>
+    </div>
+
+    <div
+      class="product-card bg-[#163b5d] rounded-[2rem] shadow-lg p-8 text-center hover:-translate-y-1 hover:shadow-2xl transition cursor-pointer aspect-[3/4] sm:aspect-[3/5] p-6 sm:p-8
+ flex flex-col justify-center text-white"
+      data-product="abs"
+    >
+      <h3 class="text-xl font-semibold">ABS-Like</h3>
+      <p class="mt-2 text-sm text-gray-200">Impact-resistant — Engineering prototype</p>
+      <p class="text-xs text-gray-300 mt-1">Print time: 2.5 – 3.2 s/layer</p>
+      <button class="mt-5 px-4 py-2 rounded-xl bg-[#d3262c] text-white text-xs hover:bg-red-700 transition">
+        More
+      </button>
+    </div>
+
+    <div
+      class="product-card bg-[#163b5d] rounded-[2rem] shadow-lg p-8 text-center hover:-translate-y-1 hover:shadow-2xl transition cursor-pointer aspect-[3/4] sm:aspect-[3/5] p-6 sm:p-8
+ flex flex-col justify-center text-white"
+      data-product="rigid"
+    >
+      <h3 class="text-xl font-semibold">Rigid One</h3>
+      <p class="mt-2 text-sm text-gray-200">Ultra-stiff — Dimensional stability</p>
+      <p class="text-xs text-gray-300 mt-1">Print time: 2.5 – 3.2 s/layer</p>
+      <button class="mt-5 px-4 py-2 rounded-xl bg-[#d3262c] text-white text-xs hover:bg-red-700 transition">
+        More
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- 🪟 Modal -->
+<div id="productModal" class="fixed inset-0 bg-black/50 hidden z-50 flex items-center justify-center p-4">
+  <div
+    class="bg-white rounded-2xl shadow-2xl max-w-2xl w-[90%] max-h-[80vh] overflow-y-auto p-10 relative animate-fadeIn "
+  >
+    <button
+      id="closeModal"
+      class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl leading-none"
+    >
+      &times;
+    </button>
+    <div id="modalContent" class="text-gray-800"></div>
+  </div>
+</div>
+
+<!-- ✨ Animation -->
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn { animation: fadeIn 0.3s ease; }
+</style>
+
+<!-- ⚙️ JS for Modal -->
+<script>
+const modal = document.getElementById("productModal");
+const modalContent = document.getElementById("modalContent");
+const closeModal = document.getElementById("closeModal");
+
+const products = {
+  basic: {
+    name: "Basic v.18",
+    html: `
+      <h3 class="text-2xl font-bold mb-3 text-gray-900">Basic v.18</h3>
+      <p><strong>Overview:</strong> Versatile resin with balanced flexibility and toughness, suitable for basic printing or light heat-resistant parts.</p>
+      <ul class="list-disc ml-5 mt-3 text-gray-700">
+        <li>Balanced flexibility and strength</li>
+        <li>Stable and easy post-processing</li>
+        <li>Ideal for general engineering or modeling use</li>
+      </ul>
+      <p class="mt-3"><strong>Recommended prints:</strong> General durable or heat-resistant parts (e.g. test joints, small caps, functional samples)</p>
+      <p class="mt-2 text-sm text-gray-500">Print time: 2.5 – 3.2 s / layer</p>
+    `
+  },
+  ev: {
+    name: "E-V",
+    html: `
+      <h3 class="text-2xl font-bold mb-3 text-gray-900">E-V</h3>
+      <p><strong>Overview:</strong> Rigid and crisp resin designed for high-precision details and sharp surfaces.</p>
+      <ul class="list-disc ml-5 mt-3 text-gray-700">
+        <li>High rigidity with excellent detail fidelity</li>
+        <li>Smooth surface, minimal shrinkage</li>
+        <li>Optimized for intricate or display models</li>
+      </ul>
+      <p class="mt-3"><strong>Recommended prints:</strong> Fine-detail models (e.g. decorative figures, detailed patterns)</p>
+      <p class="mt-2 text-sm text-gray-500">Print time: 2.5 – 3.2 s / layer</p>
+    `
+  },
+  m11: {
+    name: "M.11",
+    html: `
+      <h3 class="text-2xl font-bold mb-3 text-gray-900">M.11</h3>
+      <p><strong>Overview:</strong> Ultra-flexible resin engineered for parts requiring high elasticity and light bending without cracking.</p>
+      <ul class="list-disc ml-5 mt-3 text-gray-700">
+        <li>Highly flexible, crack-resistant</li>
+        <li>Easy to remove and post-process</li>
+        <li>Suitable for flexible or fit-testing components</li>
+      </ul>
+      <p class="mt-3"><strong>Recommended prints:</strong> Elastic components (e.g. snap caps, gaskets, flexible joints)</p>
+      <p class="mt-2 text-sm text-gray-500">Print time: 2.5 – 3.2 s / layer</p>
+    `
+  },
+  abs: {
+    name: "ABS-Like",
+    html: `
+      <h3 class="text-2xl font-bold mb-3 text-gray-900">ABS-Like (Elastic)</h3>
+      <p><strong>Overview:</strong> Resin simulating ABS plastic, offering high toughness and impact resistance — ideal for engineering and prototype use.</p>
+      <ul class="list-disc ml-5 mt-3 text-gray-700">
+        <li>ABS-like mechanical strength and flexibility</li>
+        <li>Better impact resistance than standard resin</li>
+        <li>Perfect for mechanical prototypes or durable parts</li>
+      </ul>
+      <p class="mt-3"><strong>Recommended prints:</strong> Strong prototypes (e.g. housings, handles, joints, load-bearing light parts)</p>
+      <p class="mt-2 text-sm text-gray-500">Print time: 2.5 – 3.2 s / layer</p>
+    `
+  },
+  rigid: {
+    name: "Rigid One",
+    html: `
+      <h3 class="text-2xl font-bold mb-3 text-gray-900">Rigid One</h3>
+      <p><strong>Overview:</strong> Ultra-stiff resin developed for models requiring maximum shape stability and surface hardness.</p>
+      <ul class="list-disc ml-5 mt-3 text-gray-700">
+        <li>Extremely rigid with minimal deformation</li>
+        <li>Maintains dimensional accuracy post-print</li>
+        <li>Ideal for jigs, measurement fixtures, or technical frames</li>
+      </ul>
+      <p class="mt-3"><strong>Recommended prints:</strong> Rigid fixtures or calibration parts (e.g. gauges, supports, non-bending components)</p>
+      <p class="mt-2 text-sm text-gray-500">Print time: 2.5 – 3.2 s / layer</p>
+    `
+  }
+};
+
+// Open modal
+document.querySelectorAll(".product-card button").forEach(btn => {
+  btn.addEventListener("click", e => {
+    const productKey = e.currentTarget.closest(".product-card").dataset.product;
+    modalContent.innerHTML = products[productKey].html;
+    modal.classList.remove("hidden");
+    document.body.classList.add("overflow-hidden");
+  });
+});
+
+// Close modal
+closeModal.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  document.body.classList.remove("overflow-hidden");
+});
+
+// Close when clicking outside modal box
+modal.addEventListener("click", e => {
+  if (e.target === modal) {
+    modal.classList.add("hidden");
+    document.body.classList.remove("overflow-hidden");
+  }
+});
+</script>
+
+
+  <!-- Industries -->
+  <!-- 🌐 Industries Section -->
+<section id="industries" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+
+  <!-- Title -->
+  <h2 class="text-3xl font-bold text-center mb-4">
+    <span class="text-[#163b5d]">Industries</span>
+    <span class="text-[#d3262c]"> We Serve</span>
+  </h2>
+  <p class="text-center text-gray-600 max-w-2xl mx-auto mb-10">
+    RightChoiceVN resin solutions are tailored for each industry's needs — 
+    from high-precision dental models to durable mechanical parts.
+  </p>
+
+  <!-- Grid layout -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- 1️⃣ Dental Labs -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition"
+>
+  <img src="industry-dental.jpg" alt="Dental Labs" class="w-full h-40 sm:h-48 object-cover" />
+
+  <div class="p-6">
+    <h3 id="ind-dental-title" class="text-lg font-semibold text-[#163b5d]">Dental Labs & Clinics</h3>
+    <p id="ind-dental-desc" class="text-sm text-gray-600 mt-2">
+      Used in printing dental models, surgical guides, and aligner trays. 
+      <br><span class="font-medium">Recommended resin:</span> Dental Model, ABS-Like, Rigid One.
+    </p>
+  </div>
+</div>
+
+    <!-- 2️⃣ Engineering & Prototyping -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition"
+>
+  <img src="industry-engineering.jpg" alt="Engineering & Prototyping" class="w-full h-40 sm:h-48 object-cover" />
+  <div class="p-6">
+    <h3 id="ind-engineering-title" class="text-lg font-semibold text-[#163b5d]">Engineering & Prototyping</h3>
+    <p id="ind-engineering-desc" class="text-sm text-gray-600 mt-2">
+      Ideal for mechanical design, fixtures, or product prototypes. 
+      <br><span class="font-medium">Recommended resin:</span> ABS-Like, Rigid One, Basic v.18.
+    </p>
+  </div>
+</div>
+
+    <!-- 3️⃣ Education & Research -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition"
+>
+  <img src="industry-edu.jpg" alt="Education & Research" class="w-full h-40 sm:h-48 object-cover" />
+  <div class="p-6">
+    <h3 id="ind-education-title" class="text-lg font-semibold text-[#163b5d]">Education & Research</h3>
+    <p id="ind-education-desc" class="text-sm text-gray-600 mt-2">
+      For schools and R&D labs using 3D printing in study or experiments. 
+      <br><span class="font-medium">Recommended resin:</span> Basic v.18, E-V, M.11.
+    </p>
+  </div>
+</div>
+
+    <!-- 4️⃣ Architecture & Construction -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition"
+>
+  <img src="industry-architecture.jpg" alt="Architecture & Construction" class="w-full h-40 sm:h-48 object-cover" />
+  <div class="p-6">
+    <h3 id="ind-architecture-title" class="text-lg font-semibold text-[#163b5d]">Architecture & Construction</h3>
+    <p id="ind-architecture-desc" class="text-sm text-gray-600 mt-2">
+      Used in architectural mockups and detailed visual models. 
+      <br><span class="font-medium">Recommended resin:</span> E-V, Basic v.18, Clear / Hi-Clarity.
+    </p>
+  </div>
+</div>
+
+    <!-- 5️⃣ Manufacturing & OEM -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition"
+>
+  <img src="industry-manufacturing.jpg" alt="Manufacturing & OEM" class="w-full h-40 sm:h-48 object-cover" />
+  <div class="p-6">
+    <h3 id="ind-manufacturing-title" class="text-lg font-semibold text-[#163b5d]">Manufacturing & OEM</h3>
+    <p id="ind-manufacturing-desc" class="text-sm text-gray-600 mt-2">
+      For service bureaus, small-batch production, or OEM testing. 
+      <br><span class="font-medium">Recommended resin:</span> Rigid One, ABS-Like, Tough.
+    </p>
+  </div>
+</div>
+
+    <!-- 6️⃣ Creative & Entertainment -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition"
+>
+  <img src="industry-creative.jpg" alt="Creative & Entertainment" class="w-full h-40 sm:h-48 object-cover" />
+  <div class="p-6">
+    <h3 id="ind-creative-title" class="text-lg font-semibold text-[#163b5d]">Creative & Entertainment</h3>
+    <p id="ind-creative-desc" class="text-sm text-gray-600 mt-2">
+      For art, cosplay, figures, or film props with detailed finishing. 
+      <br><span class="font-medium">Recommended resin:</span> E-V, M.11, Basic v.18.
+    </p>
+  </div>
+</div>
+  </div>
+</section>
+
+
+ <!-- 📨 Instant Quote -->
+<section id="quote" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+
+    <h2 class="text-3xl font-bold mb-2">
+      <span class="text-[#163b5d]">Instant</span>
+      <span class="text-[#d3262c]"> Quote</span>
+    </h2>
+    <p class="text-gray-600 text-sm mb-8">
+      Fill in your contact information and request. We’ll email and call you shortly.
+    </p>
+
+    <!-- Alert -->
+    <div id="quoteAlert" class="hidden mt-4 p-3 rounded-xl text-sm"></div>
+
+    <!-- Form -->
+    <form id="quoteForm" class="space-y-5">
+      <!-- Honeypot -->
+      <input type="text" name="bot-field" class="hidden" tabindex="-1" autocomplete="off" />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="text-sm font-medium">Full name </label>
+          <input name="name" required class="mt-1 w-full rounded-xl border px-4 py-2" placeholder="Nguyen Van A" />
+        </div>
+        <div>
+          <label class="text-sm font-medium">Company </label>
+          <input name="company" class="mt-1 w-full rounded-xl border px-4 py-2" placeholder="RightChoiceVN" />
+        </div>
+        <div>
+          <label class="text-sm font-medium">Email</label>
+          <input name="email" type="email" required class="mt-1 w-full rounded-xl border px-4 py-2" placeholder="you@example.com" />
+        </div>
+        <div>
+          <label class="text-sm font-medium">Phone</label>
+          <input name="phone" type="tel" required class="mt-1 w-full rounded-xl border px-4 py-2" placeholder="090x xxx xxx" />
+        </div>
+      </div>
+
+      <div>
+        <label class="text-sm font-medium">Your request </label>
+        <textarea name="notes" rows="4" class="mt-1 w-full rounded-xl border px-4 py-2" placeholder="Request details, resin type, delivery address..."></textarea>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button class="rounded-xl px-5 py-2 bg-[#163b5d] text-white hover:bg-[#122f4a] transition">
+          Send request 
+        </button>
+        <div class="text-xs text-gray-500"></div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- 🧾 Distributors -->
+<section id="distributors" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <h2 class="text-3xl font-bold mb-2">
+      <span class="text-[#163b5d]">Distributor</span>
+      <span class="text-[#d3262c]"> Application</span>
+    </h2>
+    <p class="text-gray-600 text-sm mb-8">
+      Apply to become a reseller. We’ll send MOQ, pricing tiers, and SLA.
+    </p>
+
+    <form id="distributorForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <input type="text" name="company" required placeholder="Company name" class="rounded-xl border px-4 py-2" />
+      <input type="email" name="email" required placeholder="Email" class="rounded-xl border px-4 py-2" />
+      <input type="tel" name="phone" required placeholder="Phone number" class="rounded-xl border px-4 py-2" />
+      <input type="text" name="address" required placeholder="Address" class="rounded-xl border px-4 py-2 md:col-span-2" />
+      <button class="rounded-xl px-5 py-2 bg-[#163b5d] text-white hover:bg-[#122f4a] transition md:col-span-2">
+        Apply
+      </button>
+    </form>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="border-t mt-10 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-sm text-gray-600 flex flex-col md:flex-row items-center justify-between gap-4">
+
+    <!-- Left: Logo -->
+    <div class="flex items-center gap-3">
+      <img src="logofooter.png" 
+     alt="RightChoiceVN Logo" 
+     class="h-20 w-auto object-contain hover:scale-105 transition-transform duration-300" />
+      <span class="text-gray-700 font-medium"></span>
+    </div>
+
+    <!-- Right: Contact info -->
+    <div class="text-center md:text-right text-xs sm:text-sm">
+      <div>© <span id="year"></span> RightChoiceVN. All rights reserved.</div>
+      <div>
+        <span>Contact: <a href="tel:+84398967757" class="underline hover:text-gray-900">+84 398 967 757</a></span> •
+        <span> <a href="mailto:gnesisvn.technology.company@gmail.com" class="underline hover:text-gray-900">gnesisvn.technology.company@gmail.com</a></span> •
+        <span>HCMC, Vietnam</span>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+  <script>
+  // ===== Config: mỗi form có endpoint riêng =====
+  const QUOTE_ENDPOINT = "https://formspree.io/f/xpwykblv";   // 📨 Instant Quote
+  const DIST_ENDPOINT  = "https://formspree.io/f/xwpraynp";   // 🧾 Distributor
+
+  // ===== Instant Quote Form =====
+  const quoteForm = document.getElementById("quoteForm");
+  if (quoteForm) {
+    quoteForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const fd = new FormData(e.currentTarget);
+      if (fd.get("bot-field")) return; // honeypot check
+
+      try {
+        const res = await fetch(QUOTE_ENDPOINT, {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: fd,
+        });
+        if (res.ok) {
+          showAlert("✅ Request sent successfully! We'll contact you shortly.", true);
+          e.currentTarget.reset();
+        } else {
+          showAlert("❌ Failed to send. Please try again later.", false);
+        }
+      } catch (err) {
+        showAlert("❌ Network error. Please check your connection.", false);
+      }
+    });
+  }
+
+  // ===== Distributor Form =====
+  const distForm = document.getElementById("distributorForm");
+  if (distForm) {
+    distForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const fd = new FormData(e.currentTarget);
+      try {
+        const res = await fetch(DIST_ENDPOINT, {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: fd,
+        });
+        if (res.ok) {
+          alert("✅ Application sent successfully! We’ll follow up by email soon.");
+          e.currentTarget.reset();
+        } else {
+          alert("❌ Failed to send. Please try again later.");
+        }
+      } catch (err) {
+        alert("❌ Network error. Please check your connection.");
+      }
+    });
+  }
+
+  // ===== Common Alert Box for Instant Quote =====
+  const alertBox = document.getElementById("quoteAlert");
+  function showAlert(msg, success) {
+    if (!alertBox) return;
+    alertBox.textContent = msg;
+    alertBox.className =
+      "mt-4 p-3 rounded-xl text-sm " +
+      (success ? "bg-green-50 text-green-700" : "bg-red-50 text-red-700");
+    alertBox.classList.remove("hidden");
+    setTimeout(() => alertBox.classList.add("hidden"), 6000);
+  }
+
+  // Footer year
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+  <script>
+  lucide.createIcons();
+</script>
+<script>
+(() => {
+  // ===== TRANSLATIONS =====
+  const T = {
+    en: {
+      nav: {
+        products: "Products",
+        about: "About Us",
+        industries: "Industries",
+        quote: "Instant Quote",
+        distributors: "Distributors",
+        getQuote: "Get Quote"
+      },
+      hero: {
+        title: "Local Resin, Global Speed",
+        text: "Resin materials for Anycubic / Phrozen / Elegoo & more. SLA-guaranteed delivery in 2–5 days. QC batch code on every bottle.",
+        browse: "Browse Products",
+        quote: "Instant Quote"
+      },
+      product: { resin: "Resin", products: "Products" },
+      products: {
+        basic: {
+          desc: "Flexible & durable — Basic / Heat-resistant",
+          time: "Print time: 2.5 – 3.2 s/layer"
+        },
+        ev: {
+          desc: "High rigidity — Precise / Crisp detail",
+          time: "Print time: 2.5 – 3.2 s/layer"
+        },
+        m11: {
+          desc: "Super-flexible — Bendable / Tough",
+          time: "Print time: 2.5 – 3.2 s/layer"
+        },
+        abs: {
+          desc: "Impact-resistant — Engineering prototype",
+          time: "Print time: 2.5 – 3.2 s/layer"
+        },
+        rigid: {
+          desc: "Ultra-stiff — Dimensional stability",
+          time: "Print time: 2.5 – 3.2 s/layer"
+        }
+      },
+      common: { more: "More" },
+      industries: {
+        title1: "Industries",
+        title2: "We Serve",
+        desc:
+          "RightChoiceVN resin solutions are tailored for each industry's needs — from high-precision dental models to durable mechanical parts."
+      },
+      quote: {
+        title1: "Instant",
+        title2: "Quote",
+        desc:
+          "Fill in your contact information and request. We’ll email and call you shortly.",
+        fields: {
+          name: "Full name",
+          company: "Company",
+          email: "Email",
+          phone: "Phone",
+          request: "Your request"
+        },
+        placeholders: {
+          name: "Nguyen Van A",
+          company: "RightChoiceVN",
+          email: "you@example.com",
+          phone: "090x xxx xxx",
+          request:
+            "Request details, resin type, delivery address..."
+        },
+        send: "Send request"
+      },
+      dist: {
+        title1: "Distributor",
+        title2: "Application",
+        desc:
+          "Apply to become a reseller. We’ll send MOQ, pricing tiers, and SLA.",
+        placeholders: {
+          company: "Company name",
+          email: "Email",
+          phone: "Phone number",
+          address: "Address"
+        },
+        apply: "Apply"
+      },
+      langBtn: "VI"
+    },
+    vi: {
+      nav: {
+        products: "Sản phẩm",
+        about: "Giới thiệu",
+        industries: "Ngành",
+        quote: "Báo giá nhanh",
+        distributors: "Nhà phân phối",
+        getQuote: "Báo giá"
+      },
+      hero: {
+        title: "Nhựa nội địa – Tốc độ toàn cầu",
+        text: "Nhựa resin tương thích Anycubic / Phrozen / Elegoo & nhiều hơn. Giao hàng SLA trong 2–5 ngày. Mỗi chai đều có mã QC.",
+        browse: "Xem sản phẩm",
+        quote: "Báo giá nhanh"
+      },
+      product: { resin: "Sản phẩm", products: "Resin" }, // bạn muốn giữ màu: phần đầu #163b5d, phần sau #d3262c
+      products: {
+        basic: {
+          desc: "Dẻo & bền — Cơ bản / Chịu nhiệt nhẹ",
+          time: "Thời gian: 2.5 – 3.2 s/lớp"
+        },
+        ev: {
+          desc: "Độ cứng cao — Chi tiết sắc nét",
+          time: "Thời gian: 2.5 – 3.2 s/lớp"
+        },
+        m11: {
+          desc: "Siêu dẻo — Uốn cong / Bền va đập",
+          time: "Thời gian: 2.5 – 3.2 s/lớp"
+        },
+        abs: {
+          desc: "Chịu va đập — Prototype kỹ thuật",
+          time: "Thời gian: 2.5 – 3.2 s/lớp"
+        },
+        rigid: {
+          desc: "Cực cứng — Ổn định kích thước",
+          time: "Thời gian: 2.5 – 3.2 s/lớp"
+        }
+      },
+      common: { more: "Chi tiết" },
+      industries: {
+        title1: "Ngành",
+        title2: "Ứng dụng",
+        desc:
+          "Giải pháp resin RightChoiceVN được tùy chỉnh cho từng lĩnh vực — từ nha khoa chính xác đến chi tiết cơ khí bền bỉ."
+      },
+      quote: {
+        title1: "Báo giá",
+        title2: "nhanh",
+        desc:
+          "Điền thông tin liên hệ và yêu cầu của bạn. Chúng tôi sẽ email và gọi xác nhận sớm.",
+        fields: {
+          name: "Họ tên",
+          company: "Công ty",
+          email: "Email",
+          phone: "Số điện thoại",
+          request: "Yêu cầu của bạn"
+        },
+        placeholders: {
+          name: "Nguyễn Văn A",
+          company: "RightChoiceVN",
+          email: "ban@example.com",
+          phone: "090x xxx xxx",
+          request:
+            "Mô tả yêu cầu, loại resin, địa chỉ giao hàng..."
+        },
+        send: "Gửi yêu cầu"
+      },
+      dist: {
+        title1: "Đăng ký",
+        title2: "Nhà phân phối",
+        desc:
+          "Đăng ký làm đại lý. Chúng tôi sẽ gửi MOQ, bảng giá & SLA.",
+        placeholders: {
+          company: "Tên công ty",
+          email: "Email",
+          phone: "Số điện thoại",
+          address: "Địa chỉ"
+        },
+        apply: "Gửi đăng ký"
+      },
+      langBtn: "EN"
+    }
+  };
+  // ========== NEW TRANSLATIONS ==========
+T.infobox = {
+  types: { en: "Resin types", vi: "Các loại resin" },
+  sla: { en: "Delivery SLA", vi: "SLA giao hàng" },
+  trace: { en: "Batch trace", vi: "Truy vết lô QC" },
+  note: {
+    en: "* Pilot program in HCMC & Hanoi. Contact us for other regions.",
+    vi: "* Thí điểm tại TP.HCM & Hà Nội. Liên hệ để hỗ trợ khu vực khác."
+  }
+};
+
+// ===== ABOUT SECTION =====
+T.about = {
+
+  title1: { en: "About", vi: "Về" },
+  title2: { en: "Us", vi: "chúng tôi" },
+  desc1: {
+    en: "RightChoiceVN is a Vietnam-based resin manufacturer specializing in high-performance photopolymer materials for 3D printing. We were founded with a simple goal: to give makers, service bureaus, and industrial users across Vietnam access to world-class resin — produced locally, delivered fast, and priced fairly.",
+    vi: "RightChoiceVN là nhà sản xuất nhựa resin tại Việt Nam, chuyên về vật liệu quang trùng hợp hiệu năng cao cho in 3D. Chúng tôi được thành lập với mục tiêu đơn giản: mang đến cho các nhà chế tạo, xưởng dịch vụ và doanh nghiệp trong nước cơ hội tiếp cận nhựa chất lượng quốc tế — sản xuất nội địa, giao nhanh, giá hợp lý."
+  },
+  desc2: {
+    en: "With in-house R&D, strict batch-level QC, and close collaboration with top print labs, we continuously refine our formulas to meet diverse applications — from dental models and engineering prototypes to jewelry casting and education.",
+    vi: "Với đội ngũ R&D nội bộ, quy trình kiểm soát chất lượng từng lô và hợp tác chặt chẽ với các phòng in hàng đầu, chúng tôi liên tục tối ưu công thức để đáp ứng nhiều lĩnh vực ứng dụng — từ mô hình nha khoa, nguyên mẫu kỹ thuật đến đúc trang sức và giáo dục."
+  },
+  desc3: {
+    en: "Our mission is to empower Vietnam’s 3D printing ecosystem by providing dependable, transparent, and scalable material solutions. We believe that speed, quality, and local trust should go hand in hand.",
+    vi: "Sứ mệnh của chúng tôi là thúc đẩy hệ sinh thái in 3D Việt Nam bằng các giải pháp vật liệu đáng tin cậy, minh bạch và có khả năng mở rộng. Chúng tôi tin rằng tốc độ, chất lượng và niềm tin địa phương phải song hành."
+  },
+  desc4: {
+    en: "RightChoiceVN — Where Local Innovation Meets Global Standards.",
+    vi: "RightChoiceVN — Nơi đổi mới nội địa gặp gỡ tiêu chuẩn toàn cầu."
+  },
+  cards: {
+    1: {
+      title: { en: "Local Production", vi: "Sản xuất nội địa" },
+      text: { en: "Made in Vietnam with strict QC standards.", vi: "Sản xuất tại Việt Nam với tiêu chuẩn QC nghiêm ngặt." }
+    },
+    2: {
+      title: { en: "Global Reach", vi: "Phủ sóng toàn cầu" },
+      text: { en: "Supplying across APAC and expanding globally.", vi: "Phân phối khắp khu vực APAC và mở rộng toàn cầu." }
+    },
+    3: {
+      title: { en: "Innovation & R&D", vi: "Đổi mới & R&D" },
+      text: { en: "Continuous development of new resin formulas.", vi: "Liên tục phát triển công thức nhựa mới." }
+    }
+  
+}
+};
+
+
+T.industriesCards = {
+  dental: {
+    title: { en: "Dental Labs & Clinics", vi: "Phòng Labo & Nha khoa" },
+    desc: {
+      en: "Used for dental models, surgical guides, and aligner trays. Recommended resin: Dental Model, ABS-Like, Rigid One.",
+      vi: "Dùng in mẫu răng, guide phẫu thuật, khay aligner. Nhựa gợi ý: Dental Model, ABS-Like, Rigid One."
+    }
+  },
+  engineering: {
+    title: { en: "Engineering & Prototyping", vi: "Kỹ thuật & Nguyên mẫu" },
+    desc: {
+      en: "Ideal for mechanical design, fixtures, or product prototypes. Recommended resin: ABS-Like, Rigid One, Basic v.18.",
+      vi: "Phù hợp thiết kế cơ khí, đồ gá, prototype sản phẩm. Nhựa gợi ý: ABS-Like, Rigid One, Basic v.18."
+    }
+  },
+  education: {
+    title: { en: "Education & Research", vi: "Giáo dục & Nghiên cứu" },
+    desc: {
+      en: "For schools and R&D labs using 3D printing. Recommended resin: Basic v.18, E-V, M.11.",
+      vi: "Cho trường học và phòng lab R&D dùng in 3D. Nhựa gợi ý: Basic v.18, E-V, M.11."
+    }
+  },
+  architecture: {
+    title: { en: "Architecture & Construction", vi: "Kiến trúc & Xây dựng" },
+    desc: {
+      en: "Architectural mockups and detailed visual models. Recommended resin: E-V, Basic v.18, Clear/Hi-Clarity.",
+      vi: "Mô hình kiến trúc, mô phỏng chi tiết trình bày. Nhựa gợi ý: E-V, Basic v.18, Clear/Hi-Clarity."
+    }
+  },
+  manufacturing: {
+    title: { en: "Manufacturing & OEM", vi: "Sản xuất & OEM" },
+    desc: {
+      en: "Service bureaus, small-batch production, OEM testing. Recommended resin: Rigid One, ABS-Like, Tough.",
+      vi: "Xưởng dịch vụ, lô nhỏ, thử nghiệm OEM. Nhựa gợi ý: Rigid One, ABS-Like, Tough."
+    }
+  },
+  creative: {
+    title: { en: "Creative & Entertainment", vi: "Sáng tạo & Giải trí" },
+    desc: {
+      en: "Art, cosplay, figures, film props with fine finishing. Recommended resin: E-V, M.11, Basic v.18.",
+      vi: "Mỹ thuật, cosplay, figure, props phim chi tiết. Nhựa gợi ý: E-V, M.11, Basic v.18."
+    }
+  }
+};
+
+
+
+  // ===== MODAL CONTENT (i18n) =====
+  const ModalCopy = {
+    en: {
+      basic: `
+        <h3 class="text-2xl font-bold mb-3 text-gray-900">Basic v.18</h3>
+        <p><strong>Overview:</strong> Versatile resin with balanced flexibility and toughness, suitable for basic prints or light heat resistance.</p>
+        <ul class="list-disc ml-5 mt-3 text-gray-700">
+          <li>Balanced flexibility & strength</li>
+          <li>Stable, easy post-processing</li>
+          <li>Good for general engineering or models</li>
+        </ul>
+        <p class="mt-3"><strong>Recommended:</strong> Durable small parts, test joints, caps, samples.</p>
+        <p class="mt-2 text-sm text-gray-500">Print time: 2.5 – 3.2 s/layer</p>
+      `,
+      ev: `
+        <h3 class="text-2xl font-bold mb-3 text-gray-900">E-V</h3>
+        <p><strong>Overview:</strong> Rigid, crisp surfaces for high-precision details.</p>
+        <ul class="list-disc ml-5 mt-3 text-gray-700">
+          <li>High rigidity, sharp detail</li>
+          <li>Smooth surface, low shrinkage</li>
+          <li>Great for intricate/display models</li>
+        </ul>
+        <p class="mt-3"><strong>Recommended:</strong> Figures, ornaments, patterns.</p>
+        <p class="mt-2 text-sm text-gray-500">Print time: 2.5 – 3.2 s/layer</p>
+      `,
+      m11: `
+        <h3 class="text-2xl font-bold mb-3 text-gray-900">M.11</h3>
+        <p><strong>Overview:</strong> Ultra-flexible for parts needing elasticity & bending without cracking.</p>
+        <ul class="list-disc ml-5 mt-3 text-gray-700">
+          <li>Very flexible, crack-resistant</li>
+          <li>Easy removal & post-processing</li>
+          <li>Fit-testing, flexible components</li>
+        </ul>
+        <p class="mt-3"><strong>Recommended:</strong> Gaskets, snap caps, joints.</p>
+        <p class="mt-2 text-sm text-gray-500">Print time: 2.5 – 3.2 s/layer</p>
+      `,
+      abs: `
+        <h3 class="text-2xl font-bold mb-3 text-gray-900">ABS-Like</h3>
+        <p><strong>Overview:</strong> ABS-like toughness & impact resistance for engineering prototypes.</p>
+        <ul class="list-disc ml-5 mt-3 text-gray-700">
+          <li>Tough, slightly elastic</li>
+          <li>Better impact than standard resin</li>
+          <li>Ideal for housings/handles/joints</li>
+        </ul>
+        <p class="mt-3"><strong>Recommended:</strong> Functional mechanical prototypes.</p>
+        <p class="mt-2 text-sm text-gray-500">Print time: 2.5 – 3.2 s/layer</p>
+      `,
+      rigid: `
+        <h3 class="text-2xl font-bold mb-3 text-gray-900">Rigid One</h3>
+        <p><strong>Overview:</strong> Ultra-stiff resin with maximum dimensional stability.</p>
+        <ul class="list-disc ml-5 mt-3 text-gray-700">
+          <li>Extremely rigid, minimal deformation</li>
+          <li>Good dimensional accuracy</li>
+          <li>Jigs, fixtures, measurement parts</li>
+        </ul>
+        <p class="mt-3"><strong>Recommended:</strong> Rigid fixtures, calibration parts.</p>
+        <p class="mt-2 text-sm text-gray-500">Print time: 2.5 – 3.2 s/layer</p>
+      `
+    },
+    vi: {
+      basic: `
+        <h3 class="text-2xl font-bold mb-3 text-gray-900">Basic v.18</h3>
+        <p><strong>Tổng quan:</strong> Nhựa đa dụng cân bằng độ dẻo & độ bền, phù hợp in cơ bản hoặc chịu nhiệt nhẹ.</p>
+        <ul class="list-disc ml-5 mt-3 text-gray-700">
+          <li>Cân bằng dẻo & bền</li>
+          <li>Ổn định, dễ xử lý sau in</li>
+          <li>Hợp cho mẫu kỹ thuật & mô hình</li>
+        </ul>
+        <p class="mt-3"><strong>Khuyến nghị:</strong> Chi tiết nhỏ bền, khớp thử, nắp, mẫu chức năng.</p>
+        <p class="mt-2 text-sm text-gray-500">Thời gian: 2.5 – 3.2 s/lớp</p>
+      `,
+      ev: `
+        <h3 class="text-2xl font-bold mb-3 text-gray-900">E-V</h3>
+        <p><strong>Tổng quan:</strong> Cứng, bề mặt sắc nét cho chi tiết độ chính xác cao.</p>
+        <ul class="list-disc ml-5 mt-3 text-gray-700">
+          <li>Độ cứng cao, chi tiết sắc</li>
+          <li>Bề mặt mịn, co ngót thấp</li>
+          <li>Phù hợp mẫu trưng bày/phức tạp</li>
+        </ul>
+        <p class="mt-3"><strong>Khuyến nghị:</strong> Figure, ornament, pattern.</p>
+        <p class="mt-2 text-sm text-gray-500">Thời gian: 2.5 – 3.2 s/lớp</p>
+      `,
+      m11: `
+        <h3 class="text-2xl font-bold mb-3 text-gray-900">M.11</h3>
+        <p><strong>Tổng quan:</strong> Siêu dẻo cho chi tiết cần đàn hồi & uốn mà không nứt.</p>
+        <ul class="list-disc ml-5 mt-3 text-gray-700">
+          <li>Rất dẻo, chống nứt</li>
+          <li>Dễ tách & xử lý sau in</li>
+          <li>Phần linh hoạt, test độ khít</li>
+        </ul>
+        <p class="mt-3"><strong>Khuyến nghị:</strong> Gioăng, nắp snap, khớp dẻo.</p>
+        <p class="mt-2 text-sm text-gray-500">Thời gian: 2.5 – 3.2 s/lớp</p>
+      `,
+      abs: `
+        <h3 class="text-2xl font-bold mb-3 text-gray-900">ABS-Like</h3>
+        <p><strong>Tổng quan:</strong> Độ bền & chịu va đập kiểu ABS cho prototype kỹ thuật.</p>
+        <ul class="list-disc ml-5 mt-3 text-gray-700">
+          <li>Bền, hơi đàn hồi</li>
+          <li>Chịu va đập tốt hơn resin thường</li>
+          <li>Hợp vỏ, tay cầm, khớp</li>
+        </ul>
+        <p class="mt-3"><strong>Khuyến nghị:</strong> Prototype cơ khí chức năng.</p>
+        <p class="mt-2 text-sm text-gray-500">Thời gian: 2.5 – 3.2 s/lớp</p>
+      `,
+      rigid: `
+        <h3 class="text-2xl font-bold mb-3 text-gray-900">Rigid One</h3>
+        <p><strong>Tổng quan:</strong> Rất cứng, ổn định kích thước tối đa.</p>
+        <ul class="list-disc ml-5 mt-3 text-gray-700">
+          <li>Cứng vượt trội, ít biến dạng</li>
+          <li>Chính xác kích thước</li>
+          <li>Jig, fixture, chi tiết đo</li>
+        </ul>
+        <p class="mt-3"><strong>Khuyến nghị:</strong> Đồ gá cứng, chi tiết cân chỉnh.</p>
+        <p class="mt-2 text-sm text-gray-500">Thời gian: 2.5 – 3.2 s/lớp</p>
+      `
+    }
+  };
+
+  let currentLang = "en";
+
+  function $(sel, root = document) { return root.querySelector(sel); }
+  function $all(sel, root = document) { return Array.from(root.querySelectorAll(sel)); }
+
+  function applyLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    const L = T[lang];
+
+    // ===== Header Nav & CTA =====
+    const navProducts = $('nav a[href="#products"]');
+    const navIndustries = $('nav a[href="#industries"]');
+    const navQuote = $('nav a[href="#quote"]');
+    const navDist = $('nav a[href="#distributors"]');
+    const headerCTA = $('header a[href="#quote"].inline-flex');
+
+    if (navProducts) navProducts.textContent = L.nav.products;
+    if (navIndustries) navIndustries.textContent = L.nav.industries;
+    if (navQuote) navQuote.textContent = L.nav.quote;
+    if (navDist) navDist.textContent = L.nav.distributors;
+    if (headerCTA) headerCTA.textContent = L.nav.getQuote;
+
+    // ===== Hero =====
+    const heroWrap = $('section[style*="background-image"] .text-white');
+    if (heroWrap) {
+      const title = $('h1', heroWrap);
+      const text = $('p', heroWrap);
+      const btns = $all('a', heroWrap);
+      if (title) title.textContent = L.hero.title;
+      if (text)  text.textContent  = L.hero.text;
+      if (btns[0]) btns[0].textContent = L.hero.browse;
+      if (btns[1]) btns[1].textContent = L.hero.quote;
+    }
+
+    // ===== Products Title (2 colored spans) =====
+    const productsTitle = $('#products h1');
+    if (productsTitle) {
+      const spans = $all('span', productsTitle);
+      if (spans[0]) spans[0].textContent = L.product.resin;
+      if (spans[1]) spans[1].textContent = ' ' + L.product.products;
+    }
+
+    // ===== Product Cards (desc + time + button) =====
+    $all('.product-card').forEach(card => {
+      const key = card.dataset.product; // basic, ev, m11, abs, rigid
+      const desc = card.querySelector('p.mt-2');
+      const time = card.querySelector('p.text-xs');
+      const btn  = card.querySelector('button');
+      if (L.products[key]) {
+        if (desc) desc.textContent = L.products[key].desc;
+        if (time) time.textContent = L.products[key].time;
+      }
+      if (btn) btn.textContent = L.common.more;
+    });
+
+    // ===== Industries Title + Desc =====
+    const indTitle = $('#industries h2');
+    if (indTitle) {
+      const spans = $all('span', indTitle);
+      if (spans[0]) spans[0].textContent = L.industries.title1;
+      if (spans[1]) spans[1].textContent = ' ' + L.industries.title2;
+    }
+    const indDesc = $('#industries p.text-center');
+    if (indDesc) indDesc.textContent = L.industries.desc;
+
+    // ===== Quote Title + Desc + Form =====
+    const quoteTitle = $('#quote h2');
+    if (quoteTitle) {
+      const spans = $all('span', quoteTitle);
+      if (spans[0]) spans[0].textContent = L.quote.title1;
+      if (spans[1]) spans[1].textContent = ' ' + L.quote.title2;
+    }
+    const quoteDesc = $('#quote p.text-gray-600');
+    if (quoteDesc) quoteDesc.textContent = L.quote.desc;
+
+    const labels = $all('#quoteForm label.text-sm');
+    if (labels.length >= 4) {
+      labels[0].textContent = L.quote.fields.name;
+      labels[1].textContent = L.quote.fields.company;
+      labels[2].textContent = L.quote.fields.email;
+      labels[3].textContent = L.quote.fields.phone;
+    }
+    const qName = $('#quoteForm input[name="name"]');
+    const qCompany = $('#quoteForm input[name="company"]');
+    const qEmail = $('#quoteForm input[name="email"]');
+    const qPhone = $('#quoteForm input[name="phone"]');
+    if (qName) qName.placeholder = L.quote.placeholders.name;
+    if (qCompany) qCompany.placeholder = L.quote.placeholders.company;
+    if (qEmail) qEmail.placeholder = L.quote.placeholders.email;
+    if (qPhone) qPhone.placeholder = L.quote.placeholders.phone;
+
+    const qText = $('#quoteForm textarea[name="notes"]');
+    if (qText) {
+      const label = qText.closest('div')?.querySelector('label');
+      if (label) label.textContent = L.quote.fields.request;
+      qText.placeholder = L.quote.placeholders.request;
+    }
+    const qBtn = $('#quoteForm button');
+    if (qBtn) qBtn.textContent = L.quote.send;
+
+    // ===== Distributor Title + Desc + Form =====
+    const distTitle = $('#distributors h2');
+    if (distTitle) {
+      const spans = $all('span', distTitle);
+      if (spans[0]) spans[0].textContent = L.dist.title1;
+      if (spans[1]) spans[1].textContent = ' ' + L.dist.title2;
+    }
+    const distDesc = $('#distributors p.text-gray-600');
+    if (distDesc) distDesc.textContent = L.dist.desc;
+
+    const dInputs = $all('#distributorForm input');
+    if (dInputs[0]) dInputs[0].placeholder = L.dist.placeholders.company;
+    if (dInputs[1]) dInputs[1].placeholder = L.dist.placeholders.email;
+    if (dInputs[2]) dInputs[2].placeholder = L.dist.placeholders.phone;
+    if (dInputs[3]) dInputs[3].placeholder = L.dist.placeholders.address;
+    const dBtn = $('#distributorForm button');
+    if (dBtn) dBtn.textContent = L.dist.apply;
+
+    // ===== Info Box =====
+const IB = T.infobox;
+const _t = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+_t('ib-types', IB.types[lang]);
+_t('ib-sla',   IB.sla[lang]);
+_t('ib-trace', IB.trace[lang]);
+_t('ib-note',  IB.note[lang]);
+
+// ===== Industries Cards =====
+const IND = T.industriesCards;
+const setInd = (key) => {
+  const titleEl = document.getElementById(`ind-${key}-title`);
+  const descEl  = document.getElementById(`ind-${key}-desc`); 
+  if (titleEl) titleEl.textContent = IND[key].title[lang];
+  if (descEl) {
+    const txt = IND[key].desc[lang];
+    // Giữ định dạng "Recommended resin / Nhựa gợi ý" với <br> + <span>
+    descEl.innerHTML = txt
+      .replace('Recommended resin:', '<br><span class="font-medium">Recommended resin:</span>')
+      .replace('Nhựa gợi ý:', '<br><span class="font-medium">Nhựa gợi ý:</span>');
+  }
+};
+['dental','engineering','education','architecture','manufacturing','creative'].forEach(setInd);
+// ===== About Us =====
+const AB = T.about;
+const setText = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+setText("about-title1", AB.title1[lang]);
+setText("about-title2", AB.title2[lang]);
+setText("about-desc1", AB.desc1[lang]);
+setText("about-desc2", AB.desc2[lang]);
+setText("about-desc3", AB.desc3[lang]);
+setText("about-desc4", AB.desc4[lang]);
+setText("about-card1-title", AB.cards[1].title[lang]);
+setText("about-card1-text", AB.cards[1].text[lang]);
+setText("about-card2-title", AB.cards[2].title[lang]);
+setText("about-card2-text", AB.cards[2].text[lang]);
+setText("about-card3-title", AB.cards[3].title[lang]);
+setText("about-card3-text", AB.cards[3].text[lang]);
+
+    // ===== Lang Toggle label =====
+    const langBtn = $('#langToggle');
+    if (langBtn) langBtn.textContent = L.langBtn;
+  }
+
+
+  // ===== Hook Modal "More" buttons to i18n content =====
+  const modal = document.getElementById("productModal");
+  const modalContent = document.getElementById("modalContent");
+  if (modal && modalContent) {
+    document.querySelectorAll(".product-card button").forEach(btn => {
+      btn.addEventListener("click", e => {
+        const key = e.currentTarget.closest(".product-card").dataset.product;
+        modalContent.innerHTML = ModalCopy[currentLang][key] || "";
+        modal.classList.remove("hidden");
+        document.body.classList.add("overflow-hidden");
+      });
+    });
+
+  }
+
+  // ===== Init + Toggle =====
+  applyLang("en");
+  const langToggle = document.getElementById("langToggle");
+  if (langToggle) {
+    langToggle.addEventListener("click", () => {
+      applyLang(currentLang === "en" ? "vi" : "en");
+    });
+  }
+})();
+</script>
+
+
+
+</body>
+</html>

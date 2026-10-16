@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="15">
+<title>Hồ Cá By Trung Anh</title>
+<style>
+body {
+background-color: deepskyblue;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+overflow: hidden; }
+.fish-tank {
+    width: 1000px;
+    height: 700px;
+    border: 10px solid #1900ff;
+background-image: linear-gradient(to bottom, #19b6ff, #3fff46);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-color: #81d4fa; 
+border-radius: 30px;
+position: relative;
+overflow: hidden;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out; 
+animation: water-ripple 15s ease-in-out infinite alternate;
+}
+.fish-tank:hover {
+box-shadow: 15px 15px 25px 1px rgba(0, 0, 0, 0.6), 0 0 10px 3px rgba(142, 116, 237, 0.6);
+transform: translateY(-5px); 
+}
+@keyframes water-ripple {
+0% {
+transform: scale(1) perspective(800px) rotateX(0deg);
+}
+100% {
+transform: scale(1.02) perspective(800px) rotateX(1deg); 
+}
+}
+.fish {
+position: absolute;
+width: 120px;
+height: auto;
+}
+.fish img {
+width: 100%;
+height: auto;
+display: block;
+}
+#fish1 {
+top: 30px; 
+left: -120px; 
+animation: swim-horizontal 15s linear infinite;
+width: 100px;
+}
+#fish2 {
+top: calc(600px * 3 / 4 - 150px);
+left: -180px; 
+animation: shark-swim 16s linear infinite; 
+width: 200px;
+}
+#fish3 {
+top: 400px; 
+left: -100px; 
+animation: swim-horizontal 15s linear infinite; 
+width: 130px;
+}
+#fish4 {
+top: 100px; 
+left: -160px; 
+animation: swim-horizontal 15s linear infinite;
+width: 130px;
+}
+
+@keyframes swim-horizontal {
+0% {
+transform: translateX(0) scaleX(1);
+}
+49% {
+transform: translateX(1050px) scaleX(1); 
+}
+50% {
+transform: translateX(1050px) scaleX(-1);
+}
+99% {
+transform: translateX(0) scaleX(-1);
+}
+100% {
+transform: translateX(0) scaleX(1);
+}
+}
+        @keyframes shark-swim {
+            0% {
+                transform: translateX(0) rotate(+30deg) scaleX(1);
+            }
+            49% {
+                transform: translateX(1050px) rotate(+30deg) scaleX(1); 
+            }
+            50% {
+
+                transform: translateX(1050px) rotate(-30deg) scaleX(-1); 
+            }
+            99% {
+                transform: translateX(0) rotate(-30deg) scaleX(-1);
+            }
+            100% {
+                transform: translateX(0) rotate(-30deg) scaleX(-1);
+            }
+        }
+
+</style>
+</head>
+<body>
+<div class="fish-tank">
+<div class="fish" id="fish1">
+<img src="turtle.png" alt="Rùa">
+</div>
+<div class="fish" id="fish2">
+<img src="shark.png" alt="Cá Mập">
+</div>
+<div class="fish" id="fish3">
+<img src="goldFishSchool.png" alt="Đàn Cá">
+</div>
+<div class="fish" id="fish4">
+<img src="ca-ngua.webp" alt="Cá ngựa">
+</div>
+</div> 
+</body>
+
+</html>
+
+
