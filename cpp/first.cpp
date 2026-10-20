@@ -7,16 +7,37 @@ using namespace std;
 using ll = long long;
 using db = double;
 const int MOD = 1e9+7;
-//cout << fixed << setprecision(2);
 
-
+struct PhanSo{
+    int tu;
+    int mau;
+};
 
 int main () 
 {
     cin.tie(0)->sync_with_stdio(0);
     
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+     freopen("input.txt", "r", stdin);
+     freopen("output.txt", "w", stdout);
     
-    int a,b,c;cin>>a>>b>>c;cout << max({a, b, c});
+    PhanSo p1;
+    cin>>p1.tu>>p1.mau;
+    PhanSo p2;
+    cin>>p2.tu>>p2.mau;
+    if (p1.mau == 0 || p2.mau ==0){
+        cout<<-1;
+    }
+    else{
+        PhanSo tong;
+        tong.tu = p1.tu * p2.mau + p2.tu * p1.mau;
+        tong.mau = p1.mau * p2.mau;
+/*
+        ll ucln = __gcd(tong.tu, tong.mau); 
+        
+        tong.tu /= ucln; 
+        tong.mau /= ucln; 
+        */
+        cout << tong.tu << " " << tong.mau;
+    } 
+    return 0; 
 }
