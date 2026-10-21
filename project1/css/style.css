@@ -1259,3 +1259,108 @@ body {
     padding: 1.5rem 1.25rem;
   }
 }
+
+/* ==========================================================================
+   10. PDF Documents & Library Section
+   ========================================================================== */
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.doc-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.15rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.doc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+  background: var(--bg-card);
+}
+
+.doc-card-primary {
+  border-left: 4px solid var(--primary);
+}
+
+.doc-card-danger {
+  border-left: 4px solid var(--danger);
+}
+
+.doc-icon {
+  font-size: 2rem;
+  min-width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card-subtle);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.doc-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.doc-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+  line-height: 1.35;
+}
+
+.doc-card:hover .doc-title {
+  color: var(--primary);
+}
+
+.doc-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+
+.doc-size {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.doc-card-danger .doc-size {
+  color: var(--danger);
+  background: var(--danger-light);
+}
+
+.doc-action {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+  padding: 0.25rem;
+}
+
+.doc-card:hover .doc-action {
+  color: var(--primary);
+  transform: translate(2px, -2px);
+}

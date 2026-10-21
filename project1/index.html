@@ -59,6 +59,11 @@
             <span>📑</span> <span class="nav-text">Sổ tay tra cứu</span>
           </button>
         </li>
+        <li>
+          <button class="nav-item-btn" data-tab="documents">
+            <span>📂</span> <span class="nav-text">Tài liệu PDF</span>
+          </button>
+        </li>
       </ul>
     </nav>
 
@@ -110,6 +115,9 @@
             <button class="btn btn-outline-white" id="dashOpenLabBtn">
               <span>🧪</span> Mở phòng thực hành logic
             </button>
+            <button class="btn btn-outline-white" id="dashOpenDocsBtn" onclick="switchTab('documents')">
+              <span>📂</span> Thư viện Tài liệu & Đề thi
+            </button>
           </div>
         </div>
 
@@ -140,7 +148,7 @@
             <div class="stat-icon" style="background: var(--info-light); color: var(--info);">🎯</div>
             <div class="stat-info">
               <h4>Ngân hàng câu hỏi</h4>
-              <div class="stat-number" id="statTotalQuestions">100+</div>
+              <div class="stat-number" id="statTotalQuestions">400+</div>
             </div>
           </div>
         </div>
@@ -186,6 +194,13 @@
                   <p style="font-size: 0.85rem; color: var(--text-muted);">Kiểm tra phản xạ, đối xứng, phản xứng, bắc cầu; phân hoạch tương đương & Poset</p>
                 </div>
                 <div>➔</div>
+              </div>
+              <div class="chapter-banner-card" onclick="switchTab('documents');" style="border-left: 4px solid var(--primary); background: var(--bg-card-subtle);">
+                <div>
+                  <h4 style="font-weight: 700; color: var(--primary);">📂 Thư viện Tài liệu & Đề thi PDF</h4>
+                  <p style="font-size: 0.85rem; color: var(--text-muted);">6 Handout bài giảng, Giáo trình GS. Nguyễn Hữu Anh, và Tuyển tập Đề thi có đáp án</p>
+                </div>
+                <div style="font-size: 1.1rem; color: var(--primary);">➔</div>
               </div>
             </div>
           </div>
@@ -530,6 +545,140 @@
         </div>
       </section>
 
+      <!-- ==========================================
+           TAB 6: DOCUMENTS / PDF LIBRARY
+           ========================================== -->
+      <section class="content-section" id="documentsSection">
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">
+            📂 Thư viện Tài liệu PDF &amp; Đề thi Toán Rời Rạc
+          </h2>
+          <p style="color: var(--text-muted);">
+            Tổng hợp handout bài giảng, giáo trình tham khảo và đề thi thực tế môn Toán Rời Rạc. Nhấp vào từng tài liệu để mở file PDF trực tiếp.
+          </p>
+        </div>
+
+        <!-- Handout Section -->
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3 class="card-title" style="color: var(--primary);">📝 Handout Bài giảng trên lớp</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Slide bài giảng handout từ giảng viên, được cập nhật theo từng buổi học.
+          </p>
+          <div class="doc-grid" id="handoutGrid">
+            <a class="doc-card" href="Toán rời rạc_/Handout/20251015.pdf" target="_blank">
+              <div class="doc-icon">📄</div>
+              <div class="doc-info">
+                <div class="doc-title">Handout 15/10/2025</div>
+                <div class="doc-meta">Buổi 1 – Mệnh đề & Quy tắc logic</div>
+                <div class="doc-size">~9.6 MB</div>
+              </div>
+              <div class="doc-action">↗</div>
+            </a>
+            <a class="doc-card" href="Toán rời rạc_/Handout/20251016.pdf" target="_blank">
+              <div class="doc-icon">📄</div>
+              <div class="doc-info">
+                <div class="doc-title">Handout 16/10/2025</div>
+                <div class="doc-meta">Buổi 2 – Suy diễn logic & Vị từ</div>
+                <div class="doc-size">~9.0 MB</div>
+              </div>
+              <div class="doc-action">↗</div>
+            </a>
+            <a class="doc-card" href="Toán rời rạc_/Handout/20251025A.pdf" target="_blank">
+              <div class="doc-icon">📄</div>
+              <div class="doc-info">
+                <div class="doc-title">Handout 25/10/2025 (A)</div>
+                <div class="doc-meta">Buổi 3 – Tập hợp & Phép đếm</div>
+                <div class="doc-size">~7.6 MB</div>
+              </div>
+              <div class="doc-action">↗</div>
+            </a>
+            <a class="doc-card" href="Toán rời rạc_/Handout/20251026.pdf" target="_blank">
+              <div class="doc-icon">📄</div>
+              <div class="doc-info">
+                <div class="doc-title">Handout 26/10/2025</div>
+                <div class="doc-meta">Buổi 4 – Tổ hợp & Chuồng bồ câu</div>
+                <div class="doc-size">~5.1 MB</div>
+              </div>
+              <div class="doc-action">↗</div>
+            </a>
+            <a class="doc-card" href="Toán rời rạc_/Handout/20251029.pdf" target="_blank">
+              <div class="doc-icon">📄</div>
+              <div class="doc-info">
+                <div class="doc-title">Handout 29/10/2025</div>
+                <div class="doc-meta">Buổi 5 – Quan hệ & Tương đương</div>
+                <div class="doc-size">~4.3 MB</div>
+              </div>
+              <div class="doc-action">↗</div>
+            </a>
+            <a class="doc-card" href="Toán rời rạc_/Handout/20251030.pdf" target="_blank">
+              <div class="doc-icon">📄</div>
+              <div class="doc-info">
+                <div class="doc-title">Handout 30/10/2025</div>
+                <div class="doc-meta">Buổi 6 – Thứ tự, Dàn & Đại số Bool</div>
+                <div class="doc-size">~6.4 MB</div>
+              </div>
+              <div class="doc-action">↗</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Reference Materials -->
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3 class="card-title" style="color: var(--success);">📚 Giáo trình & Tài liệu tham khảo</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Các giáo trình chính thức và tài liệu bổ trợ cho môn Toán Rời Rạc.
+          </p>
+          <div class="doc-grid">
+            <a class="doc-card doc-card-primary" href="Toán rời rạc_/Tài liệu_/giaotrinh_toanroirac_gs-nguyen-huu-anh.pdf" target="_blank">
+              <div class="doc-icon">📕</div>
+              <div class="doc-info">
+                <div class="doc-title">Giáo trình Toán Rời Rạc – GS. Nguyễn Hữu Anh</div>
+                <div class="doc-meta">Giáo trình chính thức • NXB Lao động Xã hội</div>
+                <div class="doc-size">~1.7 MB</div>
+              </div>
+              <div class="doc-action">↗</div>
+            </a>
+            <a class="doc-card" href="Toán rời rạc_/Tài liệu_/DHSP_TRR_Bai giang_Nguyen Ngoc Trung.pdf" target="_blank">
+              <div class="doc-icon">📗</div>
+              <div class="doc-info">
+                <div class="doc-title">Bài giảng Toán Rời Rạc – ĐHSP Nguyễn Ngọc Trung</div>
+                <div class="doc-meta">Tài liệu tham khảo bổ sung</div>
+                <div class="doc-size">~680 KB</div>
+              </div>
+              <div class="doc-action">↗</div>
+            </a>
+            <a class="doc-card" href="Toán rời rạc_/Tài liệu_/Discrete_Math.pdf" target="_blank">
+              <div class="doc-icon">📘</div>
+              <div class="doc-info">
+                <div class="doc-title">Discrete Mathematics (Tài liệu tiếng Anh)</div>
+                <div class="doc-meta">Tham khảo quốc tế • Bản PDF</div>
+                <div class="doc-size">~3.0 MB</div>
+              </div>
+              <div class="doc-action">↗</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Exam Papers -->
+        <div class="card">
+          <h3 class="card-title" style="color: var(--danger);">📋 Đề thi & Bài tập tổng hợp</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Bộ sưu tập đề thi các kỳ và bài tập tổng hợp để ôn luyện trước kỳ thi.
+          </p>
+          <div class="doc-grid">
+            <a class="doc-card doc-card-danger" href="Toán rời rạc_/Tài liệu_/Tổng_hợp_đề_thi_Toán_rời_rạc.pdf" target="_blank">
+              <div class="doc-icon">📋</div>
+              <div class="doc-info">
+                <div class="doc-title">Tổng hợp Đề thi Toán Rời Rạc</div>
+                <div class="doc-meta">Đề thi các năm • Bao gồm đáp án</div>
+                <div class="doc-size">~205 KB</div>
+              </div>
+              <div class="doc-action">↗</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
     </main>
   </div>
 
@@ -555,6 +704,20 @@
   <!-- Data Modules -->
   <script src="js/data/theoryData.js"></script>
   <script src="js/data/quizData.js"></script>
+  <script src="js/data/quizChapter2Extra.js"></script>
+  <script src="js/data/quizChapter3Extra.js"></script>
+  <script src="js/data/quizChapter4Extra.js"></script>
+  <script>
+    if (typeof QUIZ_DATA_CH2_EXTRA !== 'undefined' && Array.isArray(QUIZ_DATA_CH2_EXTRA)) {
+      QUIZ_DATA.push(...QUIZ_DATA_CH2_EXTRA);
+    }
+    if (typeof QUIZ_DATA_CH3_EXTRA !== 'undefined' && Array.isArray(QUIZ_DATA_CH3_EXTRA)) {
+      QUIZ_DATA.push(...QUIZ_DATA_CH3_EXTRA);
+    }
+    if (typeof QUIZ_DATA_CH4_EXTRA !== 'undefined' && Array.isArray(QUIZ_DATA_CH4_EXTRA)) {
+      QUIZ_DATA.push(...QUIZ_DATA_CH4_EXTRA);
+    }
+  </script>
 
   <!-- Interactive Tools Modules -->
   <script src="js/tools/truthTable.js"></script>

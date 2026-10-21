@@ -40,24 +40,63 @@
 
 ---
 
-### 2. 📝 Hệ thống Trắc nghiệm chia theo từng bài
-- **Ngân hàng 115 câu hỏi trắc nghiệm chuyên sâu cho Chương 1 (Cơ sở Logic - Hoàn toàn không có XOR):**
+### 2. 📝 Hệ thống Trắc nghiệm chia theo từng bài (420+ câu hỏi chuyên sâu)
+Mỗi chương đều được trang bị **ít nhất 100 câu hỏi** trắc nghiệm chuẩn mực, phân cấp theo độ khó và chia theo từng bài học cụ thể:
+- **Chương 1: Cơ sở Logic (120 câu hỏi - Hoàn toàn không có XOR):**
   - **§1 Phép tính mệnh đề (15 câu):** Bảng chân trị, xác định mệnh đề, giá trị logic cơ bản.
   - **§2 Phép kéo theo & Luật phản đảo (20 câu):** Điều kiện cần và đủ, mệnh đề đảo, mệnh đề nghịch, tương đương phản đảo $\neg Q \rightarrow \neg P$, luật xuất nhập $(P \land Q) \rightarrow R \Leftrightarrow P \rightarrow (Q \rightarrow R)$.
   - **§3 10 Quy luật Logic cơ bản (25 câu):** Áp dụng linh hoạt De Morgan, phân bố, hấp thụ, thống trị, chứng minh tương đương logic và rút gọn mệnh đề.
   - **§4 Các Quy tắc Suy diễn hợp lý (25 câu):** Khảo sát tính hợp lý của suy luận, Modus Ponens, Modus Tollens, Tam đoạn luận, phân giải Resolution, nhận diện ngụy biện khẳng định kết luận / phủ định tiền đề.
   - **§5 Vị từ và Lượng từ (20 câu):** Giá trị chân lý vị từ, phủ định mệnh đề chứa $\forall, \exists$, trật tự lượng từ lồng nhau.
   - **§6 Nguyên lý quy nạp toán học (15 câu):** Bước cơ sở, bước quy nạp, bất biến vòng lặp và đánh giá bài toán.
-- **Kèm đầy đủ câu hỏi thực hành cho Chương 2, Chương 3 và Chương 4** (Tổng cộng 190 câu hỏi toàn hệ thống).
+- **Chương 2: Phương pháp Đếm (100 câu hỏi):**
+  - **§1 Tập hợp & Đại số tập hợp (20 câu):** Phép toán tập hợp, luật De Morgan, tập lũy thừa, lực lượng tập hợp.
+  - **§2 Ánh xạ (20 câu):** Đơn ánh, toàn ánh, song ánh, ánh xạ hợp, ánh xạ ngược.
+  - **§3 Phép đếm (20 câu):** Nguyên lý cộng, nguyên lý nhân, nguyên lý bù trừ (Inclusion-Exclusion).
+  - **§4 Giải tích tổ hợp & Nhị thức Newton (25 câu):** Hoán vị, chỉnh hợp, tổ hợp, tổ hợp lặp, chia kẹo Euler, khai triển nhị thức Newton.
+  - **§5 Nguyên lý chuồng bồ câu (15 câu):** Dirichlet cơ bản, Dirichlet tổng quát và bài toán ứng dụng.
+- **Chương 3: Quan hệ (100 câu hỏi):**
+  - **§1 Quan hệ & Quan hệ chiếu (14 câu):** Quan hệ hai ngôi, ma trận logic, đồ thị có hướng, đồng dư modulo, ánh xạ chiếu CSDL.
+  - **§2 Quan hệ tương đương (20 câu):** Phản xạ, đối xứng, bắc cầu, lớp tương đương, định lý phân hoạch và số Bell.
+  - **§3 Quan hệ thứ tự & Biểu đồ Hasse (20 câu):** Poset, phản xứng, biểu đồ Hasse, phần tử tối đại/tối tiểu/lớn nhất/bé nhất, thứ tự toàn phần.
+  - **§4 Dàn (20 câu):** Sup/Inf, định nghĩa dàn, dàn phân bố, dàn bù.
+  - **§5 Dàn 2^E & Hàm đặc trưng (10 câu):** Dàn lũy thừa $\mathcal{P}(E)$, hàm đặc trưng $\chi_A$, đẳng cấu dàn.
+  - **§6 Dàn ước số U_n & Thuật chia Euclide (16 câu):** Cấu trúc dàn của $U_n$, điều kiện dàn bù (square-free), thuật toán chia Euclide & đẳng thức Bézout.
+- **Chương 4: Đại số Bool và Hàm Bool (100 câu hỏi):**
+  - **§1 Đại số Bool & Định lý Stone (20 câu):** Tiên đề đại số Bool, định lý Stone, số phần tử $2^k$, nguyên tử (atoms), nguyên lý đối ngẫu.
+  - **§2 Hàm Bool & Dạng chính tắc (20 câu):** Minterm, maxterm, dạng nối rời chính tắc (DNF/SOP), dạng nối liền chính tắc (CNF/POS), số hàm Bool $2^{2^n}$.
+  - **§3 Mạng các cổng logic & Tối ưu (20 câu):** Cổng AND/OR/NOT, cổng vạn năng NAND/NOR, chuyển đổi mạch logic, độ sâu trễ và tối ưu fan-in.
+  - **§4 Phương pháp biểu đồ Karnaugh (20 câu):** K-Map 2-4 biến mã Gray, tế bào lớn, tế bào lớn cốt yếu, thuật toán 4 bước phủ và điều kiện don't care.
+  - **§5 Phương pháp thỏa thuận (20 câu):** Định lý thỏa thuận, tìm tiền đề nguyên tố, bài toán phủ Petrick và thuật toán Quine-McCluskey.
+- **Tổng cộng: 420 câu hỏi trắc nghiệm chất lượng cao toàn hệ thống.**
 - **Phân loại rõ ràng:** Lọc theo Chương, theo từng bài học (§1.1 -> §4.5) hoặc theo độ khó (Nhận biết, Thông hiểu, Vận dụng).
 - **2 Chế độ linh hoạt:**
-  - **Chế độ Luyện tập (Practice Mode):** Bấm chọn đáp án $\rightarrow$ Hệ thống phản hồi đúng/sai tức thì và hiển thị **hộp giải thích cặn kẽ từng bước**, trích dẫn định lý và công thức.
+  - **Chế độ Luyện tập (Practice Mode):** Bấm chọn đáp án $\rightarrow$ Phản hồi đúng/sai tức thì và hiển thị **hộp giải thích cặn kẽ từng bước**, trích dẫn định lý và công thức.
   - **Chế độ Thi kiểm tra (Exam Mode):** Đề thi 20 câu ngẫu nhiên có đồng hồ bấm giờ 25 phút, nộp bài chấm điểm trên thang điểm 10 kèm nhận xét năng lực và xem lại toàn bộ bài làm.
 - **Lưu trữ tiến độ:** Tự động lưu bài học đã đọc, điểm số các lần thi vào `localStorage`.
 
 ---
 
-### 3. 🧪 Phòng thực hành Tương tác Trực quan (Interactive Labs)
+### 3. 📂 Thư viện Tài liệu & Đề thi PDF
+- Tích hợp toàn bộ tài liệu từ thư mục `Toán rời rạc_`:
+  - **Handout bài giảng (6 buổi học):**
+    - `Handout/20251015.pdf` (Buổi 1: Mệnh đề & Quy tắc logic)
+    - `Handout/20251016.pdf` (Buổi 2: Suy diễn logic & Vị từ)
+    - `Handout/20251025A.pdf` (Buổi 3: Tập hợp & Phép đếm)
+    - `Handout/20251026.pdf` (Buổi 4: Tổ hợp & Chuồng bồ câu)
+    - `Handout/20251029.pdf` (Buổi 5: Quan hệ & Tương đương)
+    - `Handout/20251030.pdf` (Buổi 6: Thứ tự, Dàn & Đại số Bool)
+  - **Giáo trình & Sách tham khảo:**
+    - `giaotrinh_toanroirac_gs-nguyen-huu-anh.pdf` (Giáo trình chính thức - GS. Nguyễn Hữu Anh)
+    - `DHSP_TRR_Bai giang_Nguyen Ngoc Trung.pdf` (Bài giảng ĐHSP Nguyễn Ngọc Trung)
+    - `Discrete_Math.pdf` (Tài liệu tham khảo tiếng Anh)
+  - **Tổng hợp đề thi:**
+    - `Tổng_hợp_đề_thi_Toán_rời_rạc.pdf` (Tuyển tập đề thi các kỳ kèm lời giải)
+- Giao diện dạng thẻ trực quan (card grid), hỗ trợ xem trực tiếp hoặc tải về chỉ với 1 cú nhấp chuột.
+
+---
+
+### 4. 🧪 Phòng thực hành Tương tác Trực quan (Interactive Labs)
 1. **🔬 Trình tạo Bảng chân trị tự động (Truth Table Generator):**
    - Hỗ trợ nhập mọi công thức logic với toán tử: `~`, `&`, `|`, `->`, `<->`, `(+)`.
    - Tự động phân tích cú pháp (Lexer + AST Parser), tạo bảng chân trị $2^n$ dòng và kết luận: *Hằng đúng (Tautology)*, *Hằng sai (Contradiction)*, hay *Khả thỏa (Contingency)*.
@@ -74,7 +113,7 @@
 
 ---
 
-### 4. 📑 Sổ tay Công thức & Tra cứu nhanh (Formula Cheatsheet)
+### 5. 📑 Sổ tay Công thức & Tra cứu nhanh (Formula Cheatsheet)
 - Bảng tra cứu 10 luật logic, các quy tắc suy diễn hình thức, công thức giải tích tổ hợp, các cấu trúc dàn và đại số Bool.
 - Tính năng tìm kiếm nhanh bằng phím tắt `Ctrl + K` (Command Palette).
 
