@@ -1,43 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 #define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
 #define fi first
 #define se second
 using ll = long long;
-using db = double;
-const int MOD = 1e9+7;
 
-struct PhanSo{
-    int tu;
-    int mau;
-};
+bool prime(int n) {
+    for (int i=2;i*i<=n;i++) if (n%i==0) return false;
+    return n > 1;
+}
 
-int main () 
-{
-    cin.tie(0)->sync_with_stdio(0);
-    
+int ucln(int a,int b)
+{ int c=1;
+    for(int i=1;i<= a and i<=b;i++)
+    {
+        if(a%i==0 and b%i==0)
+        {
+            c=i;
+        }
+    } return c;
+}
+
+
+
+int main(){
      freopen("input.txt", "r", stdin);
      freopen("output.txt", "w", stdout);
-    
-    PhanSo p1;
-    cin>>p1.tu>>p1.mau;
-    PhanSo p2;
-    cin>>p2.tu>>p2.mau;
-    if (p1.mau == 0 || p2.mau ==0){
-        cout<<-1;
-    }
-    else{
-        PhanSo tong;
-        tong.tu = p1.tu * p2.mau + p2.tu * p1.mau;
-        tong.mau = p1.mau * p2.mau;
-/*
-        ll ucln = __gcd(tong.tu, tong.mau); 
-        
-        tong.tu /= ucln; 
-        tong.mau /= ucln; 
-        */
-        cout << tong.tu << " " << tong.mau;
-    } 
-    return 0; 
+    int a,b;cin>>a>>b;
+    cout<<ucln(a,b);
 }
+
+

@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discrete Math Hub – Học Toán Rời Rạc, Phòng Lab & Luyện Thi ĐHSP</title>
+  <meta name="description" content="Nền tảng học Toán Rời Rạc toàn diện theo Giáo trình GS. Nguyễn Hữu Anh & Học liệu Khoa CNTT ĐHSP TP.HCM: 5 chương lý thuyết, 575+ câu trắc nghiệm KaTeX, 4 cấp độ thi, 5 đề thi thực tế, Flashcards 3D và 5 công cụ mô phỏng.">
+
+  <!-- Google Fonts: Plus Jakarta Sans, Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- KaTeX CSS for LaTeX math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+
+  <!-- Application CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       APP HEADER
+       ========================================== -->
+  <header class="app-header">
+    <div class="header-left">
+      <button type="button" class="sidebar-toggle-btn" id="sidebarToggleBtn" aria-label="Đóng hoặc mở thanh lộ trình khóa học" aria-expanded="true" aria-controls="appSidebar" title="Đóng / Mở thanh Lộ trình khóa học (Ctrl + B)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+          <line x1="9" y1="3" x2="9" y2="21"></line>
+        </svg>
+        <span class="sidebar-toggle-label">Lộ trình</span>
+      </button>
+      <a href="#dashboard" class="logo-link" onclick="switchTab('dashboard'); return false;">
+        <div class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 4H6l6 8-6 8h12"></path>
+          </svg>
+        </div>
+        <div class="logo-text-group">
+          <span class="logo-brand">Discrete<span>Math</span></span>
+          <span class="logo-badge">ĐHSP • GS. Nguyễn Hữu Anh</span>
+        </div>
+      </a>
+    </div>
+
+    <nav aria-label="Điều hướng chính">
+      <ul class="nav-links">
+        <li>
+          <button class="nav-item-btn active" data-tab="dashboard">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+              <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+              <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+              <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+            </svg>
+            <span class="nav-text">Tổng quan</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-item-btn" data-tab="theory">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+            <span class="nav-text">Lý thuyết</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-item-btn" data-tab="quiz">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 11l3 3L22 4"></path>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+            </svg>
+            <span class="nav-text">Trắc nghiệm</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-item-btn" data-tab="exams">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+            <span class="nav-text">Đề thi ĐHSP</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-item-btn" data-tab="flashcards">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="M12 8v8"></path>
+              <path d="M8 12h8"></path>
+            </svg>
+            <span class="nav-text">Flashcards</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-item-btn" data-tab="tools">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10 2v7.31"></path>
+              <path d="M14 9.3V1.99"></path>
+              <path d="M8.5 2h7"></path>
+              <path d="M14 9.3a6.5 6.5 0 1 1-4 0"></path>
+            </svg>
+            <span class="nav-text">Phòng Lab</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-item-btn" data-tab="cheatsheet">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+            <span class="nav-text">Sổ tay</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-item-btn" data-tab="documents">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span class="nav-text">Tài liệu PDF</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header-right">
+      <button class="quick-search-btn" id="searchTriggerBtn" aria-label="Tìm kiếm nhanh bài học và công thức">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <span class="search-btn-label">Tìm nhanh...</span>
+        <span class="shortcut-badge">Ctrl K</span>
+      </button>
+
+      <button class="sync-header-btn" id="openDataSyncBtn" title="Sao lưu & Khôi phục tiến độ học tập (.json)">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span class="sync-btn-text">Lưu / Tải</span>
+      </button>
+
+      <button class="icon-btn" id="themeToggleBtn" aria-label="Chuyển chế độ giao diện sáng/tối" title="Chuyển chế độ Sáng / Tối">
+        <span id="themeIcon" class="icon-center"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       APP MAIN LAYOUT
+       ========================================== -->
+  <div class="app-container" id="appContainer">
+    <!-- Mobile Sidebar Backdrop -->
+    <div class="sidebar-mobile-backdrop" id="sidebarMobileBackdrop" aria-hidden="true"></div>
+
+    <!-- Floating Reopen Tab when Sidebar is Collapsed on Desktop -->
+    <button type="button" class="sidebar-reopen-fab" id="sidebarReopenFab" aria-label="Mở thanh Lộ trình khóa học" title="Mở thanh Lộ trình khóa học (Ctrl + B)">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+      <span>Lộ trình</span>
+    </button>
+
+    <!-- Left Sidebar: Course Curriculum Tree -->
+    <aside class="app-sidebar" id="appSidebar" aria-label="Mục lục chương trình học">
+      <div class="sidebar-header">
+        <div class="sidebar-title-row">
+          <span class="sidebar-title">LỘ TRÌNH KHÓA HỌC</span>
+          <div style="display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span class="sidebar-pct-badge" id="sidebarPctBadge">0%</span>
+            <button type="button" class="sidebar-collapse-icon-btn" id="sidebarCollapseBtn" aria-label="Thu gọn thanh lộ trình khóa học" title="Thu gọn thanh bên (Ctrl + B)">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="11 17 6 12 11 7"></polyline>
+                <polyline points="18 17 13 12 18 7"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="sidebar-stats">
+          <span id="sidebarCurriculumMeta">5 Chương • 29 Bài học</span>
+        </div>
+        <div class="progress-track progress-track-sm" aria-hidden="true">
+          <div class="progress-fill" id="sidebarProgressBar" style="width: 0%;"></div>
+        </div>
+      </div>
+      <div class="chapter-accordion" id="chapterAccordion">
+        <!-- Rendered dynamically by JS -->
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+      <!-- ==========================================
+           TAB 1: DASHBOARD
+           ========================================== -->
+      <section class="content-section active" id="dashboardSection">
+        <div class="dashboard-hero">
+          <div class="hero-pill">Học liệu Chuẩn Đại học • Giáo trình GS. Nguyễn Hữu Anh & Khoa CNTT ĐHSP TP.HCM</div>
+          <h1 class="hero-title">Chinh phục Toán Rời Rạc & Tư duy Khoa học Máy tính</h1>
+          <p class="hero-subtitle">
+            Trọn bộ <strong>5 chương chuyên sâu</strong> (Logic, Đếm, Quan hệ – Dàn, Đại số Bool, Hệ thức Đệ quy & Hàm sinh), <strong>625 câu hỏi chuẩn LaTeX</strong> (có mức độ <strong>Đi thi ĐHSP</strong>), <strong>5 cấp độ phòng thi</strong> và phòng Lab mô phỏng trực quan.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-white" id="dashStartLearningBtn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+              Học lý thuyết ngay
+            </button>
+            <button class="btn btn-outline-white" id="dashStartQuizBtn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 11l3 3L22 4"></path>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+              </svg>
+              Thi theo 5 cấp độ &amp; Đi thi
+            </button>
+            <button class="btn btn-outline-white" id="dashOpenExamsBtn" onclick="switchTab('exams')">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              Giải Đề thi ĐHSP (2022–2025)
+            </button>
+            <button class="btn btn-outline-white" id="dashOpenLabBtn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10 2v7.31"></path>
+                <path d="M14 9.3V1.99"></path>
+                <path d="M8.5 2h7"></path>
+                <path d="M14 9.3a6.5 6.5 0 1 1-4 0"></path>
+              </svg>
+              Mở Phòng Lab
+            </button>
+          </div>
+
+          <div class="hero-progress-wrap">
+            <div class="hero-progress-meta">
+              <span id="dashProgressLabel">Tiến độ hoàn thành lộ trình: 0/29 bài</span>
+              <span id="dashFlashcardLabel">Flashcards đã thuộc: 0/65 thẻ</span>
+            </div>
+            <div class="progress-track hero-progress-track">
+              <div class="progress-fill hero-progress-fill" id="dashProgressBar" style="width: 0%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stat Grid -->
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-icon" style="background: var(--primary-light); color: var(--primary);">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <div class="stat-info">
+              <h4>Tiến độ khóa học</h4>
+              <div class="stat-number tabular-nums" id="statProgress">0%</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background: var(--success-light); color: var(--success);">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div class="stat-info">
+              <h4>Bài giảng đã học</h4>
+              <div class="stat-number tabular-nums" id="statCompleted">0/29</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background: var(--warning-light); color: var(--warning);">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </div>
+            <div class="stat-info">
+              <h4>Điểm thi trung bình</h4>
+              <div class="stat-number tabular-nums" id="statAvgScore">--</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background: var(--info-light); color: var(--info);">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </div>
+            <div class="stat-info">
+              <h4>Ngân hàng câu hỏi</h4>
+              <div class="stat-number tabular-nums" id="statTotalQuestions">625</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Roadmap & Interactive Ecosystem -->
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="card-title">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+              Lộ trình 5 Chương Toàn diện
+            </h3>
+            <p class="card-subtitle">Mỗi chương có đầy đủ bài giảng chuyên sâu, ví dụ Handout trên lớp và trên 100 câu hỏi trắc nghiệm:</p>
+            <div class="chapter-cards-list" id="dashChapterCards">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div class="card">
+              <h3 class="card-title">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+                Phòng Thực hành & Luyện Thi Thực chiến
+              </h3>
+              <p class="card-subtitle">Công cụ tính toán từng bước chuẩn LaTeX và kho đề thi chính thức:</p>
+              <div class="quick-feature-list">
+                <button type="button" class="chapter-banner-card feature-action-card" onclick="openToolPanel('truthTable')">
+                  <div>
+                    <h4>Trình tạo Bảng chân trị & Phân tích Mệnh đề</h4>
+                    <p>Hiển thị các cột trung gian chuẩn KaTeX, kiểm tra hằng đúng / mâu thuẫn</p>
+                  </div>
+                  <span class="arrow-indicator">→</span>
+                </button>
+                <button type="button" class="chapter-banner-card feature-action-card" onclick="openToolPanel('kmap')">
+                  <div>
+                    <h4>Giải Bản đồ Karnaugh 2–4 biến & Vẽ Mạch Cổng Logic</h4>
+                    <p>Khoanh tế bào lớn cốt yếu, xuất đa thức $\overline{x}$ và sơ đồ cổng AND-OR</p>
+                  </div>
+                  <span class="arrow-indicator">→</span>
+                </button>
+                <button type="button" class="chapter-banner-card feature-action-card" onclick="openToolPanel('recurrence')">
+                  <div>
+                    <h4>Bộ giải Hệ thức Đệ quy Tuyến tính (Bậc 1 & Bậc 2)</h4>
+                    <p>Giải phương trình đặc trưng nghiệm phân biệt, nghiệm kép, nghiệm phức</p>
+                  </div>
+                  <span class="arrow-indicator">→</span>
+                </button>
+                <button type="button" class="chapter-banner-card feature-action-card" onclick="openToolPanel('combinatorics')">
+                  <div>
+                    <h4>Tổ hợp $P_n, A_n^k, C_n^k, K_n^k$, Euclide & Đồng dư $ax \equiv b \pmod m$</h4>
+                    <p>Tính toán số lớn chính xác BigInt, tìm hệ số Bézout & nghiệm đồng dư</p>
+                  </div>
+                  <span class="arrow-indicator">→</span>
+                </button>
+                <button type="button" class="chapter-banner-card feature-action-card highlight-banner" onclick="switchTab('exams')">
+                  <div>
+                    <h4 style="color: var(--primary);">Kho 5 Đề thi Thực tế ĐHSP TP.HCM (2022–2025)</h4>
+                    <p>Đề Giữa kỳ & Cuối kỳ có đồng hồ bấm giờ tự luyện và lời giải từng bước</p>
+                  </div>
+                  <span class="arrow-indicator" style="color: var(--primary);">→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Save / Load Backup Quick Card (Modeled after tinhoc12-main) -->
+            <div class="card backup-quick-card">
+              <div class="backup-quick-header">
+                <div>
+                  <h3 class="card-title" style="margin-bottom: 0.25rem;">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--info)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                      <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                      <polyline points="7 3 7 8 15 8"></polyline>
+                    </svg>
+                    Lưu & Khôi phục Dữ liệu Học tập
+                  </h3>
+                  <p style="font-size: 0.86rem; color: var(--text-muted);">
+                    Xuất toàn bộ tiến độ bài học, lịch sử điểm thi, câu đánh dấu và thẻ Flashcard ra tệp <code>.json</code> để chuyển máy hoặc sao lưu an toàn.
+                  </p>
+                </div>
+              </div>
+              <div class="backup-quick-actions">
+                <button type="button" class="btn btn-primary" onclick="exportProgressBackup()">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  Tải file lưu (.json)
+                </button>
+                <button type="button" class="btn btn-outline" onclick="openDataSyncModal()">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                  </svg>
+                  Khôi phục từ file & Nhật ký
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 2: THEORY READER
+           ========================================== -->
+      <section class="content-section" id="theorySection">
+        <div class="lesson-container">
+          <div class="lesson-meta">
+            <div class="lesson-meta-left">
+              <span class="lesson-tag" id="lessonChapterTag">Chương 1</span>
+              <span class="lesson-read-time" id="lessonReadTime">15 phút đọc</span>
+            </div>
+            <div class="lesson-meta-actions">
+              <button class="btn btn-outline" id="markCompletedBtn">
+                Đánh dấu đã học xong
+              </button>
+              <button class="btn btn-primary" id="takeLessonQuizBtn">
+                Luyện trắc nghiệm bài này
+              </button>
+            </div>
+          </div>
+
+          <h1 class="lesson-main-title" id="lessonTitle">§1 Pháp tính mệnh đề</h1>
+
+          <div class="lesson-body" id="lessonBody">
+            <!-- Dynamic Markdown + KaTeX Content -->
+          </div>
+
+          <div class="lesson-nav-footer" id="lessonNavButtons">
+            <!-- Prev & Next buttons -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 3: QUIZ & 5-LEVEL EXAM SYSTEM (OPTIMIZED PAGINATION)
+           ========================================== -->
+      <section class="content-section" id="quizSection">
+        <div class="quiz-header-bar">
+          <div class="quiz-header-top">
+            <div>
+              <h2 class="section-heading-sm">Ngân hàng Trắc nghiệm & Phòng Thi Mô phỏng</h2>
+              <p class="section-sub-sm">Tối ưu tốc độ phản hồi tức thì, chuẩn hóa LaTeX, tích hợp mức độ <strong>Đi thi (Đề ĐHSP)</strong> và trộn đề Fisher–Yates.</p>
+            </div>
+            <div class="quiz-mode-pill" role="tablist" aria-label="Chế độ luyện tập hoặc thi">
+              <button class="quiz-mode-btn active" id="practiceModeBtn" role="tab" aria-selected="true">Luyện tập tức thì</button>
+              <button class="quiz-mode-btn" id="examModeBtn" role="tab" aria-selected="false">Thi theo Cấp độ (5 mức)</button>
+            </div>
+          </div>
+
+          <!-- Filter & Shuffle Controls (Used in Practice Mode and Custom Exam) -->
+          <div class="quiz-filters" id="practiceFilterBar">
+            <select class="select-custom" id="quizChapterSelect" aria-label="Chọn chương">
+              <!-- Dynamically populated -->
+            </select>
+            <select class="select-custom" id="quizLessonSelect" aria-label="Chọn bài học">
+              <option value="all">Tất cả các bài học</option>
+            </select>
+            <select class="select-custom" id="quizDiffSelect" aria-label="Chọn mức độ câu hỏi">
+              <option value="all">Mọi mức độ</option>
+              <option value="Nhận biết">Nhận biết</option>
+              <option value="Thông hiểu">Thông hiểu</option>
+              <option value="Vận dụng">Vận dụng</option>
+              <option value="Đi thi">Đi thi (Chuẩn Đề ĐHSP)</option>
+            </select>
+
+            <button type="button" class="exam-diff-quick-btn" id="quizExamDiffBtn" title="Lọc nhanh ngân hàng câu hỏi mức độ Đi thi biên soạn từ Đề thi ĐHSP TP.HCM">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+              <span>Đi thi ĐHSP (<span id="examDiffCountBadge" class="tabular-nums">0</span>)</span>
+            </button>
+
+            <button type="button" class="bookmark-filter-btn" id="quizBookmarkFilterBtn" title="Chỉ hiện các câu hỏi đã đánh dấu">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+              </svg>
+              <span>Đã lưu (<span id="bookmarkCountBadge" class="tabular-nums">0</span>)</span>
+            </button>
+
+            <div class="quiz-inline-search-wrap">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="search" class="quiz-inline-search-input" id="quizSearchInput" placeholder="Lọc từ khóa (VD: Karnaugh, Hasse...)" aria-label="Tìm kiếm trong câu hỏi trắc nghiệm">
+            </div>
+
+            <label class="shuffle-toggle-label" title="Xáo trộn ngẫu nhiên thứ tự câu hỏi và 4 phương án A/B/C/D">
+              <input type="checkbox" id="quizShuffleToggle">
+              <span>Trộn câu & đáp án</span>
+            </label>
+
+            <select class="select-custom select-compact" id="quizPageSizeSelect" aria-label="Số câu hiển thị mỗi trang" title="Số câu hiển thị mỗi trang để tối ưu tốc độ">
+              <option value="15">15 câu / trang</option>
+              <option value="20" selected>20 câu / trang</option>
+              <option value="30">30 câu / trang</option>
+              <option value="50">50 câu / trang</option>
+            </select>
+
+            <span class="question-badge tabular-nums" id="quizTotalCountBadge">0 câu hỏi</span>
+          </div>
+        </div>
+
+        <!-- 5 Exam Difficulty Levels Selector (Visible in Exam Mode) -->
+        <div class="exam-level-panel" id="examLevelPanel" style="display: none;">
+          <div class="exam-level-grid" id="examLevelGrid">
+            <button type="button" class="exam-level-card" data-level="level1">
+              <div class="level-card-top">
+                <span class="level-tag level-tag-1">CẤP ĐỘ 1 • KHỞI ĐỘNG</span>
+                <span class="level-meta tabular-nums">15 câu • 15 phút</span>
+              </div>
+              <h4>Kiểm tra nhanh 15 phút</h4>
+              <p>Ôn tập khái niệm cốt lõi (60% Nhận biết, 40% Thông hiểu) phủ đều kiến thức nền tảng.</p>
+            </button>
+
+            <button type="button" class="exam-level-card" data-level="level2">
+              <div class="level-card-top">
+                <span class="level-tag level-tag-2">CẤP ĐỘ 2 • GIỮA KỲ</span>
+                <span class="level-meta tabular-nums">30 câu • 70 phút</span>
+              </div>
+              <h4>Thi Giữa Học Phần</h4>
+              <p>Mô phỏng đề Giữa kỳ Khoa CNTT ĐHSP TP.HCM: trọng tâm Chương 1 (Logic), Chương 2 (Đếm), Chương 3 (Quan hệ).</p>
+            </button>
+
+            <button type="button" class="exam-level-card" data-level="level3">
+              <div class="level-card-top">
+                <span class="level-tag level-tag-3">CẤP ĐỘ 3 • CUỐI KỲ</span>
+                <span class="level-meta tabular-nums">40 câu • 90 phút</span>
+              </div>
+              <h4>Thi Kết Thúc Học Phần</h4>
+              <p>Cấu trúc toàn diện Chương 1–5 (Tổ hợp có điều kiện, Poset/Dàn, Karnaugh 4 biến, Hệ thức Đệ quy & Hàm sinh).</p>
+            </button>
+
+            <button type="button" class="exam-level-card" data-level="level4">
+              <div class="level-card-top">
+                <span class="level-tag level-tag-4">CẤP ĐỘ 4 • VẬN DỤNG CAO</span>
+                <span class="level-meta tabular-nums">25 câu • 60 phút</span>
+              </div>
+              <h4>Thử thách Vận dụng cao</h4>
+              <p>Tuyển chọn câu hỏi Thông hiểu sâu & Vận dụng phân loại cao từ Handout và Giáo trình.</p>
+            </button>
+
+            <button type="button" class="exam-level-card exam-level-dithi active" data-level="level_dithi">
+              <div class="level-card-top">
+                <span class="level-tag level-tag-dithi">MỨC ĐỘ ĐI THI • ĐỀ ĐHSP</span>
+                <span class="level-meta tabular-nums">30 câu • 75 phút</span>
+              </div>
+              <h4>Thực chiến Đề thi ĐHSP</h4>
+              <p>100% câu hỏi biên soạn & mở rộng trực tiếp từ 5 Đề thi Giữa kỳ và Cuối kỳ ĐHSP TP.HCM (2022–2025).</p>
+            </button>
+          </div>
+
+          <div class="exam-config-footer">
+            <div class="exam-config-left">
+              <label class="shuffle-toggle-label">
+                <input type="checkbox" id="examShuffleCheckbox" checked>
+                <span><strong>Chế độ Trộn đề thông minh:</strong> Xáo trộn cả thứ tự câu hỏi lẫn vị trí đáp án A, B, C, D</span>
+              </label>
+              <button type="button" class="preset-btn" id="examUseCustomFilterBtn" title="Tạo đề 20 câu từ bộ lọc chương/bài hiện tại">
+                Hoặc tạo đề 20 câu theo bộ lọc chương đang chọn
+              </button>
+            </div>
+            <button type="button" class="btn btn-primary" id="startSelectedExamBtn">
+              Tạo đề mới & Bắt đầu tính giờ
+            </button>
+          </div>
+        </div>
+
+        <!-- Sticky Exam Action Bar (Visible during Exam mode) -->
+        <div class="exam-bar" id="examActionBar" style="display: none;">
+          <div class="exam-bar-left">
+            <span class="exam-active-badge" id="activeExamLevelBadge">Mức độ Đi thi: Thực chiến Đề ĐHSP</span>
+            <div class="timer-box tabular-nums">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span id="examTimerDisplay">75:00</span>
+            </div>
+            <span class="exam-answered-pill tabular-nums" id="examAnsweredCount">Đã làm: 0/30</span>
+          </div>
+          <div class="exam-bar-actions">
+            <button type="button" class="btn btn-outline-white btn-sm" id="togglePaletteBtn">
+              Bảng câu hỏi
+            </button>
+            <button type="button" class="btn btn-outline-white btn-sm" id="restartExamBtn">
+              Đổi đề mới
+            </button>
+            <button type="button" class="btn btn-white btn-sm" id="submitExamBtn">
+              Nộp bài & Chấm điểm
+            </button>
+          </div>
+        </div>
+
+        <!-- Question Palette Navigator -->
+        <div class="exam-palette-box" id="examPaletteBox" style="display: none;">
+          <div class="palette-header">
+            <span><strong>Bảng điều hướng nhanh:</strong> Nhấp số thứ tự để chuyển tới câu hỏi</span>
+            <div class="palette-legend">
+              <span><i class="dot dot-empty"></i> Chưa chọn</span>
+              <span><i class="dot dot-answered"></i> Đã chọn</span>
+              <span><i class="dot dot-correct"></i> Đúng</span>
+              <span><i class="dot dot-wrong"></i> Sai</span>
+            </div>
+          </div>
+          <div class="palette-grid" id="examPaletteGrid"></div>
+        </div>
+
+        <!-- Top Pagination Bar (Practice Mode) -->
+        <div class="quiz-pagination-bar" id="quizPaginationTop"></div>
+
+        <!-- Questions List Container -->
+        <div id="quizQuestionsContainer">
+          <!-- Dynamic Quiz Cards (Paginated for instant rendering) -->
+        </div>
+
+        <!-- Bottom Pagination Bar (Practice Mode) -->
+        <div class="quiz-pagination-bar" id="quizPaginationBottom"></div>
+      </section>
+
+      <!-- ==========================================
+           TAB 4: OFFICIAL ĐHSP EXAM ARCHIVE (2022–2025)
+           ========================================== -->
+      <section class="content-section" id="examsSection">
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <div class="section-banner-row">
+            <div>
+              <h2 class="section-heading-md">Kho Đề thi Thực tế Toán Rời Rạc – ĐHSP TP.HCM (2022–2025)</h2>
+              <p style="color: var(--text-muted); font-size: 0.95rem;">
+                Tuyển tập <strong>5 đề thi tự luận chính thức</strong> (Giữa học phần & Kết thúc học phần) của Khoa CNTT – Trường ĐH Sư phạm TP.HCM. Tích hợp đồng hồ bấm giờ tự luyện và lời giải chi tiết từng bước bằng LaTeX.
+              </p>
+            </div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <button type="button" class="btn btn-outline" onclick="openPdfPreview('extra/Toán rời rạc_/Tài liệu_/Tổng_hợp_đề_thi_Toán_rời_rạc.pdf', 'Tổng hợp Đề thi Toán Rời Rạc ĐHSP (PDF gốc)')">
+                Xem file PDF gốc
+              </button>
+            </div>
+          </div>
+
+          <div class="preset-buttons" id="examArchiveFilterBar" style="margin-top: 1rem;">
+            <button type="button" class="preset-btn active" data-exfilter="all">Tất cả (5 đề)</button>
+            <button type="button" class="preset-btn" data-exfilter="Giữa kỳ">Giữa học phần (2 đề)</button>
+            <button type="button" class="preset-btn" data-exfilter="Cuối kỳ">Kết thúc học phần (3 đề)</button>
+          </div>
+        </div>
+
+        <div class="exam-archive-selector" id="examArchiveCards">
+          <!-- Populated dynamically -->
+        </div>
+
+        <div id="examArchiveViewer">
+          <!-- Active official exam paper + self timer + collapsible solutions -->
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 5: 3D FLIP FLASHCARDS
+           ========================================== -->
+      <section class="content-section" id="flashcardsSection">
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <div class="section-banner-row">
+            <div>
+              <h2 class="section-heading-md">Flashcards Ghi nhớ Công thức & Định lý Cốt lõi</h2>
+              <p style="color: var(--text-muted); font-size: 0.95rem;">
+                Nhấp vào thẻ hoặc nhấn phím <code>Space</code> để lật thẻ 3D, phím mũi tên <code>←</code> / <code>→</code> để chuyển thẻ.
+              </p>
+            </div>
+            <div class="fc-mastery-box">
+              <div class="fc-mastery-text tabular-nums" id="fcMasteryText">Đã thuộc: 0 / 65 thẻ</div>
+              <div class="progress-track" style="width: 180px;">
+                <div class="progress-fill" id="fcMasteryBar" style="width: 0%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="fc-toolbar">
+            <div class="preset-buttons" id="fcChapterFilter" style="margin-top: 0;">
+              <button type="button" class="preset-btn active" data-fcchap="all">Tất cả (65)</button>
+              <button type="button" class="preset-btn" data-fcchap="c1">Chương 1</button>
+              <button type="button" class="preset-btn" data-fcchap="c2">Chương 2</button>
+              <button type="button" class="preset-btn" data-fcchap="c3">Chương 3</button>
+              <button type="button" class="preset-btn" data-fcchap="c4">Chương 4</button>
+              <button type="button" class="preset-btn" data-fcchap="c5">Chương 5</button>
+            </div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <button type="button" class="preset-btn" id="fcOnlyUnlearnedBtn">Chỉ thẻ chưa thuộc</button>
+              <button type="button" class="preset-btn" id="fcShuffleBtn">Trộn ngẫu nhiên</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flashcard-stage-wrap">
+          <div class="flashcard-counter tabular-nums" id="fcCounterLabel">Thẻ 1 / 65</div>
+
+          <div class="flashcard-scene" id="flashcardScene" tabindex="0" role="button" aria-label="Thẻ ghi nhớ Toán rời rạc – Nhấn để lật mặt sau">
+            <div class="flashcard-inner" id="flashcardInner">
+              <div class="flashcard-face flashcard-front">
+                <div class="fc-face-top">
+                  <span class="lesson-tag" id="fcFrontTag">Chương 1</span>
+                  <span class="fc-status-pill" id="fcStatusPill">Cần ôn</span>
+                </div>
+                <div class="fc-face-content" id="fcFrontContent"></div>
+                <div class="fc-face-hint">Nhấp vào thẻ hoặc nhấn Space để xem đáp án →</div>
+              </div>
+              <div class="flashcard-face flashcard-back">
+                <div class="fc-face-top">
+                  <span class="lesson-tag" style="background: var(--success-light); color: var(--success);">Đáp án & Công thức chuẩn</span>
+                  <span class="fc-face-sub">Mặt sau</span>
+                </div>
+                <div class="fc-face-content fc-back-text" id="fcBackContent"></div>
+                <div class="fc-face-hint">Nhấp để lật lại câu hỏi</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flashcard-controls">
+            <button type="button" class="btn btn-outline" id="fcPrevBtn">← Thẻ trước</button>
+            <button type="button" class="btn btn-outline" id="fcFlipBtn">Lật thẻ (Space)</button>
+            <button type="button" class="btn btn-primary" id="fcToggleLearnedBtn">Đánh dấu Đã thuộc</button>
+            <button type="button" class="btn btn-outline" id="fcNextBtn">Thẻ tiếp →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 6: INTERACTIVE LABS (5 TOOLS)
+           ========================================== -->
+      <section class="content-section" id="toolsSection">
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h2 class="section-heading-md">Phòng Thực hành Tương tác Toán Rời Rạc (5 Công cụ)</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            Mô phỏng trực quan, kiểm chứng đáp số bài tập và xuất lời giải từng bước bằng ký hiệu toán học LaTeX chuẩn giáo trình.
+          </p>
+        </div>
+
+        <div class="tools-nav" role="tablist">
+          <button class="tool-tab-btn active" data-tool="truthTable">Bảng chân trị Logic</button>
+          <button class="tool-tab-btn" data-tool="kmap">Bản đồ Karnaugh & Mạch</button>
+          <button class="tool-tab-btn" data-tool="combinatorics">Tổ hợp, Euclide & Đồng dư</button>
+          <button class="tool-tab-btn" data-tool="relation">Quan hệ, Phân hoạch & Poset</button>
+          <button class="tool-tab-btn" data-tool="recurrence">Giải Hệ thức Đệ quy</button>
+        </div>
+
+        <!-- Tool 1: Truth Table -->
+        <div class="tool-panel active" id="panel_truthTable">
+          <div class="card">
+            <h3 class="card-title">Trình tạo Bảng chân trị & Phân tích Cú pháp Logic</h3>
+            <div class="form-group">
+              <label class="form-label" for="logicExprInput">Nhập biểu thức mệnh đề logic (hoặc bấm bàn phím ký hiệu toán học bên dưới):</label>
+              <div class="input-action-row">
+                <input type="text" class="form-control" id="logicExprInput" value="(p → q) ∧ p → q" placeholder="Ví dụ: (p → q) ∧ ¬q → ¬p">
+                <button class="btn btn-primary" id="calcTruthTableBtn" style="white-space: nowrap;">
+                  Lập bảng chân trị
+                </button>
+              </div>
+
+              <!-- Math Symbol Keypad (No ugly ASCII needed!) -->
+              <div class="math-keypad" aria-label="Bàn phím ký hiệu logic">
+                <span class="keypad-label">Chèn ký hiệu:</span>
+                <button type="button" class="key-btn" data-insert="¬">¬ (Phủ định)</button>
+                <button type="button" class="key-btn" data-insert=" ∧ ">∧ (Hội)</button>
+                <button type="button" class="key-btn" data-insert=" ∨ ">∨ (Tuyển)</button>
+                <button type="button" class="key-btn" data-insert=" → ">→ (Kéo theo)</button>
+                <button type="button" class="key-btn" data-insert=" ↔ ">↔ (Tương đương)</button>
+                <button type="button" class="key-btn" data-insert="(">(</button>
+                <button type="button" class="key-btn" data-insert=")">)</button>
+                <button type="button" class="key-btn" data-insert="p">p</button>
+                <button type="button" class="key-btn" data-insert="q">q</button>
+                <button type="button" class="key-btn" data-insert="r">r</button>
+                <button type="button" class="key-btn key-btn-clear" id="clearLogicExprBtn">Xóa</button>
+              </div>
+
+              <div class="preset-buttons">
+                <span class="keypad-label">Mẫu chuẩn:</span>
+                <button type="button" class="preset-btn preset-logic-btn" data-expr="p → q">Phép kéo theo</button>
+                <button type="button" class="preset-btn preset-logic-btn" data-expr="(p → q) ∧ ¬q → ¬p">Modus Tollens</button>
+                <button type="button" class="preset-btn preset-logic-btn" data-expr="¬(p ∧ q) ↔ (¬p ∨ ¬q)">Luật De Morgan</button>
+                <button type="button" class="preset-btn preset-logic-btn" data-expr="(p ∨ q) ∧ ¬p → q">Tam đoạn luận rời</button>
+                <button type="button" class="preset-btn preset-logic-btn" data-expr="((p ∨ q) ∧ (p → r) ∧ (q → r)) → r">Chứng minh chia trường hợp</button>
+              </div>
+            </div>
+            <div id="truthTableResult">
+              <!-- Result table rendered by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Tool 2: Karnaugh Map Solver -->
+        <div class="tool-panel" id="panel_kmap">
+          <div class="card">
+            <h3 class="card-title">Trình giải Bản đồ Karnaugh (2–4 biến) & Thiết kế Mạch Cổng Logic</h3>
+            <div class="kmap-toolbar">
+              <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                <label class="form-label" for="kmapVarSelect" style="margin-bottom: 0;">Số biến:</label>
+                <select class="select-custom" id="kmapVarSelect">
+                  <option value="2">2 biến (x, y)</option>
+                  <option value="3">3 biến (x, y, z)</option>
+                  <option value="4" selected>4 biến (x, y, z, t)</option>
+                </select>
+
+                <label class="form-label" for="kmapPresetSelect" style="margin-bottom: 0;">Đề mẫu:</label>
+                <select class="select-custom" id="kmapPresetSelect">
+                  <option value="textbook">Ví dụ Giáo trình GS. Nguyễn Hữu Anh</option>
+                  <option value="ck2223">Đề CK ĐHSP 2022–2023: Σm(4,5,9,10,11,13,15)</option>
+                  <option value="ck2324">Đề CK ĐHSP 2023–2024: Σm(2,4,5,10,13,14,15)</option>
+                  <option value="ck2425">Đề CK ĐHSP 2024–2025: Σm(0,1,5,6,7,9,10)</option>
+                  <option value="majority3">Mạch biểu quyết đa số 3 biến: Σm(3,5,6,7)</option>
+                </select>
+              </div>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <button type="button" class="btn btn-outline" id="kmapSetZerosBtn">Đặt tất cả 0</button>
+                <button type="button" class="btn btn-outline" id="kmapSetOnesBtn">Đặt tất cả 1</button>
+                <button type="button" class="btn btn-primary" id="kmapSampleBtn">Nạp mẫu đã chọn</button>
+              </div>
+            </div>
+            <p class="input-help" style="margin-bottom: 0.5rem;">
+              Nhấp trực tiếp vào từng ô trên bảng Karnaugh để bật/tắt giá trị <code>0</code> và <code>1</code>. Hệ thống tự động tìm tất cả <strong>Tế bào lớn (PI)</strong>, <strong>Tế bào lớn cốt yếu (EPI)</strong>, xuất công thức gạch đầu $\overline{x}$ và vẽ sơ đồ mạch logic 2 tầng AND–OR.
+            </p>
+
+            <div id="kmapGridContainer"></div>
+            <div id="kmapSolutionOutput"></div>
+          </div>
+        </div>
+
+        <!-- Tool 3: Combinatorics, Euclid & Linear Congruence -->
+        <div class="tool-panel" id="panel_combinatorics">
+          <div class="grid-2">
+            <!-- Sub-card 1: Combinatorics -->
+            <div class="card">
+              <h3 class="card-title">Máy tính Giải tích Tổ hợp ($P_n, A_n^k, F_n^k, C_n^k, K_n^k$)</h3>
+              <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                <div style="flex: 1;">
+                  <label class="form-label" for="combNInput">Số phần tử $n$:</label>
+                  <input type="number" class="form-control" id="combNInput" value="10" min="0" max="100">
+                </div>
+                <div style="flex: 1;">
+                  <label class="form-label" for="combKInput">Chập chọn $k$:</label>
+                  <input type="number" class="form-control" id="combKInput" value="3" min="0" max="100">
+                </div>
+              </div>
+              <button class="btn btn-primary" id="calcCombBtn" style="width: 100%;">
+                Tính các đại lượng tổ hợp
+              </button>
+              <div id="combResultOutput"></div>
+            </div>
+
+            <!-- Sub-card 2: Euclid & Bezout -->
+            <div class="card">
+              <h3 class="card-title">Thuật toán Chia Euclide & Đẳng thức Bézout</h3>
+              <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                <div style="flex: 1;">
+                  <label class="form-label" for="euclidAInput">Số nguyên $a$:</label>
+                  <input type="number" class="form-control" id="euclidAInput" value="252">
+                </div>
+                <div style="flex: 1;">
+                  <label class="form-label" for="euclidBInput">Số nguyên $b$:</label>
+                  <input type="number" class="form-control" id="euclidBInput" value="105">
+                </div>
+              </div>
+              <button class="btn btn-primary" id="calcEuclidBtn" style="width: 100%;">
+                Tìm $\gcd(a,b)$, $\text{lcm}(a,b)$ & Hệ số Bézout
+              </button>
+              <div id="euclidResultOutput"></div>
+            </div>
+          </div>
+
+          <!-- Sub-card 3: Linear Congruence Solver -->
+          <div class="card">
+            <h3 class="card-title">Giải Phương trình Đồng dư Tuyến tính $ax \equiv b \pmod{m}$</h3>
+            <div class="grid-3-inputs">
+              <div>
+                <label class="form-label" for="congAInput">Hệ số $a$:</label>
+                <input type="number" class="form-control" id="congAInput" value="6">
+              </div>
+              <div>
+                <label class="form-label" for="congBInput">Vế phải $b$:</label>
+                <input type="number" class="form-control" id="congBInput" value="9">
+              </div>
+              <div>
+                <label class="form-label" for="congMInput">Mô-đun $m$ ($m \gt 0$):</label>
+                <input type="number" class="form-control" id="congMInput" value="15" min="1">
+              </div>
+            </div>
+            <button type="button" class="btn btn-primary" id="calcCongBtn" style="margin-top: 1rem;">
+              Giải phương trình đồng dư
+            </button>
+            <div id="congResultOutput"></div>
+          </div>
+        </div>
+
+        <!-- Tool 4: Relation Analyzer -->
+        <div class="tool-panel" id="panel_relation">
+          <div class="card">
+            <h3 class="card-title">Bộ phân tích Quan hệ Hai ngôi (Tương đương, Phân hoạch & Poset)</h3>
+            <div class="preset-buttons" style="margin-bottom: 1rem;">
+              <span class="keypad-label">Mẫu đề thi:</span>
+              <button type="button" class="preset-btn preset-rel-btn" data-set="2, 4, 5" data-pairs="(2,2), (4,4), (5,5), (2,5), (5,2)">Đề CK 24–25: (2x + y) ⋮ 3 trên {2,4,5}</button>
+              <button type="button" class="preset-btn preset-rel-btn" data-set="2, 3, 4, 6, 8" data-pairs="(2,2), (3,3), (4,4), (6,6), (8,8), (2,4), (2,6), (2,8), (3,6), (4,8)">Đề CK 22–23: Ước số trên {2,3,4,6,8}</button>
+              <button type="button" class="preset-btn preset-rel-btn" data-set="1, 2, 3, 4, 6, 12" data-pairs="(1,1),(2,2),(3,3),(4,4),(6,6),(12,12),(1,2),(1,3),(1,4),(1,6),(1,12),(2,4),(2,6),(2,12),(3,6),(3,12),(4,12),(6,12)">Dàn ước số U₁₂</button>
+            </div>
+            <div class="grid-2" style="margin-bottom: 0.75rem;">
+              <div class="form-group">
+                <label class="form-label" for="relSetInput">Tập hợp $A$ (cách nhau bởi dấu phẩy):</label>
+                <input type="text" class="form-control" id="relSetInput" value="2, 4, 5" placeholder="2, 4, 5">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="relPairsInput">Các cặp $(x, y) \in \mathcal{R}$:</label>
+                <input type="text" class="form-control" id="relPairsInput" value="(2,2), (4,4), (5,5), (2,5), (5,2)" placeholder="(2,2), (4,4), (5,5), (2,5), (5,2)">
+              </div>
+            </div>
+            <button class="btn btn-primary" id="analyzeRelationBtn">
+              Kiểm tra 4 tính chất & Kết luận cấu trúc
+            </button>
+            <div id="relationResultOutput"></div>
+          </div>
+        </div>
+
+        <!-- Tool 5: Recurrence Relation Solver (NEW!) -->
+        <div class="tool-panel" id="panel_recurrence">
+          <div class="card">
+            <h3 class="card-title">Bộ giải Hệ thức Đệ quy Tuyến tính $a_n = c_1 a_{n-1} + c_2 a_{n-2}$</h3>
+            <p class="card-subtitle">
+              Tự động lập phương trình đặc trưng, phân tích nghiệm phân biệt ($\Delta \gt 0$), nghiệm kép ($\Delta = 0$), nghiệm phức ($\Delta \lt 0$) và giải hệ điều kiện đầu dưới dạng phân số tối giản chuẩn LaTeX.
+            </p>
+
+            <div class="preset-buttons" style="margin-bottom: 1.25rem;">
+              <span class="keypad-label">Mẫu Đề thi ĐHSP:</span>
+              <button type="button" class="preset-btn preset-rec-btn" data-c1="1" data-c2="6" data-a0="2" data-a1="2">Đề CK 2022–2023 (c₁=1, c₂=6)</button>
+              <button type="button" class="preset-btn preset-rec-btn" data-c1="2" data-c2="8" data-a0="2" data-a1="4">Đề CK 2023–2024 (c₁=2, c₂=8)</button>
+              <button type="button" class="preset-btn preset-rec-btn" data-c1="6" data-c2="-9" data-a0="2" data-a1="6">Đề CK 2024–2025 (Nghiệm kép r=3)</button>
+              <button type="button" class="preset-btn preset-rec-btn" data-c1="4" data-c2="-4" data-a0="1" data-a1="6">Nghiệm kép (1 + 2n)·2ⁿ</button>
+              <button type="button" class="preset-btn preset-rec-btn" data-c1="1" data-c2="1" data-a0="0" data-a1="1">Dãy Fibonacci</button>
+            </div>
+
+            <div class="grid-4-inputs">
+              <div>
+                <label class="form-label" for="recC1Input">Hệ số $c_1$ (của $a_{n-1}$):</label>
+                <input type="number" step="any" class="form-control" id="recC1Input" value="1">
+              </div>
+              <div>
+                <label class="form-label" for="recC2Input">Hệ số $c_2$ (của $a_{n-2}$):</label>
+                <input type="number" step="any" class="form-control" id="recC2Input" value="6">
+              </div>
+              <div>
+                <label class="form-label" for="recA0Input">Điều kiện đầu $a_0$:</label>
+                <input type="number" step="any" class="form-control" id="recA0Input" value="2">
+              </div>
+              <div>
+                <label class="form-label" for="recA1Input">Điều kiện đầu $a_1$:</label>
+                <input type="number" step="any" class="form-control" id="recA1Input" value="2">
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="solveRecurrenceBtn" style="margin-top: 1rem;">
+              Giải từng bước bằng LaTeX & Lập bảng giá trị
+            </button>
+
+            <div id="recurrenceResultOutput"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 7: FORMULA CHEATSHEET (100% KATEX)
+           ========================================== -->
+      <section class="content-section" id="cheatsheetSection">
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h2 class="section-heading-md">Sổ tay Công thức & Định lý Cốt lõi Toán Rời Rạc (Chương 1–5)</h2>
+          <p style="color: var(--text-muted);">
+            Toàn bộ ký hiệu tổ hợp, chỉnh hợp, logic, dàn và đệ quy được hiển thị chuẩn LaTeX theo quy ước giáo trình đại học Việt Nam.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <!-- Card 1: 10 Quy luật logic -->
+          <div class="card">
+            <h3 class="card-title" style="color: var(--primary);">1. Mười Quy luật Logic Cơ bản</h3>
+            <table class="lesson-body table" style="width: 100%;">
+              <thead><tr><th>Quy luật</th><th>Biểu thức tương đương</th></tr></thead>
+              <tbody>
+                <tr><td>1. Phủ định kép</td><td>$\neg(\neg p) \iff p$ (hay $\overline{\overline{p}} \iff p$)</td></tr>
+                <tr><td>2. De Morgan</td><td>$\neg(p \land q) \iff \neg p \lor \neg q$<br>$\neg(p \lor q) \iff \neg p \land \neg q$</td></tr>
+                <tr><td>3. Giao hoán</td><td>$p \lor q \iff q \lor p$; $\; p \land q \iff q \land p$</td></tr>
+                <tr><td>4. Kết hợp</td><td>$(p \lor q) \lor r \iff p \lor (q \lor r)$<br>$(p \land q) \land r \iff p \land (q \land r)$</td></tr>
+                <tr><td>5. Phân bố</td><td>$p \land (q \lor r) \iff (p \land q) \lor (p \land r)$<br>$p \lor (q \land r) \iff (p \lor q) \land (p \lor r)$</td></tr>
+                <tr><td>6. Lũy đẳng</td><td>$p \lor p \iff p$; $\; p \land p \iff p$</td></tr>
+                <tr><td>7. Trung hòa</td><td>$p \lor 0 \iff p$; $\; p \land 1 \iff p$</td></tr>
+                <tr><td>8. Phần tử bù</td><td>$p \lor \neg p \iff 1$; $\; p \land \neg p \iff 0$</td></tr>
+                <tr><td>9. Thống trị</td><td>$p \lor 1 \iff 1$; $\; p \land 0 \iff 0$</td></tr>
+                <tr><td>10. Hấp thụ</td><td>$p \lor (p \land q) \iff p$; $\; p \land (p \lor q) \iff p$</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Card 2: Phép kéo theo & Luật phản đảo -->
+          <div class="card">
+            <h3 class="card-title" style="color: var(--info);">2. Phép Kéo theo, Luật Phản đảo & Lượng từ</h3>
+            <table class="lesson-body table" style="width: 100%;">
+              <thead><tr><th>Quy luật / Mệnh đề</th><th>Công thức chuẩn</th></tr></thead>
+              <tbody>
+                <tr><td>Khử phép kéo theo</td><td>$p \to q \iff \neg p \lor q$</td></tr>
+                <tr><td>Phủ định phép kéo theo</td><td>$\neg(p \to q) \iff p \land \neg q$</td></tr>
+                <tr><td><strong>Luật phản đảo</strong></td><td>$p \to q \iff \neg q \to \neg p$</td></tr>
+                <tr><td>Mệnh đề đảo & nghịch</td><td>$q \to p \iff \neg p \to \neg q$ ($\not\iff p \to q$)</td></tr>
+                <tr><td>Luật xuất – nhập</td><td>$(p \land q) \to r \iff p \to (q \to r)$</td></tr>
+                <tr><td>Phân bố kéo theo</td><td>$(p \lor q) \to r \iff (p \to r) \land (q \to r)$</td></tr>
+                <tr><td>Phủ định lượng từ</td><td>$\neg(\forall x P(x)) \iff \exists x \neg P(x)$<br>$\neg(\exists x P(x)) \iff \forall x \neg P(x)$</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Card 3: Các quy tắc suy diễn -->
+          <div class="card">
+            <h3 class="card-title" style="color: var(--success);">3. Các Quy tắc Suy diễn Hợp lý</h3>
+            <table class="lesson-body table" style="width: 100%;">
+              <thead><tr><th>Tên quy tắc</th><th>Sơ đồ suy diễn</th></tr></thead>
+              <tbody>
+                <tr><td>Modus Ponens (Khẳng định)</td><td>$p \to q, \; p \;\therefore\; q$</td></tr>
+                <tr><td>Modus Tollens (Phủ định)</td><td>$p \to q, \; \neg q \;\therefore\; \neg p$</td></tr>
+                <tr><td>Tam đoạn luận giả thiết</td><td>$p \to q, \; q \to r \;\therefore\; p \to r$</td></tr>
+                <tr><td>Tam đoạn luận rời</td><td>$p \lor q, \; \neg p \;\therefore\; q$</td></tr>
+                <tr><td>Chứng minh chia trường hợp</td><td>$p \lor q, \; p \to r, \; q \to r \;\therefore\; r$</td></tr>
+                <tr><td>Suy diễn phản chứng</td><td>$(H_1 \land \dots \land H_m \land \neg C) \to 0 \;\therefore\; C$</td></tr>
+                <tr><td>Quy tắc độ phân giải</td><td>$p \lor q, \; \neg p \lor r \;\therefore\; q \lor r$</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Card 4: Công thức đếm & Tổ hợp -->
+          <div class="card">
+            <h3 class="card-title" style="color: var(--warning);">4. Giải tích Tổ hợp & Nghiệm nguyên</h3>
+            <table class="lesson-body table" style="width: 100%;">
+              <thead><tr><th>Khái niệm</th><th>Công thức chuẩn LaTeX</th></tr></thead>
+              <tbody>
+                <tr><td>Hoán vị & Hoán vị lặp</td><td>$P_n = n!$; $\quad P^* = \dfrac{n!}{k_1! k_2! \cdots k_m!}$</td></tr>
+                <tr><td>Chỉnh hợp không lặp</td><td>$A_n^k = \dfrac{n!}{(n - k)!} \quad (0 \le k \le n)$</td></tr>
+                <tr><td>Chỉnh hợp lặp</td><td>$F_n^k = \overline{A}_n^k = n^k$</td></tr>
+                <tr><td>Tổ hợp không lặp</td><td>$C_n^k = \dbinom{n}{k} = \dfrac{n!}{k!(n - k)!}$</td></tr>
+                <tr><td>Tổ hợp lặp (Chia kẹo Euler)</td><td>$K_n^k = \overline{C}_n^k = C_{n+k-1}^k = C_{n+k-1}^{n-1}$</td></tr>
+                <tr><td>Nhị thức Newton</td><td>$(x + y)^n = \sum_{k=0}^n C_n^k x^{n-k} y^k$</td></tr>
+                <tr><td>Chuồng bồ câu Dirichlet</td><td>Ít nhất một chuồng chứa $\left\lceil \dfrac{N}{k} \right\rceil$ vật</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Card 5: Quan hệ, Dàn & Đại số Bool -->
+          <div class="card">
+            <h3 class="card-title" style="color: var(--danger);">5. Quan hệ, Dàn & Đại số Bool</h3>
+            <table class="lesson-body table" style="width: 100%;">
+              <thead><tr><th>Cấu trúc</th><th>Tính chất & Công thức cốt lõi</th></tr></thead>
+              <tbody>
+                <tr><td>Đếm quan hệ ($|A| = n$)</td><td>Phản xạ: $2^{n(n-1)}$; Đối xứng: $2^{n(n+1)/2}$; Phản xứng: $2^n \cdot 3^{n(n-1)/2}$</td></tr>
+                <tr><td>Quan hệ tương đương</td><td>Phản xạ + Đối xứng + Bắc cầu $\leftrightarrow$ Phân hoạch $A / \mathcal{R}$</td></tr>
+                <tr><td>Quan hệ thứ tự (Poset)</td><td>Phản xạ + Phản xứng + Bắc cầu $\to$ Biểu đồ Hasse</td></tr>
+                <tr><td>Dàn ước số $(\mathcal{U}_n, \mid)$</td><td>Là dàn bù (Đại số Bool) $\iff n = p_1 p_2 \cdots p_k$ (square-free)</td></tr>
+                <tr><td>Định lý Stone</td><td>Mọi Đại số Bool hữu hạn có $|B| = 2^k \cong \mathcal{P}(E)$</td></tr>
+                <tr><td>Số hàm Bool $n$ biến</td><td>$2^{2^n}$ hàm; tế bào Karnaugh $2^k$ ô còn $n - k$ biến</td></tr>
+                <tr><td>Định lý Thỏa thuận</td><td>$x A \lor \overline{x} B \lor AB = x A \lor \overline{x} B$</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Card 6: Hệ thức Đệ quy & Hàm sinh -->
+          <div class="card">
+            <h3 class="card-title" style="color: var(--primary);">6. Hệ thức Đệ quy, Định lý Master & Hàm sinh</h3>
+            <table class="lesson-body table" style="width: 100%;">
+              <thead><tr><th>Dạng bài toán</th><th>Công thức nghiệm chuẩn</th></tr></thead>
+              <tbody>
+                <tr><td>PT đặc trưng bậc 2</td><td>$a_n = c_1 a_{n-1} + c_2 a_{n-2} \implies r^2 - c_1 r - c_2 = 0$</td></tr>
+                <tr><td>Hai nghiệm thực $r_1 \neq r_2$</td><td>$a_n = \alpha r_1^n + \beta r_2^n$</td></tr>
+                <tr><td>Nghiệm kép $r_1 = r_2 = r_0$</td><td>$a_n = (\alpha + \beta n) r_0^n$</td></tr>
+                <tr><td>Nghiệm bội $m$ tổng quát</td><td>$(\alpha_0 + \alpha_1 n + \dots + \alpha_{m-1} n^{m-1}) r_i^n$</td></tr>
+                <tr><td>Nghiệm riêng $F(n) = P_t(n) s^n$</td><td>$a_n^{(p)} = n^m Q_t(n) s^n$ ($m$ là bội của $s$ trong PTĐT)</td></tr>
+                <tr><td>Định lý Master $aT(n/b)+\Theta(n^d)$</td><td>So sánh $d$ với $\log_b a$: $\Theta(n^{\log_b a})$, $\Theta(n^d \log n)$, $\Theta(n^d)$</td></tr>
+                <tr><td>Hàm sinh cơ bản</td><td>$\dfrac{1}{1 - cx} = \sum_{n=0}^{\infty} c^n x^n$; $\quad \dfrac{1}{(1-x)^m} = \sum_{k=0}^{\infty} C_{m+k-1}^k x^k$</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 8: DOCUMENTS / PDF LIBRARY
+           ========================================== -->
+      <section class="content-section" id="documentsSection">
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h2 class="section-heading-md">Thư viện Tài liệu PDF, Giáo trình & Handout Bài giảng</h2>
+          <p style="color: var(--text-muted);">
+            Đầy đủ <strong>10 tệp PDF gốc</strong> từ thư mục học liệu Toán Rời Rạc. Hỗ trợ <strong>Xem trực tiếp ngay trong ứng dụng</strong>, mở sang tab mới hoặc tải tệp về máy.
+          </p>
+        </div>
+
+        <!-- Exam Papers -->
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3 class="card-title" style="color: var(--danger);">1. Tuyển tập Đề thi Chính thức ĐHSP TP.HCM</h3>
+          <div class="doc-grid">
+            <div class="doc-card doc-card-danger">
+              <div class="doc-card-body">
+                <div class="doc-title">Tổng hợp Đề thi Toán Rời Rạc (2022–2025)</div>
+                <div class="doc-meta">5 Đề thi Giữa học phần & Kết thúc học phần Khoa CNTT – ĐHSP TP.HCM • 205 KB</div>
+              </div>
+              <div class="doc-actions-row">
+                <button type="button" class="btn btn-primary btn-xs" onclick="openPdfPreview('extra/Toán rời rạc_/Tài liệu_/Tổng_hợp_đề_thi_Toán_rời_rạc.pdf', 'Tổng hợp Đề thi Toán Rời Rạc (2022–2025)')">Xem trực tiếp</button>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Tài liệu_/Tổng_hợp_đề_thi_Toán_rời_rạc.pdf" target="_blank" rel="noopener">Mở tab mới</a>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Tài liệu_/Tổng_hợp_đề_thi_Toán_rời_rạc.pdf" download>Tải về</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reference Textbooks -->
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3 class="card-title" style="color: var(--success);">2. Giáo trình & Bài giảng Tham khảo</h3>
+          <div class="doc-grid">
+            <div class="doc-card doc-card-primary">
+              <div class="doc-card-body">
+                <div class="doc-title">Giáo trình Toán Rời Rạc – GS. Nguyễn Hữu Anh</div>
+                <div class="doc-meta">Giáo trình chuẩn ĐHQG TP.HCM (Logic, Đếm, Quan hệ, Dàn & Đại số Bool) • 1.72 MB</div>
+              </div>
+              <div class="doc-actions-row">
+                <button type="button" class="btn btn-primary btn-xs" onclick="openPdfPreview('extra/Toán rời rạc_/Tài liệu_/giaotrinh_toanroirac_gs-nguyen-huu-anh.pdf', 'Giáo trình Toán Rời Rạc – GS. Nguyễn Hữu Anh')">Xem trực tiếp</button>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Tài liệu_/giaotrinh_toanroirac_gs-nguyen-huu-anh.pdf" target="_blank" rel="noopener">Mở tab mới</a>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Tài liệu_/giaotrinh_toanroirac_gs-nguyen-huu-anh.pdf" download>Tải về</a>
+              </div>
+            </div>
+
+            <div class="doc-card">
+              <div class="doc-card-body">
+                <div class="doc-title">Bài giảng Toán Rời Rạc – ThS. Nguyễn Ngọc Trung (ĐHSP)</div>
+                <div class="doc-meta">Bài giảng chính thức ĐHSP TP.HCM: Mệnh đề, Tập hợp, Đếm, Quan hệ & Mạch Hàm Bool • 680 KB</div>
+              </div>
+              <div class="doc-actions-row">
+                <button type="button" class="btn btn-primary btn-xs" onclick="openPdfPreview('extra/Toán rời rạc_/Tài liệu_/DHSP_TRR_Bai giang_Nguyen Ngoc Trung.pdf', 'Bài giảng Toán Rời Rạc – Nguyễn Ngọc Trung')">Xem trực tiếp</button>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Tài liệu_/DHSP_TRR_Bai giang_Nguyen Ngoc Trung.pdf" target="_blank" rel="noopener">Mở tab mới</a>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Tài liệu_/DHSP_TRR_Bai giang_Nguyen Ngoc Trung.pdf" download>Tải về</a>
+              </div>
+            </div>
+
+            <div class="doc-card">
+              <div class="doc-card-body">
+                <div class="doc-title">Ghi chú Toán Rời Rạc & Ứng dụng – Khoa CNTT ĐHSP</div>
+                <div class="doc-meta">Tài liệu tổng hợp chuyên sâu (Trịnh Minh Huy): Logic, Quy nạp, Đệ quy, Quan hệ & Karnaugh • 3.01 MB</div>
+              </div>
+              <div class="doc-actions-row">
+                <button type="button" class="btn btn-primary btn-xs" onclick="openPdfPreview('extra/Toán rời rạc_/Tài liệu_/Discrete_Math.pdf', 'Ghi chú Toán Rời Rạc & Ứng dụng – Khoa CNTT ĐHSP')">Xem trực tiếp</button>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Tài liệu_/Discrete_Math.pdf" target="_blank" rel="noopener">Mở tab mới</a>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Tài liệu_/Discrete_Math.pdf" download>Tải về</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Classroom Handouts -->
+        <div class="card">
+          <h3 class="card-title" style="color: var(--primary);">3. Bộ 6 Handout Bài tập & Sửa bài trên lớp (Tháng 10/2025)</h3>
+          <div class="doc-grid" id="handoutGrid">
+            <div class="doc-card">
+              <div class="doc-card-body">
+                <div class="doc-title">Handout Buổi 1 (15/10/2025)</div>
+                <div class="doc-meta">Đại số Mệnh đề, Bảng chân trị, 16 Quy luật Logic & Chứng minh Suy diễn • 9.59 MB</div>
+              </div>
+              <div class="doc-actions-row">
+                <button type="button" class="btn btn-primary btn-xs" onclick="openPdfPreview('extra/Toán rời rạc_/Handout/20251015.pdf', 'Handout Buổi 1 (15/10/2025) – Mệnh đề & Quy luật Logic')">Xem trực tiếp</button>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Handout/20251015.pdf" target="_blank" rel="noopener">Mở tab mới</a>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Handout/20251015.pdf" download>Tải về</a>
+              </div>
+            </div>
+
+            <div class="doc-card">
+              <div class="doc-card-body">
+                <div class="doc-title">Handout Buổi 2 (16/10/2025)</div>
+                <div class="doc-meta">Kiểm tra Suy luận thực tế, Phủ định Lượng từ & Ánh xạ Đơn ánh – Toàn ánh – Song ánh • 9.03 MB</div>
+              </div>
+              <div class="doc-actions-row">
+                <button type="button" class="btn btn-primary btn-xs" onclick="openPdfPreview('extra/Toán rời rạc_/Handout/20251016.pdf', 'Handout Buổi 2 (16/10/2025) – Suy luận, Lượng từ & Ánh xạ')">Xem trực tiếp</button>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Handout/20251016.pdf" target="_blank" rel="noopener">Mở tab mới</a>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Handout/20251016.pdf" download>Tải về</a>
+              </div>
+            </div>
+
+            <div class="doc-card">
+              <div class="doc-card-body">
+                <div class="doc-title">Handout Buổi 3 (25/10/2025 – Bản A)</div>
+                <div class="doc-meta">Nguyên lý Bù trừ, Chuồng bồ câu, Hoán vị lặp (SUCCESS/GOOGLE), Chỉnh hợp & Tổ hợp lặp • 7.58 MB</div>
+              </div>
+              <div class="doc-actions-row">
+                <button type="button" class="btn btn-primary btn-xs" onclick="openPdfPreview('extra/Toán rời rạc_/Handout/20251025A.pdf', 'Handout Buổi 3 (25/10/2025) – Bù trừ, Dirichlet & Tổ hợp lặp')">Xem trực tiếp</button>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Handout/20251025A.pdf" target="_blank" rel="noopener">Mở tab mới</a>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Handout/20251025A.pdf" download>Tải về</a>
+              </div>
+            </div>
+
+            <div class="doc-card">
+              <div class="doc-card-body">
+                <div class="doc-title">Handout Buổi 4 (26/10/2025)</div>
+                <div class="doc-meta">Phương trình & Bất phương trình nghiệm nguyên có ràng buộc (Biến bù & Nguyên lý Phần bù) • 5.08 MB</div>
+              </div>
+              <div class="doc-actions-row">
+                <button type="button" class="btn btn-primary btn-xs" onclick="openPdfPreview('extra/Toán rời rạc_/Handout/20251026.pdf', 'Handout Buổi 4 (26/10/2025) – Phương trình Nghiệm nguyên có Ràng buộc')">Xem trực tiếp</button>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Handout/20251026.pdf" target="_blank" rel="noopener">Mở tab mới</a>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Handout/20251026.pdf" download>Tải về</a>
+              </div>
+            </div>
+
+            <div class="doc-card">
+              <div class="doc-card-body">
+                <div class="doc-title">Handout Buổi 5 (29/10/2025)</div>
+                <div class="doc-meta">Giải đề Ôn tập Giữa kỳ: Suy diễn phản chứng, Lượng từ 2 biến, Dirichlet trường hợp xấu nhất • 4.32 MB</div>
+              </div>
+              <div class="doc-actions-row">
+                <button type="button" class="btn btn-primary btn-xs" onclick="openPdfPreview('extra/Toán rời rạc_/Handout/20251029.pdf', 'Handout Buổi 5 (29/10/2025) – Giải đề Ôn tập Giữa kỳ')">Xem trực tiếp</button>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Handout/20251029.pdf" target="_blank" rel="noopener">Mở tab mới</a>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Handout/20251029.pdf" download>Tải về</a>
+              </div>
+            </div>
+
+            <div class="doc-card">
+              <div class="doc-card-body">
+                <div class="doc-title">Handout Buổi 6 (30/10/2025)</div>
+                <div class="doc-meta">Tổng ôn Giữa học phần: Rút gọn Đại số Mệnh đề, Phủ định Lượng từ & Tìm Ánh xạ ngược • 6.38 MB</div>
+              </div>
+              <div class="doc-actions-row">
+                <button type="button" class="btn btn-primary btn-xs" onclick="openPdfPreview('extra/Toán rời rạc_/Handout/20251030.pdf', 'Handout Buổi 6 (30/10/2025) – Tổng ôn Giữa học phần')">Xem trực tiếp</button>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Handout/20251030.pdf" target="_blank" rel="noopener">Mở tab mới</a>
+                <a class="btn btn-outline btn-xs" href="extra/Toán rời rạc_/Handout/20251030.pdf" download>Tải về</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ==========================================
+       COMMAND PALETTE / QUICK SEARCH MODAL
+       ========================================== -->
+  <div class="search-modal-backdrop" id="searchModalBackdrop" role="dialog" aria-modal="true" aria-label="Tìm kiếm nhanh">
+    <div class="search-modal">
+      <div class="search-input-box">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Tìm bài giảng, đề thi ĐHSP, thẻ ghi nhớ, công cụ..." autocomplete="off">
+        <span class="shortcut-badge">ESC</span>
+      </div>
+      <ul class="search-results-list" id="searchResults"></ul>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       DATA BACKUP & RESTORE DIALOG (tinhoc12-main pattern)
+       ========================================== -->
+  <dialog class="app-dialog" id="dataSyncDialog" aria-labelledby="dataSyncTitle">
+    <div class="dialog-header">
+      <h3 id="dataSyncTitle">Quản lý Lưu & Tải Dữ liệu Học tập</h3>
+      <button type="button" class="icon-btn" id="closeDataSyncBtn" aria-label="Đóng hộp thoại">✕</button>
+    </div>
+    <div class="dialog-body">
+      <div class="sync-stats-summary" id="syncStatsSummary"></div>
+
+      <div class="sync-grid-2">
+        <div class="sync-box">
+          <h4>1. Tải dữ liệu về máy (Sao lưu)</h4>
+          <p>Đóng gói toàn bộ tiến độ bài học, kết quả các lần thi, câu hỏi đánh dấu, thẻ Flashcard đã thuộc và lịch sử hoạt động thành tệp <code>.json</code>.</p>
+          <button type="button" class="btn btn-primary" id="exportBackupBtn" style="width: 100%; margin-top: 0.75rem;">
+            Xuất tệp discrete-math-backup.json
+          </button>
+        </div>
+
+        <div class="sync-box">
+          <h4>2. Khôi phục từ tệp đã lưu</h4>
+          <p>Chọn hoặc kéo thả tệp <code>.json</code> đã sao lưu trước đó để đồng bộ lại toàn bộ dữ liệu học tập.</p>
+          <label class="file-dropzone" id="backupDropzone" for="importBackupFileInput">
+            <input type="file" id="importBackupFileInput" accept=".json,application/json" hidden>
+            <span class="dropzone-title">Nhấp chọn tệp .json hoặc kéo thả vào đây</span>
+            <span class="dropzone-sub" id="selectedBackupFileName">Hỗ trợ định dạng sao lưu Discrete Math Hub (.json)</span>
+          </label>
+          <div id="pendingRestoreConfirmBox" class="restore-confirm-box" style="display: none;">
+            <div id="pendingRestoreInfo" style="font-size: 0.85rem; margin-bottom: 0.6rem;"></div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button type="button" class="btn btn-primary btn-xs" id="confirmRestoreBtn">Xác nhận khôi phục</button>
+              <button type="button" class="btn btn-outline btn-xs" id="cancelRestoreBtn">Hủy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sync-activity-section">
+        <div class="sync-activity-header">
+          <h4>Nhật ký hoạt động gần đây</h4>
+          <button type="button" class="btn btn-outline btn-xs" id="resetAllProgressBtn" style="color: var(--danger); border-color: var(--danger);">
+            Xóa toàn bộ tiến độ
+          </button>
+        </div>
+        <ul class="activity-log-list" id="syncActivityList"></ul>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ==========================================
+       EXAM RESULT DIALOG (SVG SCORE RING)
+       ========================================== -->
+  <dialog class="app-dialog" id="examResultDialog" aria-labelledby="examResultTitle">
+    <div class="dialog-header">
+      <h3 id="examResultTitle">Kết quả Bài thi Mô phỏng</h3>
+      <button type="button" class="icon-btn" id="closeExamResultBtn" aria-label="Đóng kết quả">✕</button>
+    </div>
+    <div class="dialog-body" id="examResultBody"></div>
+  </dialog>
+
+  <!-- ==========================================
+       IN-APP PDF PREVIEW DIALOG
+       ========================================== -->
+  <dialog class="app-dialog pdf-dialog" id="pdfPreviewDialog" aria-labelledby="pdfPreviewTitle">
+    <div class="dialog-header">
+      <h3 id="pdfPreviewTitle">Xem tài liệu PDF</h3>
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <a id="pdfModalOpenNewTab" class="btn btn-outline btn-xs" href="#" target="_blank" rel="noopener">Mở tab mới</a>
+        <a id="pdfModalDownload" class="btn btn-primary btn-xs" href="#" download>Tải xuống</a>
+        <button type="button" class="icon-btn" id="closePdfPreviewBtn" aria-label="Đóng trình xem PDF">✕</button>
+      </div>
+    </div>
+    <div class="pdf-frame-container">
+      <iframe id="pdfPreviewFrame" title="Trình xem tài liệu PDF Toán Rời Rạc"></iframe>
+    </div>
+  </dialog>
+
+  <!-- Toast Notifications Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ==========================================
+       SCRIPTS (DEFERRED IN EXACT DEPENDENCY ORDER)
+       ========================================== -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <!-- Data Modules -->
+  <script defer src="js/data/theoryData.js"></script>
+  <script defer src="js/data/quizData.js"></script>
+  <script defer src="js/data/quizChapter2Extra.js"></script>
+  <script defer src="js/data/quizChapter3Extra.js"></script>
+  <script defer src="js/data/quizChapter4Extra.js"></script>
+  <script defer src="js/data/quizChapter5.js"></script>
+  <script defer src="js/data/quizHandoutExtra.js"></script>
+  <script defer src="js/data/quizDhspExam.js"></script>
+  <script defer src="js/data/examArchiveData.js"></script>
+  <script defer src="js/data/flashcardsData.js"></script>
+
+  <!-- Interactive Tools Modules -->
+  <script defer src="js/tools/truthTable.js"></script>
+  <script defer src="js/tools/kmapSolver.js"></script>
+  <script defer src="js/tools/combinatorics.js"></script>
+  <script defer src="js/tools/relationTool.js"></script>
+  <script defer src="js/tools/recurrenceTool.js"></script>
+
+  <!-- Main Controller -->
+  <script defer src="js/app.js"></script>
+</body>
+</html>
