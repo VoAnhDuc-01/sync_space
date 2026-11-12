@@ -1,0 +1,9 @@
+https://brotherctf.com/practice/mot-goc-o-jordan
+
+
+Nhìn ảnh chắc nhiều người từng thấy rồi, nhưng mình quên mất tên khu di tích có công trình này. Mình chỉ nhớ nó nằm ở Jordan và được tạc thẳng vào vách đá sa thạch.
+
+Tìm địa danh trên Wikipedia, rồi lấy tọa độ của cả khu di tích (đừng lấy riêng vị trí mặt tiền trong ảnh). Chuyển tọa độ sang độ thập phân, làm tròn 5 chữ số sau dấu phẩy.
+
+Flag theo mẫu HUTECH{TEN_VIDO_KINHDO}. Tên viết hoa, dấu cách thành dấu gạch dưới; tọa độ giữ hướng N/S/E/W và không có khoảng trắng.
+
