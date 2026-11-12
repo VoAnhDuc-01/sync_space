@@ -1,5 +1,0 @@
-1. Làm latex cho nó đẹp hơn, ví dụ kí hiệu tổ hợp, chỉnh hợp cho chuẩn , ko sử dung những kí tự ví dụ như "^"
-2. Làm cho UI/UX tốt hơn, tham khảo từ "D:\dev_space\project1\extra\ui-ux-pro-max-skill"
-3. Update chức năng lưu và tải file , tham khảo từ folder "D:\dev_space\project1\extra\tinhoc12-main"  
-3. Tạo thêm mức cấp độ thi, tham khảo từ folder "D:\dev_space\project1\extra\Toán rời rạc_\Tài liệu_\Tổng_hợp_đề_thi_Toán_rời_rạc"
-4. Tạo them that nhiều nội dung từ "D:\dev_space\project1\extra\Toán rời rạc_"
