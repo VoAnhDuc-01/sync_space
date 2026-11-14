@@ -1,0 +1,128 @@
+:root{
+--color-primary: #006199;
+--color-secondary: #8ACFF8;
+--color-third:#F4EB6C;
+--color-fourth:#FFD444;
+--color-success: #22c55e;
+
+}
+
+.header-grid-container{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    
+}
+
+
+.logo-container{
+    background: var(--color-primary);
+    padding: 10px;
+    color: white;
+    display: grid;
+    place-items: center;
+}
+.search-cotainer{
+    background: var(--color-primary);
+    padding: 10px;
+    color: white;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr auto;
+}
+.search-input{
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 30pt;
+    border: 1px solid var(--color-third) ;
+    border-radius: 10px 0px 0px 10px;
+    /* Trên-trái Trên-phải Dưới-Phải Dưới-trái */
+}
+.search-button{
+    background-color: var(--color-third);
+    min-width: 100px;
+    min-height: 50px;
+    font-size: 15pt;
+    border: none;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.cart-button{
+    background-color: var(--color-primary);
+    min-width: 100px;
+    min-height: 50px;
+    font-size: 15pt;
+    border: none;
+    
+    color: white    ;
+}
+.account-button{
+    background-color: var(--color-third);
+    min-width: 120px;
+    min-height: 50px;
+    font-size: 15pt;
+    border-radius: 5px;
+    border: none;
+    color: var(--color-primary)    ;
+}
+.cart-account-container{
+    background: var(--color-primary);
+    padding: 10px;
+    color: white;
+    display: grid;
+    place-items: center;
+    grid-template-columns:1fr auto;
+    padding-right: 30px ;
+}
+
+.all-product-container{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+     margin:30px;
+     gap: 10px;
+}
+
+.item-product-container
+{
+    padding: 10px;
+    background-color: rgb(234, 233, 233);
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+}
+
+.product-img{
+    max-height: 250px;
+    max-width: 250px;
+    min-height:240px;
+}
+.product-title{
+    font-size: 24pt;
+    color: black;
+}
+
+.product-price{
+    color: var(--color-primary);
+    font-size: 11pt;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+}
+.all-category-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+}
+.item-category-container {
+    display : grid;
+    background-color: #22c55e;
+}
+.img-category {
+    width : 50px;
+    height : 50px;
+}
+
+
+
+
+
