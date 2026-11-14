@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Áo Dài Tay</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/category.css">
+    <link rel="stylesheet" href="../css/nojs-custom.css">
+</head>
+<body>
+    
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    
+                </div>
+
+                <div class="quickViewMainImage">
+                    <button type="button" class="quickViewImageNav quickViewPrevImageBtn" id="quickViewPrevImageBtn" aria-label="Ảnh trước">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <img src="" alt="" id="quickViewImage">
+
+                    <button type="button" class="quickViewImageNav quickViewNextImageBtn" id="quickViewNextImageBtn" aria-label="Ảnh sau">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            
+                    </div>
+                </div>
+
+                <div class="quickViewOption">
+                    <div class="quickViewOptionTop">
+                        <span>Kích thước</span>
+                    </div>
+
+                    <div class="quickViewSizeList" id="quickViewSizeList">
+                        
+                    </div>
+                </div>
+
+                <div class="quickViewOption">
+                    <div class="quickViewOptionTop">
+                        <span>Số lượng</span>
+                    </div>
+
+                    <div class="quickViewQuantityBox">
+                        <button type="button" id="quickViewMinusQty" aria-label="Giảm số lượng">
+                            -
+                        </button>
+
+                        <input type="number" id="quickViewQuantityInput" value="1" min="1" readonly>
+
+                        <button type="button" id="quickViewPlusQty" aria-label="Tăng số lượng">
+                            +
+                        </button>
+                    </div>
+                </div>
+
+                <button type="button" class="quickViewBuyBtn" id="quickViewBuyBtn">
+                    Sở hữu ngay
+                </button>
+
+                <div class="quickViewMoreInfo">
+                    <button type="button" class="quickViewToggleBtn" data-action="toggle-material">
+                        <span>Chất liệu sản phẩm</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <div class="quickViewToggleContent" id="quickViewMaterial" hidden>
+                        Nội dung chất liệu sản phẩm.
+                    </div>
+
+                    <button type="button" class="quickViewToggleBtn" data-action="toggle-description">
+                        <span>Mô tả sản phẩm</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <div class="quickViewToggleContent" id="quickViewDescription" hidden>
+                        Nội dung mô tả sản phẩm.
+                    </div>
+                </div>
+
+                <a href="#" class="quickViewDetailLink" id="quickViewDetailLink">
+                    Xem chi tiết sản phẩm &gt;&gt;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+            </div>
+        </div>
+
+        <div class="cartDrawerFooter">
+            <div class="cartDrawerTotalRow">
+                <span>Tổng tiền tạm tính:</span>
+                <strong id="cartDrawerSubtotal">0đ</strong>
+            </div>
+
+            <button type="button" class="cartDrawerCheckoutBtn" id="cartDrawerCheckoutBtn">
+                Tiến hành đặt hàng
+            </button>
+
+            <a href="../html/cart.html" class="cartDrawerDetailLink" id="cartDrawerDetailLink">
+                Xem chi tiết giỏ hàng
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Template item trong cart drawer -->
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="containerFooter">
+            <div class="contact">
+                <h4>Gọi mua hàng (8:30-21:30)</h4>
+
+                <div class="contactNumber">
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>0911.010.757</span>
+                    </p>
+
+                    <p>Tất cả các ngày trong tuần</p>
+                </div>
+            </div>
+
+            <div class="contact">
+                <h4>Góp ý, khiếu nại (8:30-20:30)</h4>
+
+                <div class="contactNumber">
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>0917.257.595</span>
+                    </p>
+
+                    <p>Các ngày trong tuần (trừ ngày lễ)</p>
+                </div>
+            </div>
+
+            <div class="socialMedia">
+                <h4>Nền tảng mạng xã hội</h4>
+
+                <div class="iconSocialMedia">
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.9317374327557!2d106.79120977589625!3d10.892792489263131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d9b2d9812e63%3A0xd4c6b932cc0bca0e!2sBcons%20City%20Mall!5e0!3m2!1sen!2s"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </footer>
+
+    
+
+
+</body>
+</html>

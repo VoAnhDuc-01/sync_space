@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+
+    <link rel="stylesheet" href="../css/admin.css?v=13">
+</head>
+<body>
+    <div class="adminPage">
+        
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <p class="formHint">
+                                        Khi thay đổi số lượng từng biến thể, tổng tồn kho sẽ tự động cập nhật.
+                                    </p>
+                                </div>
+
+                                <div class="formGroup">
+                                    <label class="formLabel" for="detailProductDescriptionInput">
+                                        Mô tả sản phẩm
+                                    </label>
+                                    <textarea
+                                        id="detailProductDescriptionInput"
+                                        class="formInput formTextarea"
+                                        placeholder="Nhập mô tả sản phẩm..."
+                                    ></textarea>
+                                </div>
+
+                                <p class="formMessage" id="detailProductFormMessage"></p>
+
+                                <div class="formActions">
+                                    <a href="../html/admin-products.html" class="secondaryBtn">
+                                        Quay lại danh sách
+                                    </a>
+
+                                    <button type="submit" class="primaryBtn">
+                                        Lưu sản phẩm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Summary -->
+                <section class="contentCard productDetailSummaryGrid" id="productDetailSummaryGrid">
+                    <h3>Tóm tắt sản phẩm</h3>
+                    <p>Thông tin nhanh của sản phẩm hiện tại</p>
+
+                    <div class="summaryGrid">
+                        <div class="summaryItem">
+                            <span>Nhóm sản phẩm</span>
+                            <strong id="summaryProductGroup">Đang cập nhật</strong>
+                        </div>
+
+                        <div class="summaryItem">
+                            <span>Loại sản phẩm</span>
+                            <strong id="summaryProductCategory">Đang cập nhật</strong>
+                        </div>
+
+                        <div class="summaryItem">
+                            <span>Chất liệu</span>
+                            <strong id="summaryProductMaterial">Đang cập nhật</strong>
+                        </div>
+
+                        <div class="summaryItem">
+                            <span>Số biến thể</span>
+                            <strong id="summaryProductVariantCount">0 biến thể</strong>
+                        </div>
+
+                        <div class="summaryItem">
+                            <span>Giá bán</span>
+                            <strong id="summaryProductPrice">0đ</strong>
+                        </div>
+
+                        <div class="summaryItem">
+                            <span>Tổng tồn kho</span>
+                            <strong id="summaryProductStock">0 sản phẩm</strong>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Not found -->
+                <section class="contentCard productNotFoundBox" id="productNotFoundBox" style="display: none;">
+                    <h3>Không tìm thấy sản phẩm</h3>
+                    <p>Sản phẩm có thể đã bị xóa hoặc mã sản phẩm không hợp lệ.</p>
+
+                    <a href="../html/admin-products.html" class="primaryBtn">
+                        Quay lại danh sách sản phẩm
+                    </a>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <!-- Variant row template -->
+    
+
+    
+
+</body>
+</html>

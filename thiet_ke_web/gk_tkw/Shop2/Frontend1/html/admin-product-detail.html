@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+
+    <link rel="stylesheet" href="../css/admin.css?v=13">
+</head>
+<body>
+    <div class="adminPage">
+        <!-- Sidebar -->
+        <aside class="adminSidebar">
+            <div class="adminLogo">
+                <h2>FASHION</h2>
+                <span>Admin Panel</span>
+            </div>
+
+            <div class="adminUserBox">
+                <div class="adminAvatar" id="adminAvatar">A</div>
+
+                <div>
+                    <h3 id="adminName">Quản trị viên</h3>
+                    <p id="adminRole">Chủ cửa hàng</p>
+                </div>
+            </div>
+
+            <nav class="adminMenu">
+                <a href="../html/admin-dashboard.html" class="adminMenuLink">
+                    <span>⌂</span>
+                    Tổng quan
+                </a>
+
+                <a href="../html/admin-products.html" class="adminMenuLink active">
+                    <span>▦</span>
+                    Quản lý sản phẩm
+                </a>
+
+                <a href="../html/admin-orders.html" class="adminMenuLink">
+                    <span>□</span>
+                    Quản lý đơn hàng
+                </a>
+
+                <a href="../html/admin-customers.html" class="adminMenuLink">
+                    <span>♡</span>
+                    Quản lý khách hàng
+                </a>
+
+                <a href="../html/admin-vouchers.html" class="adminMenuLink">
+                    <span>%</span>
+                    Quản lý voucher
+                </a>
+
+                <a href="../html/admin-staff.html" class="adminMenuLink" data-owner-only="true">
+                    <span>☷</span>
+                    Quản lý nhân viên
+                </a>
+
+                <a href="../html/admin-reports.html" class="adminMenuLink">
+                    <span>↗</span>
+                    Báo cáo thống kê
+                </a>
+            </nav>
+
+            <button type="button" class="adminLogoutBtn" id="adminLogoutBtn">
+                Đăng xuất
+            </button>
+        </aside>
+
+        <!-- Main -->
+        <main class="adminMain">
+            <!-- Header -->
+            <header class="adminHeader">
+                <div>
+                    <h2 id="productDetailTitle">Chi tiết sản phẩm</h2>
+                    <p id="productDetailSubtitle">Thêm mới hoặc chỉnh sửa thông tin sản phẩm trong hệ thống quản trị</p>
+                </div>
+
+                <div class="adminHeaderActions">
+                    <span class="adminCurrentDate" id="adminCurrentDate">--/--/----</span>
+
+                    <a href="../html/admin-products.html" class="secondaryBtn">
+                        Quay lại
+                    </a>
+
+                    <button type="button" class="primaryBtn" id="saveProductHeaderBtn">
+                        Lưu sản phẩm
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <section class="adminContent">
+                <!-- Form card -->
+                <section class="contentCard productDetailEditCard" id="productDetailEditCard">
+                    <div class="productDetailHeader">
+                        <div>
+                            <h3 id="detailPageProductName">Thông tin sản phẩm</h3>
+                            <p>
+                                Mã sản phẩm:
+                                <span id="detailPageProductCode">Sản phẩm mới</span>
+                            </p>
+                        </div>
+
+                        <span class="statusBadge statusActive" id="detailPageProductStatusBadge">
+                            Đang bán
+                        </span>
+                    </div>
+
+                    <form class="productDetailForm" id="productDetailForm">
+                        <input type="hidden" id="detailProductIdInput">
+
+                        <div class="productDetailGrid">
+                            <!-- Image -->
+                            <div class="productImageColumn">
+                                <div class="productImagePreviewBox">
+                                    <img
+                                        src=""
+                                        alt="Ảnh sản phẩm"
+                                        id="detailProductImagePreview"
+                                        class="productImagePreview"
+                                    >
+
+                                    <div class="productImageText" id="detailProductImageText">
+                                        S
+                                    </div>
+                                </div>
+
+                                <label class="formLabel" for="detailProductImageFile">
+                                    Upload hình ảnh sản phẩm
+                                </label>
+
+                                <input
+                                    type="file"
+                                    id="detailProductImageFile"
+                                    accept="image/*"
+                                    class="formInput"
+                                >
+                            </div>
+
+                            <!-- Form fields -->
+                            <div class="productFormColumn">
+                                <div class="formGrid twoColumns">
+                                    <div class="formGroup">
+                                        <label class="formLabel" for="detailProductNameInput">
+                                            Tên sản phẩm
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="detailProductNameInput"
+                                            class="formInput"
+                                            placeholder="Ví dụ: Áo thun basic nam"
+                                        >
+                                    </div>
+
+                                    <div class="formGroup">
+                                        <label class="formLabel" for="detailProductGroupInput">
+                                            Nhóm sản phẩm
+                                        </label>
+                                        <select id="detailProductGroupInput" class="formInput">
+                                            <option value="">Chọn nhóm sản phẩm</option>
+                                            <option value="ao-ngan-tay">Áo ngắn tay</option>
+                                            <option value="ao-dai-tay">Áo dài tay</option>
+                                            <option value="quan">Quần</option>
+                                            <option value="vay">Váy</option>
+                                            <option value="phu-kien">Phụ kiện</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="formGroup">
+                                        <label class="formLabel" for="detailProductCategoryInput">
+                                            Loại sản phẩm
+                                        </label>
+                                        <select id="detailProductCategoryInput" class="formInput">
+                                            <option value="">Chọn loại sản phẩm</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="formGroup">
+                                        <label class="formLabel" for="detailProductStatusInput">
+                                            Trạng thái
+                                        </label>
+                                        <select id="detailProductStatusInput" class="formInput">
+                                            <option value="active">Đang bán</option>
+                                            <option value="inactive">Đang ẩn</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="formGroup">
+                                        <label class="formLabel" for="detailProductPriceInput">
+                                            Giá bán
+                                        </label>
+                                        <input
+                                            type="number"
+                                            id="detailProductPriceInput"
+                                            class="formInput"
+                                            placeholder="Ví dụ: 199000"
+                                            min="0"
+                                        >
+                                    </div>
+
+                                    <div class="formGroup">
+                                        <label class="formLabel" for="detailProductOldPriceInput">
+                                            Giá gốc
+                                        </label>
+                                        <input
+                                            type="number"
+                                            id="detailProductOldPriceInput"
+                                            class="formInput"
+                                            placeholder="Ví dụ: 250000"
+                                            min="0"
+                                        >
+                                    </div>
+
+                                    <div class="formGroup">
+                                        <label class="formLabel" for="detailProductMaterialInput">
+                                            Chất liệu
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="detailProductMaterialInput"
+                                            class="formInput"
+                                            placeholder="Ví dụ: Cotton, Kaki, Denim..."
+                                        >
+                                    </div>
+
+                                    <div class="formGroup">
+                                        <label class="formLabel" for="detailProductStockInput">
+                                            Tổng tồn kho
+                                        </label>
+                                        <input
+                                            type="number"
+                                            id="detailProductStockInput"
+                                            class="formInput"
+                                            value="0"
+                                            readonly
+                                        >
+                                        <p class="formHint">
+                                            Tổng tồn kho được tự động tính từ số lượng của từng biến thể.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Variant section -->
+                                <div class="productVariantSection">
+                                    <h4>Biến thể sản phẩm</h4>
+                                    <p class="sectionHint">
+                                        Mỗi biến thể là một cặp màu, kích thước và số lượng tồn kho riêng.
+                                    </p>
+
+                                    <div class="variantFormGrid">
+                                        <div class="formGroup">
+                                            <label class="formLabel" for="detailVariantColorInput">
+                                                Màu sắc
+                                            </label>
+                                            <input
+                                                type="text"
+                                                id="detailVariantColorInput"
+                                                class="formInput"
+                                                placeholder="Ví dụ: Đen, Trắng, Be..."
+                                            >
+                                        </div>
+
+                                        <div class="formGroup">
+                                            <label class="formLabel" for="detailVariantSizeInput">
+                                                Kích thước
+                                            </label>
+                                            <input
+                                                type="text"
+                                                id="detailVariantSizeInput"
+                                                class="formInput"
+                                                placeholder="Ví dụ: S, M, L, XL..."
+                                            >
+                                        </div>
+
+                                        <div class="formGroup">
+                                            <label class="formLabel" for="detailVariantQuantityInput">
+                                                Số lượng
+                                            </label>
+                                            <input
+                                                type="number"
+                                                id="detailVariantQuantityInput"
+                                                class="formInput"
+                                                placeholder="Số lượng"
+                                                min="0"
+                                            >
+                                        </div>
+
+                                        <div class="formGroup">
+                                            <label class="formLabel" for="detailVariantSkuInput">
+                                                SKU
+                                            </label>
+                                            <input
+                                                type="text"
+                                                id="detailVariantSkuInput"
+                                                class="formInput"
+                                                placeholder="Tự tạo nếu bỏ trống"
+                                            >
+                                        </div>
+
+                                        <div class="formGroup variantActionGroup">
+                                            <button type="button" class="secondaryBtn" id="addProductVariantBtn">
+                                                + Thêm biến thể
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="variantTableWrap">
+                                        <table class="adminTable variantTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>Màu sắc</th>
+                                                    <th>Kích thước</th>
+                                                    <th>SKU</th>
+                                                    <th>Số lượng</th>
+                                                    <th>Thao tác</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody id="detailProductVariantTableBody">
+                                                <!-- JS render biến thể -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <p class="formHint">
+                                        Khi thay đổi số lượng từng biến thể, tổng tồn kho sẽ tự động cập nhật.
+                                    </p>
+                                </div>
+
+                                <div class="formGroup">
+                                    <label class="formLabel" for="detailProductDescriptionInput">
+                                        Mô tả sản phẩm
+                                    </label>
+                                    <textarea
+                                        id="detailProductDescriptionInput"
+                                        class="formInput formTextarea"
+                                        placeholder="Nhập mô tả sản phẩm..."
+                                    ></textarea>
+                                </div>
+
+                                <p class="formMessage" id="detailProductFormMessage"></p>
+
+                                <div class="formActions">
+                                    <a href="../html/admin-products.html" class="secondaryBtn">
+                                        Quay lại danh sách
+                                    </a>
+
+                                    <button type="submit" class="primaryBtn">
+                                        Lưu sản phẩm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Summary -->
+                <section class="contentCard productDetailSummaryGrid" id="productDetailSummaryGrid">
+                    <h3>Tóm tắt sản phẩm</h3>
+                    <p>Thông tin nhanh của sản phẩm hiện tại</p>
+
+                    <div class="summaryGrid">
+                        <div class="summaryItem">
+                            <span>Nhóm sản phẩm</span>
+                            <strong id="summaryProductGroup">Đang cập nhật</strong>
+                        </div>
+
+                        <div class="summaryItem">
+                            <span>Loại sản phẩm</span>
+                            <strong id="summaryProductCategory">Đang cập nhật</strong>
+                        </div>
+
+                        <div class="summaryItem">
+                            <span>Chất liệu</span>
+                            <strong id="summaryProductMaterial">Đang cập nhật</strong>
+                        </div>
+
+                        <div class="summaryItem">
+                            <span>Số biến thể</span>
+                            <strong id="summaryProductVariantCount">0 biến thể</strong>
+                        </div>
+
+                        <div class="summaryItem">
+                            <span>Giá bán</span>
+                            <strong id="summaryProductPrice">0đ</strong>
+                        </div>
+
+                        <div class="summaryItem">
+                            <span>Tổng tồn kho</span>
+                            <strong id="summaryProductStock">0 sản phẩm</strong>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Not found -->
+                <section class="contentCard productNotFoundBox" id="productNotFoundBox" style="display: none;">
+                    <h3>Không tìm thấy sản phẩm</h3>
+                    <p>Sản phẩm có thể đã bị xóa hoặc mã sản phẩm không hợp lệ.</p>
+
+                    <a href="../html/admin-products.html" class="primaryBtn">
+                        Quay lại danh sách sản phẩm
+                    </a>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <!-- Variant row template -->
+    <template id="productVariantRowTemplate">
+        <tr>
+            <td>
+                <span class="variantColorText"></span>
+            </td>
+
+            <td>
+                <span class="variantSizeText"></span>
+            </td>
+
+            <td>
+                <input
+                    type="text"
+                    class="formInput variantSkuInput"
+                    placeholder="SKU"
+                >
+            </td>
+
+            <td>
+                <input
+                    type="number"
+                    class="formInput variantQuantityInput"
+                    min="0"
+                >
+            </td>
+
+            <td>
+                <button type="button" class="dangerBtn" data-action="remove-variant">
+                    Xóa
+                </button>
+            </td>
+        </tr>
+    </template>
+
+    <script src="../js/admin-api.js?v=12"></script>
+<script src="../js/admin-product-detail.js?v=12"></script>
+</body>
+</html>

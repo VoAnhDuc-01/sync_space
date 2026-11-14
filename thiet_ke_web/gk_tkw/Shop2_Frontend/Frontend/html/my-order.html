@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đơn hàng của tôi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/my-order.css?v=17">
+    <link rel="stylesheet" href="../css/nojs-custom.css">
+</head>
+<body>
+    <!-- Top bar -->
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar-left">
+                <i class="fa-solid fa-phone"></i>
+                <span>0911.010.757</span>
+            </div>
+
+            <div class="topbar-right">
+                <a href="../html/profile.html" id="topbarAccountLink" data-role="topbar-account-link">
+                    <span id="topbarAccountText">Nguyễn Văn Anh</span>
+                </a>
+
+                <a href="../html/cart.html">
+                    <i class="fa-solid fa-cart-arrow-down"></i>
+                    <span>Giỏ hàng</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <a href="../html/home.html">
+                <img src="../img/logo.png" alt="DUHU Shop">
+            </a>
+        </div>
+
+        <nav class="nav-left">
+            <ul class="menu">
+                <li class="drop-down">
+                    <a href="../html/ao-tay-ngan.html">Áo ngắn tay</a>
+
+                    <div class="menu-small">
+                        <ul>
+                            <li><a href="../html/ao-thun.html">Áo thun</a></li>
+                            <li><a href="../html/ao-polo.html">Áo polo</a></li>
+                            <li><a href="../html/ao-so-mi.html">Áo sơ mi</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="drop-down">
+                    <a href="../html/ao-tay-dai.html">Áo dài tay</a>
+
+                    <div class="menu-small">
+                        <ul>
+                            <li><a href="../html/ao-sweater.html">Áo Sweater</a></li>
+                            <li><a href="../html/ao-hoodie.html">Áo Hoodie</a></li>
+                            <li><a href="../html/ao-khoac.html">Áo Khoác</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="drop-down">
+                    <a href="../html/quan.html">Quần</a>
+
+                    <div class="menu-small">
+                        <ul>
+                            <li><a href="../html/quan-dai.html">Quần dài</a></li>
+                            <li><a href="../html/quan-ngan.html">Quần ngắn</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="drop-down">
+                    <a href="../html/vay.html">Váy</a>
+
+                    <div class="menu-small">
+                        <ul>
+                            <li><a href="../html/vay-ngan.html">Váy ngắn</a></li>
+                            <li><a href="../html/vay-dai.html">Váy dài</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="drop-down">
+                    <a href="../html/phu-kien.html">Phụ kiện</a>
+
+                    <div class="menu-small">
+                        <ul>
+                            <li><a href="../html/mu.html">Mũ</a></li>
+                            <li><a href="../html/quan-lot.html">Quần lót</a></li>
+                            <li><a href="../html/tat.html">Tất</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="drop-down">
+                    <a href="../html/big-voucher.html">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span>Big Voucher</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <form class="text-box" id="searchForm" action="#">
+            <input
+                type="text"
+                id="searchKeyword"
+                name="keyword"
+                placeholder="Tìm kiếm ..."
+            >
+
+            <button type="submit" id="searchButton" aria-label="Tìm kiếm">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+    </header>
+
+    <!-- My order page -->
+    <main class="profilePage" data-page="my-order">
+        <div class="profileContainer">
+            <div class="breadcrumb">
+                <a href="../html/home.html">Trang chủ</a>
+                <span>/</span>
+                <span aria-current="page">Đơn hàng của tôi</span>
+            </div>
+
+            <h1 class="pageTitle">Đơn hàng của tôi</h1>
+
+            <div class="profileLayout">
+                <!-- Sidebar -->
+                <aside class="profileSidebar">
+                    <div class="userBox" id="profileUserBox">
+                        <div class="userAvatar">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+
+                        <div class="userInfo">
+                            <h3 id="profileUserName">Nguyễn Văn Anh</h3>
+                            <p id="profileUserRank">Thành viên Vàng</p>
+                        </div>
+                    </div>
+
+                    <ul class="sidebarMenu">
+                        <li>
+                            <a href="../html/profile.html">
+                                <i class="fa-regular fa-user"></i>
+                                <span>Thông tin tài khoản</span>
+                            </a>
+                        </li>
+
+                        <li class="active">
+                            <a href="../html/my-order.html">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                <span>Đơn hàng của tôi</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../html/order-history.html">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                                <span>Lịch sử mua hàng</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../html/wishlist.html">
+                                <i class="fa-regular fa-heart"></i>
+                                <span>Sản phẩm yêu thích</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../html/points.html">
+                                <i class="fa-solid fa-coins"></i>
+                                <span>Điểm tích lũy</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <button type="button" class="logoutBtn" id="logoutBtn">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                <span>Đăng xuất</span>
+                            </button>
+                        </li>
+                    </ul>
+                </aside>
+
+                <!-- Content -->
+                <section class="profileContent">
+                    <div class="contentCard">
+                        <div class="cardHeader">
+                            <h2>Đơn hàng hiện tại</h2>
+
+                            <p>
+                                Theo dõi các đơn hàng đang chờ xác nhận, đang chuẩn bị hoặc đang giao.
+                                Các đơn đã hoàn thành sẽ được chuyển sang lịch sử mua hàng.
+                            </p>
+                        </div>
+
+                        <!-- Page states -->
+                        <div class="myOrderState loadingState" id="myOrderLoadingState" hidden style="display:none;">
+                            Đang tải đơn hàng hiện tại...
+                        </div>
+
+                        <div class="myOrderState emptyState" id="myOrderEmptyState" hidden>
+                            <div class="emptyOrderBox">
+                                <div class="emptyOrderIcon">
+                                    <i class="fa-solid fa-box-open"></i>
+                                </div>
+
+                                <h3>Bạn chưa có đơn hàng nào đang xử lý</h3>
+
+                                <p>
+                                    Khi bạn đặt hàng và đơn chưa hoàn thành, thông tin đơn hàng sẽ được hiển thị tại đây.
+                                </p>
+
+                                <a href="../html/home.html" class="btnPrimary">
+                                    Tiếp tục mua sắm
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="myOrderState errorState" id="myOrderErrorState" hidden>
+                            Có lỗi khi tải danh sách đơn hàng hiện tại.
+                        </div>
+
+                        <!-- Content -->
+                        <div class="myOrderContent" id="myOrderContent">
+                            <div class="myOrderList" id="myOrderList">
+                                <article class="myOrderCard" data-order-id="1">
+                                    <div class="myOrderCardHeader">
+                                        <div>
+                                            <span class="orderCodeLabel">Mã đơn hàng</span>
+                                            <h3 data-role="order-code">DH-2026-9824</h3>
+                                        </div>
+                                        <span class="orderStatusBadge statusShipping" data-role="order-status">Đang giao hàng</span>
+                                    </div>
+
+                                    <div class="orderInfoGrid">
+                                        <div class="orderInfoItem">
+                                            <span class="orderInfoLabel">Ngày đặt hàng</span>
+                                            <strong class="orderInfoValue" data-role="order-date">14/11/2026</strong>
+                                        </div>
+                                        <div class="orderInfoItem">
+                                            <span class="orderInfoLabel">Phương thức thanh toán</span>
+                                            <strong class="orderInfoValue" data-role="payment-method">Thanh toán khi nhận hàng (COD)</strong>
+                                        </div>
+                                        <div class="orderInfoItem">
+                                            <span class="orderInfoLabel">Người nhận</span>
+                                            <strong class="orderInfoValue" data-role="receiver-name">Nguyễn Văn Anh</strong>
+                                        </div>
+                                        <div class="orderInfoItem">
+                                            <span class="orderInfoLabel">Số điện thoại nhận hàng</span>
+                                            <strong class="orderInfoValue" data-role="receiver-phone">0901234567</strong>
+                                        </div>
+                                        <div class="orderInfoItem fullWidth">
+                                            <span class="orderInfoLabel">Địa chỉ nhận hàng</span>
+                                            <strong class="orderInfoValue" data-role="receiver-address">123 Đường Lê Lợi, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh</strong>
+                                        </div>
+
+                                        <div class="orderInfoItem fullWidth orderProductDropdownItem">
+                                            <div class="orderProductHeader">
+                                                <span class="orderInfoLabel">Sản phẩm trong đơn: <strong>3 sản phẩm</strong></span>
+                                            </div>
+                                            <div class="orderProductDropdown" style="display:block; margin-top: 10px;">
+                                                <div class="orderProductList">
+                                                    <div class="orderProductItem" style="display:flex; align-items:center; gap:15px; padding:10px 0; border-bottom:1px solid #f0f0f0;">
+                                                        <img src="../img/products/hoodie-teddy-20260601150733-6df727b0.png" width="60" style="border-radius:6px;" alt="Áo Hoodie">
+                                                        <div style="flex:1;">
+                                                            <h4 style="margin:0 0 5px; font-size:14px;"><a href="../html/product-detail.html">Áo Hoodie Gấu Teddy Thêu Nổi Cao Cấp</a></h4>
+                                                            <p style="margin:0; font-size:12px; color:#666;">Màu: Đen | Size: L | SL: 1</p>
+                                                        </div>
+                                                        <strong style="color:#e53637;">450.000đ</strong>
+                                                    </div>
+                                                    <div class="orderProductItem" style="display:flex; align-items:center; gap:15px; padding:10px 0; border-bottom:1px solid #f0f0f0;">
+                                                        <img src="../img/products/polo-basic-20260601151808-4cc1befe.jpg" width="60" style="border-radius:6px;" alt="Áo Polo">
+                                                        <div style="flex:1;">
+                                                            <h4 style="margin:0 0 5px; font-size:14px;"><a href="../html/product-detail.html">Áo Polo Nam Form Regular Basic</a></h4>
+                                                            <p style="margin:0; font-size:12px; color:#666;">Màu: Trắng | Size: XL | SL: 1</p>
+                                                        </div>
+                                                        <strong style="color:#e53637;">220.000đ</strong>
+                                                    </div>
+                                                    <div class="orderProductItem" style="display:flex; align-items:center; gap:15px; padding:10px 0;">
+                                                        <img src="../img/products/qun-jean-ng-rng-20260601155624-3edde235.webp" width="60" style="border-radius:6px;" alt="Quần Jean">
+                                                        <div style="flex:1;">
+                                                            <h4 style="margin:0 0 5px; font-size:14px;"><a href="../html/product-detail.html">Quần Jean Ống Rộng Streetwear</a></h4>
+                                                            <p style="margin:0; font-size:12px; color:#666;">Màu: Xanh nhạt | Size: 31 | SL: 1</p>
+                                                        </div>
+                                                        <strong style="color:#e53637;">298.000đ</strong>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="orderInfoItem fullWidth orderTotalDropdownItem">
+                                            <div class="orderTotalBreakdown" style="display:block; background:#f9f9f9; padding:15px; border-radius:8px; margin-top:10px;">
+                                                <div class="orderTotalBreakdownRow" style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                                                    <span>Tổng tiền hàng:</span><strong>968.000đ</strong>
+                                                </div>
+                                                <div class="orderTotalBreakdownRow" style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                                                    <span>Phí vận chuyển:</span><strong>30.000đ</strong>
+                                                </div>
+                                                <div class="orderTotalBreakdownRow discountRow" style="display:flex; justify-content:space-between; margin-bottom:6px; color:#2e7d32;">
+                                                    <span>Đổi 100 điểm thưởng:</span><strong>-30.000đ</strong>
+                                                </div>
+                                                <div class="orderTotalBreakdownRow discountRow" style="display:flex; justify-content:space-between; margin-bottom:6px; color:#2e7d32;">
+                                                    <span>Voucher BIG50K:</span><strong>-50.000đ</strong>
+                                                </div>
+                                                <div class="orderTotalBreakdownRow finalRow" style="display:flex; justify-content:space-between; font-size:16px; border-top:1px dashed #ddd; padding-top:8px;">
+                                                    <span><strong>Tổng thanh toán:</strong></span><strong style="color:#e53637; font-size:18px;">918.000đ</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="buttonGroup orderButtonGroup" style="margin-top:20px; display:flex; gap:10px;">
+                                        <a href="../html/order-detail.html" class="btnSecondary" style="text-decoration:none; padding:10px 20px; border-radius:6px; background:#f0f0f0; color:#333;">Xem chi tiết</a>
+                                        <a href="../html/order-history.html" class="btnPrimary" style="text-decoration:none; padding:10px 20px; border-radius:6px; background:#111; color:#fff;">ĐÃ NHẬN HÀNG</a>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Template đơn hàng hiện tại -->
+    
+
+    <!-- Template sản phẩm trong đơn -->
+    
+
+    <!-- Popup sau khi bấm đã nhận -->
+    <div class="rewardPopup" id="rewardPopup" hidden>
+        <div class="rewardPopupOverlay" id="rewardPopupOverlay"></div>
+
+        <div
+            class="rewardPopupDialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="rewardPopupTitle"
+        >
+            <button
+                type="button"
+                class="rewardPopupClose"
+                id="closeRewardPopupBtn"
+                aria-label="Đóng popup"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="rewardPopupIcon">
+                <i class="fa-solid fa-gift"></i>
+            </div>
+
+            <div class="rewardPopupContent">
+                <h2 id="rewardPopupTitle">Đã nhận hàng thành công</h2>
+                <p>Đánh giá để nhận thêm điểm cá nhân nhé.</p>
+            </div>
+
+            <div class="rewardPopupActions">
+                <button type="button" class="btnSecondary" id="rewardLaterBtn">
+                    Để sau
+                </button>
+
+                <button type="button" class="btnPrimary" id="rewardReviewNowBtn">
+                    Đánh giá ngay
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup đánh giá -->
+    <div class="reviewPopup" id="reviewPopup" hidden>
+        <div class="reviewPopupOverlay" id="reviewPopupOverlay"></div>
+
+        <div
+            class="reviewPopupDialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="reviewPopupTitle"
+        >
+            <button
+                type="button"
+                class="reviewPopupClose"
+                id="closeReviewPopupBtn"
+                aria-label="Đóng popup"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="reviewPopupHeader">
+                <h2 id="reviewPopupTitle">Đánh giá đơn hàng</h2>
+                <p>Hãy chia sẻ trải nghiệm của bạn sau khi nhận hàng.</p>
+            </div>
+
+            <form class="reviewForm" id="reviewForm" novalidate>
+                <input type="hidden" id="reviewOrderId" name="reviewOrderId" value="">
+
+                <div class="reviewFormGroup">
+                    <label class="reviewLabel">Số sao</label>
+
+                    <div class="reviewStars" id="reviewStars">
+                        <button type="button" class="reviewStarBtn" data-value="1" aria-label="1 sao">
+                            <i class="fa-solid fa-star"></i>
+                        </button>
+
+                        <button type="button" class="reviewStarBtn" data-value="2" aria-label="2 sao">
+                            <i class="fa-solid fa-star"></i>
+                        </button>
+
+                        <button type="button" class="reviewStarBtn" data-value="3" aria-label="3 sao">
+                            <i class="fa-solid fa-star"></i>
+                        </button>
+
+                        <button type="button" class="reviewStarBtn" data-value="4" aria-label="4 sao">
+                            <i class="fa-solid fa-star"></i>
+                        </button>
+
+                        <button type="button" class="reviewStarBtn" data-value="5" aria-label="5 sao">
+                            <i class="fa-solid fa-star"></i>
+                        </button>
+                    </div>
+
+                    <input type="hidden" id="reviewRating" name="reviewRating" value="">
+                </div>
+
+                <div class="reviewFormGroup">
+                    <label for="reviewContent" class="reviewLabel">Nội dung đánh giá</label>
+
+                    <textarea
+                        id="reviewContent"
+                        name="reviewContent"
+                        placeholder="Nhập cảm nhận của bạn về sản phẩm và đơn hàng..."
+                    ></textarea>
+                </div>
+
+                <div class="reviewPopupActions">
+                    <button type="button" class="btnSecondary" id="cancelReviewBtn">
+                        Hủy
+                    </button>
+
+                    <button type="submit" class="btnPrimary" id="submitReviewBtn">
+                        XÁC NHẬN
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="containerFooter">
+            <div class="contact">
+                <h4>Gọi mua hàng (8:30-21:30)</h4>
+
+                <div class="contactNumber">
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>0911.010.757</span>
+                    </p>
+
+                    <p>Tất cả các ngày trong tuần</p>
+                </div>
+            </div>
+
+            <div class="contact">
+                <h4>Góp ý, khiếu nại (8:30-20:30)</h4>
+
+                <div class="contactNumber">
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>0917.257.595</span>
+                    </p>
+
+                    <p>Các ngày trong tuần (trừ ngày lễ)</p>
+                </div>
+            </div>
+
+            <div class="socialMedia">
+                <h4>Nền tảng mạng xã hội</h4>
+
+                <div class="iconSocialMedia">
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.9317374327557!2d106.79120977589625!3d10.892792489263131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d9b2d9812e63%3A0xd4c6b932cc0bca0e!2sBcons%20City%20Mall!5e0!3m2!1sen!2s"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </footer>
+
+    
+
+
+</body>
+</html>

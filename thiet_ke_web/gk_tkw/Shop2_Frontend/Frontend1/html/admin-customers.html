@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý khách hàng</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <div class="adminPage">
+        <aside class="adminSidebar">
+            <div class="adminLogo">
+                <h2>FASHION</h2>
+                <span>Admin Panel</span>
+            </div>
+
+            <div class="adminUserBox">
+                <div class="adminAvatar" id="adminAvatar">A</div>
+
+                <div>
+                    <h3 id="adminName">Quản trị viên</h3>
+                    <p id="adminRole">Chủ cửa hàng</p>
+                </div>
+            </div>
+
+            <nav class="adminMenu">
+                <a href="../html/admin-dashboard.html" class="adminMenuLink">
+                    <span>⌂</span>
+                    Tổng quan
+                </a>
+
+                <a href="../html/admin-products.html" class="adminMenuLink">
+                    <span>▦</span>
+                    Quản lý sản phẩm
+                </a>
+
+                <a href="../html/admin-orders.html" class="adminMenuLink">
+                    <span>□</span>
+                    Quản lý đơn hàng
+                </a>
+
+                <a href="../html/admin-customers.html" class="adminMenuLink active">
+                    <span>♡</span>
+                    Quản lý khách hàng
+                </a>
+
+                <a href="../html/admin-vouchers.html" class="adminMenuLink">
+                    <span>%</span>
+                    Quản lý voucher
+                </a>
+
+               
+
+                <a href="../html/admin-staff.html" class="adminMenuLink" data-owner-only="true">
+                    <span>☷</span>
+                    Quản lý nhân viên
+                </a>
+
+                <a href="../html/admin-reports.html" class="adminMenuLink">
+                    <span>↗</span>
+                    Báo cáo thống kê
+                </a>
+            </nav>
+
+            <button type="button" class="adminLogoutBtn" id="adminLogoutBtn">
+                Đăng xuất
+            </button>
+        </aside>
+
+        <main class="adminMain">
+            <header class="adminHeader">
+                <div>
+                    <h1>Quản lý khách hàng</h1>
+                    <p>Theo dõi tài khoản, lịch sử mua hàng và trạng thái khách hàng</p>
+                </div>
+
+                <div class="adminHeaderActions">
+                    <span class="adminDate" id="adminCurrentDate"></span>
+                </div>
+            </header>
+
+            <section class="adminContent">
+                <section class="statGrid">
+                    <article class="statCard">
+                        <div class="statIcon">♡</div>
+
+                        <div>
+                            <p>Tổng khách hàng</p>
+                            <h2 id="totalCustomerCount">342</h2>
+                            <span>Tất cả khách hàng đã đăng ký</span>
+                        </div>
+                    </article>
+
+                    <article class="statCard">
+                        <div class="statIcon">✓</div>
+
+                        <div>
+                            <p>Đang hoạt động</p>
+                            <h2 id="activeCustomerCount">330</h2>
+                            <span>Tài khoản còn hoạt động</span>
+                        </div>
+                    </article>
+
+                    <article class="statCard">
+                        <div class="statIcon">★</div>
+
+                        <div>
+                            <p>Khách VIP</p>
+                            <h2 id="vipCustomerCount">28</h2>
+                            <span>Khách hàng chi tiêu cao</span>
+                        </div>
+                    </article>
+
+                    <article class="statCard">
+                        <div class="statIcon">×</div>
+
+                        <div>
+                            <p>Bị khóa</p>
+                            <h2 id="lockedCustomerCount">12</h2>
+                            <span>Tài khoản đang bị khóa</span>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="contentCard">
+                    <div class="cardHeader">
+                        <div>
+                            <h2>Danh sách khách hàng</h2>
+                            <p>Nhấn vào một khách hàng để xem dashboard chi tiết</p>
+                        </div>
+                    </div>
+
+                    <div class="filterBar">
+                        <input 
+                            type="text" 
+                            class="searchInput" 
+                            id="customerSearchInput" 
+                            placeholder="Tìm theo tên, email hoặc số điện thoại..."
+                        >
+
+                        <select class="filterSelect" id="customerRankFilter">
+                            <option value="all">Tất cả hạng</option>
+                            <option value="new">Khách mới</option>
+                            <option value="silver">Bạc</option>
+                            <option value="gold">Vàng</option>
+                            <option value="diamond">Kim cương</option>
+                        </select>
+
+                        <select class="filterSelect" id="customerStatusFilter">
+                            <option value="all">Tất cả trạng thái</option>
+                            <option value="active">Hoạt động</option>
+                            <option value="locked">Đã khóa</option>
+                        </select>
+                    </div>
+
+                    <div class="tableWrapper">
+                        <table class="adminTable customerTable">
+                            <thead>
+                                <tr>
+                                    <th>Khách hàng</th>
+                                    <th>Liên hệ</th>
+                                    <th>Ngày đăng ký</th>
+                                    <th>Số đơn</th>
+                                    <th>Tổng chi tiêu</th>
+                                    <th>Hạng</th>
+                                    <th>Trạng thái</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="customerTableBody">
+                                <tr>
+                                    <td><strong>Nguyễn Văn Anh</strong></td>
+                                    <td>nguyenvananh@gmail.com</td>
+                                    <td>0901234567</td>
+                                    <td><span style="background:#fff8e1; color:#f57f17; font-weight:600; padding:2px 8px; border-radius:4px;">Thành viên Vàng</span></td>
+                                    <td>3 đơn hàng</td>
+                                    <td><strong>1.778.000đ</strong></td>
+                                    <td><span class="statusBadge" style="background:#e8f5e9; color:#2e7d32; padding:3px 8px; border-radius:4px; font-size:12px;">Hoạt động</span></td>
+                                    <td><a href="../html/admin-customer-detail.html" style="text-decoration:none; padding:4px 8px; background:#f0f0f0; border-radius:4px; font-size:12px; color:#333;">Chi tiết</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Trần Thị Mai</strong></td>
+                                    <td>tranmai@gmail.com</td>
+                                    <td>0912345678</td>
+                                    <td><span>Thành viên Bạc</span></td>
+                                    <td>1 đơn hàng</td>
+                                    <td><strong>450.000đ</strong></td>
+                                    <td><span class="statusBadge" style="background:#e8f5e9; color:#2e7d32; padding:3px 8px; border-radius:4px; font-size:12px;">Hoạt động</span></td>
+                                    <td><a href="../html/admin-customer-detail.html" style="text-decoration:none; padding:4px 8px; background:#f0f0f0; border-radius:4px; font-size:12px; color:#333;">Chi tiết</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Lê Hoàng Nam</strong></td>
+                                    <td>namle@gmail.com</td>
+                                    <td>0987654321</td>
+                                    <td><span style="background:#e0f7fa; color:#006064; font-weight:600; padding:2px 8px; border-radius:4px;">VIP Kim Cương</span></td>
+                                    <td>8 đơn hàng</td>
+                                    <td><strong>5.620.000đ</strong></td>
+                                    <td><span class="statusBadge" style="background:#e8f5e9; color:#2e7d32; padding:3px 8px; border-radius:4px; font-size:12px;">Hoạt động</span></td>
+                                    <td><a href="../html/admin-customer-detail.html" style="text-decoration:none; padding:4px 8px; background:#f0f0f0; border-radius:4px; font-size:12px; color:#333;">Chi tiết</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="emptyText" id="emptyCustomerText" style="display:none;">
+                        Không tìm thấy khách hàng phù hợp.
+                    </p>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    
+
+    
+
+</body>
+</html>

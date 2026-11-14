@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm sản phẩm</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/category.css">
+    <link rel="stylesheet" href="../css/nojs-custom.css">
+</head>
+<body>
+    
+    
+
+    
+
+    
+
+    <!-- Cart drawer -->
+    <div class="cartDrawerOverlay" id="cartDrawerOverlay" hidden></div>
+
+    <aside class="cartDrawer" id="cartDrawer" hidden>
+        <div class="cartDrawerHeader">
+            <div>
+                <h2>GIỎ HÀNG</h2>
+                <p>Bạn đang có <strong id="cartDrawerCount">0</strong> sản phẩm trong giỏ hàng.</p>
+            </div>
+
+            <button type="button" id="cartDrawerCloseBtn" class="cartDrawerCloseBtn" aria-label="Đóng">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="cartDrawerBody">
+            <div class="cartDrawerEmptyState" id="cartDrawerEmptyState" hidden>
+                Giỏ hàng của bạn đang trống.
+            </div>
+
+            <div class="cartDrawerList" id="cartDrawerList"></div>
+        </div>
+
+        <div class="cartDrawerFooter">
+            <div class="cartDrawerSubtotalRow">
+                <span>TỔNG TIỀN TẠM TÍNH:</span>
+                <strong id="cartDrawerSubtotal">0đ</strong>
+            </div>
+
+            <button type="button" id="cartDrawerCheckoutBtn" class="cartDrawerCheckoutBtn">
+                TIẾN HÀNH ĐẶT HÀNG
+            </button>
+
+            <a href="../html/cart.html" class="cartDrawerDetailLink">
+                Xem chi tiết giỏ hàng
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </aside>
+
+    
+
+    
+
+
+</body>
+</html>

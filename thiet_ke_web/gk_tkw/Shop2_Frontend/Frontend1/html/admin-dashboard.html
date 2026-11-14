@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng quan quản trị</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <div class="adminPage">
+        <aside class="adminSidebar">
+            <div class="adminLogo">
+                <h2>FASHION</h2>
+                <span>Admin Panel</span>
+            </div>
+
+            <div class="adminUserBox">
+                <div class="adminAvatar" id="adminAvatar">A</div>
+
+                <div>
+                    <h3 id="adminName">Quản trị viên</h3>
+                    <p id="adminRole">Chủ cửa hàng</p>
+                </div>
+            </div>
+
+            <nav class="adminMenu">
+                <a href="../html/admin-dashboard.html" class="adminMenuLink active">
+                    <span>⌂</span>
+                    Tổng quan
+                </a>
+
+                <a href="../html/admin-products.html" class="adminMenuLink">
+                    <span>▦</span>
+                    Quản lý sản phẩm
+                </a>
+
+                <a href="../html/admin-orders.html" class="adminMenuLink">
+                    <span>□</span>
+                    Quản lý đơn hàng
+                </a>
+
+                <a href="../html/admin-customers.html" class="adminMenuLink">
+                    <span>♡</span>
+                    Quản lý khách hàng
+                </a>
+
+                <a href="../html/admin-vouchers.html" class="adminMenuLink">
+                    <span>%</span>
+                    Quản lý voucher
+                </a>
+
+             
+
+                <a href="../html/admin-staff.html" class="adminMenuLink" data-owner-only="true">
+                    <span>☷</span>
+                    Quản lý nhân viên
+                </a>
+
+                <a href="../html/admin-reports.html" class="adminMenuLink">
+                    <span>↗</span>
+                    Báo cáo thống kê
+                </a>
+            </nav>
+
+            <button type="button" class="adminLogoutBtn" id="adminLogoutBtn">
+                Đăng xuất
+            </button>
+        </aside>
+
+        <main class="adminMain">
+            <header class="adminHeader">
+                <div>
+                    <h1>Tổng quan cửa hàng</h1>
+                    <p>Theo dõi tình hình kinh doanh và hoạt động mới nhất</p>
+                </div>
+
+                <div class="adminHeaderActions">
+                    <span class="adminDate" id="adminCurrentDate">14/11/2026</span>
+
+                    <a href="../html/home.html" class="adminViewStoreBtn">
+                        Xem cửa hàng
+                    </a>
+                </div>
+            </header>
+
+            <section class="adminContent">
+                <section class="statGrid">
+                    <article class="statCard">
+                        <div class="statIcon">₫</div>
+
+                        <div>
+                            <p>Doanh thu hôm nay</p>
+                            <h2 id="todayRevenue">12.850.000đ</h2>
+                            <span>Ước tính từ đơn đã hoàn thành</span>
+                        </div>
+                    </article>
+
+                    <article class="statCard">
+                        <div class="statIcon">□</div>
+
+                        <div>
+                            <p>Đơn hàng mới</p>
+                            <h2 id="newOrderCount">18</h2>
+                            <span>Đơn đang chờ xác nhận</span>
+                        </div>
+                    </article>
+
+                    <article class="statCard">
+                        <div class="statIcon">▦</div>
+
+                        <div>
+                            <p>Sản phẩm</p>
+                            <h2 id="productCount">124</h2>
+                            <span>Sản phẩm đang quản lý</span>
+                        </div>
+                    </article>
+
+                    <article class="statCard">
+                        <div class="statIcon">!</div>
+
+                        <div>
+                            <p>Sắp hết hàng</p>
+                            <h2 id="lowStockCount">5</h2>
+                            <span>Sản phẩm tồn kho thấp</span>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="dashboardGrid">
+                    <div class="contentCard">
+                        <div class="cardHeader">
+                            <div>
+                                <h2>Đơn hàng gần đây</h2>
+                                <p>Danh sách các đơn hàng mới phát sinh</p>
+                            </div>
+
+                            <a href="../html/admin-orders.html" class="cardLink">
+                                Xem tất cả
+                            </a>
+                        </div>
+
+                        <div class="tableWrapper">
+                            <table class="adminTable">
+                                <thead>
+                                    <tr>
+                                        <th>Mã đơn</th>
+                                        <th>Khách hàng</th>
+                                        <th>Ngày đặt</th>
+                                        <th>Tổng tiền</th>
+                                        <th>Trạng thái</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="recentOrderList">
+                                    <tr>
+                                        <td><strong>DH-2026-9824</strong></td>
+                                        <td>Nguyễn Văn Anh</td>
+                                        <td>14/11/2026 09:30</td>
+                                        <td><strong>918.000đ</strong></td>
+                                        <td><span class="statusBadge" style="background:#e3f2fd; color:#1565c0; padding:3px 8px; border-radius:4px; font-size:12px;">Đang giao</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>DH-2026-9823</strong></td>
+                                        <td>Trần Thị Mai</td>
+                                        <td>14/11/2026 08:45</td>
+                                        <td><strong>450.000đ</strong></td>
+                                        <td><span class="statusBadge" style="background:#fff3e0; color:#e65100; padding:3px 8px; border-radius:4px; font-size:12px;">Chờ xác nhận</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>DH-2026-9822</strong></td>
+                                        <td>Lê Hoàng Nam</td>
+                                        <td>13/11/2026 19:15</td>
+                                        <td><strong>1.250.000đ</strong></td>
+                                        <td><span class="statusBadge" style="background:#e8f5e9; color:#2e7d32; padding:3px 8px; border-radius:4px; font-size:12px;">Hoàn thành</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>DH-2026-9821</strong></td>
+                                        <td>Phạm Hồng Nhung</td>
+                                        <td>13/11/2026 16:20</td>
+                                        <td><strong>680.000đ</strong></td>
+                                        <td><span class="statusBadge" style="background:#e8f5e9; color:#2e7d32; padding:3px 8px; border-radius:4px; font-size:12px;">Hoàn thành</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p class="emptyText" id="emptyRecentOrder" style="display:none;">
+                            Chưa có đơn hàng gần đây.
+                        </p>
+                    </div>
+
+                    <div class="contentCard">
+                        <div class="cardHeader">
+                            <div>
+                                <h2>Sản phẩm sắp hết hàng</h2>
+                                <p>Cần kiểm tra và nhập thêm hàng</p>
+                            </div>
+
+                            <a href="../html/admin-products.html" class="cardLink">
+                                Quản lý
+                            </a>
+                        </div>
+
+                        <div class="tableWrapper">
+                            <table class="adminTable">
+                                <thead>
+                                    <tr>
+                                        <th>Sản phẩm</th>
+                                        <th>Danh mục</th>
+                                        <th>Tồn kho</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="lowStockProductList">
+                                    <tr>
+                                        <td><strong>Áo Hoodie Gấu Teddy Thêu Nổi</strong></td>
+                                        <td>Áo hoodie</td>
+                                        <td><strong style="color:#c62828;">3 cái</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Quần Jean Slimfit Co Giãn</strong></td>
+                                        <td>Quần dài</td>
+                                        <td><strong style="color:#c62828;">2 cái</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Áo Polo Basic Phối Cổ</strong></td>
+                                        <td>Áo polo</td>
+                                        <td><strong style="color:#e65100;">5 cái</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p class="emptyText" id="emptyLowStock" style="display:none;">
+                            Không có sản phẩm sắp hết hàng.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="contentCard">
+                    <div class="cardHeader">
+                        <div>
+                            <h2>Việc cần xử lý</h2>
+                            <p>Các tác vụ quan trọng trong ngày</p>
+                        </div>
+                    </div>
+
+                    <div class="taskGrid">
+                        <a href="../html/admin-orders.html" class="taskItem">
+                            <strong>Xác nhận đơn hàng</strong>
+                            <span>Kiểm tra các đơn đang chờ xác nhận.</span>
+                        </a>
+
+                        <a href="../html/admin-products.html" class="taskItem">
+                            <strong>Cập nhật tồn kho</strong>
+                            <span>Kiểm tra sản phẩm có số lượng thấp.</span>
+                        </a>
+
+                        <a href="../html/admin-vouchers.html" class="taskItem">
+                            <strong>Kiểm tra voucher</strong>
+                            <span>Xem các mã giảm giá còn hiệu lực.</span>
+                        </a>
+
+                        <a href="../html/admin-reports.html" class="taskItem">
+                            <strong>Xem báo cáo</strong>
+                            <span>Theo dõi doanh thu và đơn hàng.</span>
+                        </a>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    
+
+    
+
+  
+
+</body>
+</html>

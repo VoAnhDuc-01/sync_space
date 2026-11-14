@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt hàng thành công</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/order-success.css">
+    <link rel="stylesheet" href="../css/nojs-custom.css">
+</head>
+<body>
+    
+                    <div class="orderInfoGrid">
+                        <div class="infoBox">
+                            <span>Mã đơn hàng</span>
+                            <strong id="successOrderCode">DH-2026-9824</strong>
+                        </div>
+
+                        <div class="infoBox">
+                            <span>Thời gian đặt</span>
+                            <strong id="successOrderCreatedAt">14/11/2026 10:45</strong>
+                        </div>
+
+                        <div class="infoBox">
+                            <span>Trạng thái</span>
+                            <strong id="successOrderStatus">Chờ xác nhận</strong>
+                        </div>
+
+                        <div class="infoBox">
+                            <span>Phương thức thanh toán</span>
+                            <strong id="successPaymentMethod">Thanh toán khi nhận hàng (COD)</strong>
+                        </div>
+
+                        <div class="infoBox">
+                            <span>Tổng thanh toán</span>
+                            <strong class="totalPrice" id="successGrandTotal">948.000đ</strong>
+                        </div>
+                    </div>
+
+                    
+                        </div>
+                    </div>
+
+                    <!-- Order summary -->
+                    <div class="orderSummaryBox">
+                        <h2>Chi tiết thanh toán</h2>
+
+                        <div class="summaryRow">
+                            <span>Tạm tính</span>
+                            <strong id="successSubtotalAmount">0đ</strong>
+                        </div>
+
+                        <div class="summaryRow">
+                            <span>Phí vận chuyển</span>
+                            <strong id="successShippingFee">0đ</strong>
+                        </div>
+
+                        <div class="summaryRow discount" id="successPointDiscountRow" hidden>
+                            <span>Điểm đã đổi</span>
+                            <strong id="successPointDiscountAmount">-0đ</strong>
+                        </div>
+
+                        <div class="summaryRow discount" id="successVoucherDiscountRow" hidden>
+                            <span>Voucher giảm giá</span>
+                            <strong id="successVoucherDiscountAmount">-0đ</strong>
+                        </div>
+
+                        <div class="summaryRow discount" id="successDiscountTotalRow">
+                            <span>Tổng giảm giá</span>
+                            <strong id="successDiscountAmount">0đ</strong>
+                        </div>
+
+                        <div class="summaryTotal">
+                            <span>Tổng cộng</span>
+                            <strong id="successTotalAmount">0đ</strong>
+                        </div>
+                    </div>
+
+                    <!-- Benefits detail -->
+                    <div class="usedBenefitsBox" id="usedBenefitsBox" hidden>
+                        <h2>Ưu đãi đã sử dụng</h2>
+
+                        <div class="usedBenefitItem" id="usedPointBenefit" hidden>
+                            <div>
+                                <strong>Đổi điểm</strong>
+                                <p id="usedPointBenefitText">Không sử dụng điểm</p>
+                            </div>
+                        </div>
+
+                        <div class="usedBenefitItem" id="usedVoucherBenefit" hidden>
+                            <div>
+                                <strong>Mã giảm giá</strong>
+                                <p id="usedVoucherBenefitText">Không sử dụng voucher</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Guest notice -->
+                    <div class="guestOrderNotice" id="guestOrderNotice">
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <p>
+                            Bạn đang đặt hàng với tư cách khách vãng lai. Vui lòng lưu lại mã đơn hàng để tiện theo dõi hoặc liên hệ cửa hàng khi cần hỗ trợ.
+                        </p>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="successActions">
+                        <a href="../html/home.html" class="btnPrimary" id="continueShoppingButton">
+                            Tiếp tục mua sắm
+                        </a>
+
+                        <a href="../html/cart.html" class="btnSecondary" id="backToCartButton">
+                            Quay lại giỏ hàng
+                        </a>
+
+                        <a href="../html/my-order.html" class="btnSecondary" id="viewMyOrdersButton" hidden>
+                            Xem đơn hàng của tôi
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Template sản phẩm đã đặt -->
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="containerFooter">
+            <div class="contact">
+                <h4>Gọi mua hàng (8:30-21:30)</h4>
+
+                <div class="contactNumber">
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>0911.010.757</span>
+                    </p>
+
+                    <p>Tất cả các ngày trong tuần</p>
+                </div>
+            </div>
+
+            <div class="contact">
+                <h4>Góp ý, khiếu nại (8:30-20:30)</h4>
+
+                <div class="contactNumber">
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>0917.257.595</span>
+                    </p>
+
+                    <p>Các ngày trong tuần (trừ ngày lễ)</p>
+                </div>
+            </div>
+
+            <div class="socialMedia">
+                <h4>Nền tảng mạng xã hội</h4>
+
+                <div class="iconSocialMedia">
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.9317374327557!2d106.79120977589625!3d10.892792489263131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d9b2d9812e63%3A0xd4c6b932cc0bca0e!2sBcons%20City%20Mall!5e0!3m2!1sen!2s"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </footer>
+
+   
+
+
+</body>
+</html>
