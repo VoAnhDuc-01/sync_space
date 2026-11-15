@@ -1,0 +1,86 @@
+/* Font Tiếng Việt */
+body,
+.challenge-body-html,
+.challenge-body-html p,
+.challenge-body-html li,
+.challenge-body-html span,
+.challenge-body-html strong,
+.challenge-body-html em,
+.challenge-body-html h1,
+.challenge-body-html h2,
+.challenge-body-html h3 {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif !important;
+}
+
+pre, code,
+.challenge-body-html pre,
+.challenge-body-html code,
+.monaco-editor, .CodeMirror {
+    font-family: Consolas, "Courier New", monospace !important;
+}
+
+.MathJax, .MathJax *,
+.mjx-chtml, .mjx-chtml *,
+.katex, .katex * {
+    font-family: KaTeX_Main, "Times New Roman", serif !important;
+}
+
+
+
+/* Monokai theme */
+.monaco-editor,
+.monaco-editor .margin,
+.monaco-editor-background,
+.monaco-editor .inputarea.ime-input {
+    background-color: #272822 !important;
+}
+
+.monaco-editor .mtk1 {
+    color: #F8F8F2 !important;
+}
+
+.monaco-editor .mtk3,
+.monaco-editor .mtk4 {
+    color: #75715E !important;
+    font-style: italic !important;
+}
+
+.monaco-editor .mtk5,
+.monaco-editor .mtk6,
+.monaco-editor .mtk8 {
+    color: #F92672 !important;
+}
+
+.monaco-editor .mtk7,
+.monaco-editor .mtk11 {
+    color: #E6DB74 !important;
+}
+
+.monaco-editor .mtk9 {
+    color: #AE81FF !important;
+}
+
+.monaco-editor .mtk10,
+.monaco-editor .mtk12 {
+    color: #66D9EF !important;
+}
+
+.monaco-editor .view-overlays .current-line {
+    background-color: #3E3D32 !important;
+    border: none !important;
+}
+.monaco-editor .line-numbers {
+    color: #90908A !important;
+}
+
+
+/* Tắt toàn bộ gạch chân đỏ, vàng, xanh lượn sóng trong khung code */
+.monaco-editor .squiggly-error,
+.monaco-editor .squiggly-warning,
+.monaco-editor .squiggly-info,
+.monaco-editor .squiggly-hint {
+    background: none !important;
+    border-bottom: none !important;
+    display: none !important;
+}
+s
