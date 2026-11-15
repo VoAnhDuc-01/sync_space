@@ -1,7 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll=long long;
 int main() {
-    int n; cin >> n;int a[n];
-    for (auto &x : a) cin >> x;
-    cout << *max_element(a, a + n);
+    ll x;
+    ll y = -99999; 
+    while (cin>>x) {
+        if (x >y)y = x;
+    }cout<<y;
+    return 0;
 }
