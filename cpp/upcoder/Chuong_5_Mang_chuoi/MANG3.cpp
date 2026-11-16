@@ -10,7 +10,7 @@ int main() {
     for (auto &x : a) {
         cin >> x;
         int k = sqrt(x);
-        if (x >= 0 && k * k == x) {
+        if ( k * k == x) {
             tong += x;
         }
     }
